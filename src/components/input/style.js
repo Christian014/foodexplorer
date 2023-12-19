@@ -1,0 +1,21 @@
+import styled from "styled-components";
+
+export const Container = styled.input `
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 48px;
+    padding-left: 14px;
+    
+    border: none;
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: 'Roboto', sans-serif;
+    
+    color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT};
+    
+`;
