@@ -1,7 +1,11 @@
 import { Container } from "./style";
 import { NavBar } from "../../components/navBar";
-
+import { Dish } from "../../components/dishes";
 import Lanches from "../../assets/lanches.png"
+
+
+
+import { Carousel } from "../../components/carousel";
 
 export function Home(){
 
@@ -16,8 +20,25 @@ export function Home(){
 
                     <img src={Lanches} alt="" />
                     
-                    <h2>Sabores inigualáveis</h2>
-                    <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+                    <div className="banner-text">
+
+                        <h1>Sabores inigualáveis</h1>
+                        <p>Sinta o cuidado do preparo com ingredientes selecionados.</p>
+
+                    </div>
+
+                </div>
+
+                {/* refeições */}
+                <div className="meals">
+
+                    <h2>Refeições</h2>
+                    
+                    <div className="dishes">
+
+                        <Carousel />
+
+                    </div>
 
                 </div>
 
