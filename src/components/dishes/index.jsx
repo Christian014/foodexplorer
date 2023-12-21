@@ -1,31 +1,38 @@
 import { Container } from "./style";
 import { Button } from "../button";
 
-import { useState } from "react";
-
 import { SlArrowRight } from "react-icons/sl";
 
 import Coracao from "../../assets/coracao.png";
 import Ravanelo from "../../assets/dish/ravanelo100.png";
-
 import Increment from "../../assets/increment.png";
 import Decrement from "../../assets/decrement.png";
+
+import { useState } from "react";
+
 
 
 export function Dish(){
 
-    
 
-    const [incrementNumDish, setIncrementNumDish] = useState('00');
+    const [dishAmount, setDishAmount] = useState(1);
 
-     async function incrementDish() {
+    const incrementDishAmount = () => {
+
+        setDishAmount((prevAmount) => prevAmount + 1);
         
-        let numberDishElement = document.getElementById('numberDish');
-        
-          let num = parseInt(numberDishElement.textContent);
-          setIncrementNumDish((num + 1).toString().padStart(2, '0'));
-          
-      }
+    };
+
+    const decrementDishAmount = () => {
+
+        if (dishAmount > 1) {
+            setDishAmount((prevAmount) => prevAmount - 1);
+        } else {
+            alert("Escolha ao menos um prato");
+        }
+
+    };
+
 
     return(
 
@@ -44,11 +51,11 @@ export function Dish(){
 
             <div className="price">
                 
-                <img id="decrement" className="decrement" src={Decrement} alt="" />
+                <img id="decrement" className="decrement" onClick={decrementDishAmount} src={Decrement} alt="" />
                 
-                <strong id="numberDish" className="number-dish">{incrementNumDish}</strong>
+                <strong id="dishAmount" className="number-dish">{dishAmount.toString().padStart(2, '0')}</strong>
 
-                <img id="increment" className="increment" onClick={incrementDish} src={Increment} alt="" />
+                <img id="increment" className="increment" onClick={incrementDishAmount} src={Increment} alt="" />
                 
             </div>
 

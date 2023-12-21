@@ -40,6 +40,22 @@ export function Home(){
 
                     </div>
 
+                    <h2>Pratos Principais</h2>
+                    
+                    <div className="dishes">
+
+                        <Carousel />
+
+                    </div>
+
+                    <h2>Pratos Principais</h2>
+                    
+                    <div className="dishes">
+
+                        <Carousel />
+
+                    </div>
+
                 </div>
 
             </main>
