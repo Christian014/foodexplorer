@@ -3,6 +3,8 @@ import { NavBar } from "../../components/navBar";
 import { Dish } from "../../components/dishes";
 import Lanches from "../../assets/lanches.png"
 
+import { Footer } from "../../components/footer";
+
 
 
 import { Carousel } from "../../components/carousel";
@@ -59,6 +61,8 @@ export function Home(){
                 </div>
 
             </main>
+
+            <Footer />
             
         </Container>
     )
