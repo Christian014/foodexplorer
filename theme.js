@@ -1,6 +1,8 @@
 export default{
     COLORS: {
 
+        P_FOOTER_COLOR: "#4d585e",
+        H3_FOOTER_COLOR: "#efece4",
         H1_COLOR: "#ffffff",
         LINK_COLOR:"#dfe0e1",
         PRICE_COLOR: "#82F3FF",

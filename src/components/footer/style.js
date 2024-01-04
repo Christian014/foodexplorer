@@ -11,21 +11,21 @@ export const Container = styled.div `
     .content-footer{
 
         display: flex;
-
         justify-content: center;
         align-items: center;
         height: 100%;
     
         p{
+            color: ${({theme}) => theme.COLORS.P_FOOTER_COLOR};
+            
             font-size: 15px;
-            color: #4d585e;
             font-weight: bold;
             font-family: 'Roboto';
             
         }
 
         h3{
-            color: #efece4;
+            color: ${({theme}) => theme.COLORS.H3_FOOTER_COLOR};
             font-size: 12px;
 
             align-self: center;

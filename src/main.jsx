@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 
 //pages
 import { Home } from './pages/home'; 
+import { Dish } from './pages/dish';
 import { SignIn } from './pages/signIn/index';
-import { SignUp } from './pages/signUp/index'
+import { SignUp } from './pages/signUp/index';
 
 //theme
 import theme from '../theme';
@@ -19,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
       <CreateGlobalStyle />
       
-      < Home/>
+      < Dish/>
 
     </ThemeProvider>
 
