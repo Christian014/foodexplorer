@@ -1,15 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
-
-    background-color: #001119;
-
     height: 77px;
     width: 100%;
-
+    
 
     .content-footer{
-
+        background-color: #001119;
         display: flex;
         justify-content: center;
         align-items: center;

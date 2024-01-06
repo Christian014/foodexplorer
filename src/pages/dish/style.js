@@ -2,9 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div `
     width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
 
     .containOneDish{
-
         
         width: 316px;
         height: 677px;
@@ -68,9 +71,69 @@ export const Container = styled.div `
             }
 
         }
+
+        .tags{
+            margin-top: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        
+
+        .buttons{
+            margin-top: 48px;
+            margin-bottom: 61px;
+
+            display: flex;
+            align-items: center;
+
+            .btt{
+                padding-left: 25px;
+                width: 188px;
+                font-size: 10px;
+            }
+
+            .img-pedidos{
+                position: absolute;
+                width: 18px;
+                height: 15px;
+
+
+                margin-left: 151px;
+                margin-top: 3px;
+            }
+        }
+
+
+        .pedidos{
+            margin-right: 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 15px;
+
+            img{
+                cursor: pointer;
+            }
+
+            .decrement{
+                width: 20px;
+                height: 2px;
+                padding: 5px;
+            }
+            strong{
+                color: white;
+                font-size: 22px;
+                font-family: 'Roboto';
+            }
+        } 
     }
 
 
-    
+    .footer{
+        margin-top: 45px;
+    }
 
 `;

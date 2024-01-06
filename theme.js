@@ -8,6 +8,7 @@ export default{
         PRICE_COLOR: "#82F3FF",
         LABEL_COLOR: "#C4C4CC",
 
+        BACKGROUND_TAG: "#192227",
         BACKGROUND_DISH: "#00070A",
         BACKGROUND_INPUT: "#0d1d25", 
         BACKGROUND_BUTTON: "#750310",
