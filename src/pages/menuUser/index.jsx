@@ -1,27 +1,47 @@
 import { Container } from "./style";
 //img
 import Close from "../../assets/close.png";
-import Lupa from "../../assets/lupa.png"
+import Lupa from "../../assets/lupa.png";
 //component
-import { Input } from "../../components/input"
+import { Input } from "../../components/input";
+import { Footer } from "../../components/footer";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export function MenuUser(){
-    return(
+export function MenuUser() {
+
+    return (
 
         <Container>
-            <div className="header">
+            <main>
+                <div className="header">
 
-                <div>
-                    <img src={Close} alt="close" />
-                    <p>Menu</p>
+                    <div>
+                        <Link to="/">
+                            <img src={Close} alt="close" />
+                        </Link>
+                        
+                        <p>Menu</p>
+                    </div>
+
                 </div>
 
-            </div>
+                <div className="container">
+                    <img src={Lupa} alt="" />
+                    <Input className=" input" placeholder="Busque por pratos ou ingredientes" />
+                    
 
-            <div className="container">
-                <img src={Lupa} alt="" />
-                <Input className= " input" placeholder="Busque por pratos ou ingredientes"/>
-            </div>
+                    <Link to="/">
+                        <p className="paragrafo">Sair</p>
+                    </Link>
+                </div>
+
+                
+                    <div className="footer">
+                        <Footer />
+                    </div>
+                
+            </main>
         </Container>
 
     )

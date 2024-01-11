@@ -13,6 +13,7 @@ export const Container = styled.div `
         .img-menu{
             width: 24px;
             height: 18px;
+            cursor: pointer;
         }
 
         
@@ -21,6 +22,7 @@ export const Container = styled.div `
         .img-pedido{
             width: 26px;
             height: 22px;
+            cursor: pointer;
         }
 
         >div{

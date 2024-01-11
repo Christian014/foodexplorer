@@ -16,6 +16,8 @@ export default{
         BACKGROUND_NAVBAR: "#001119",
 
         PLACEHOLDER_INPUT: "#7C7C8A",
+
+        BORDER_BOTTOM_P: "#192227",
         
     }
 }

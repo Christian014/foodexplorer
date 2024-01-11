@@ -1,6 +1,5 @@
 import { Container } from "./style";
 import { NavBar } from "../../components/navBar";
-import { Dish } from "../../components/dishes";
 import Lanches from "../../assets/lanches.png"
 
 import { Footer } from "../../components/footer";
@@ -31,7 +30,7 @@ export function Home(){
 
                 </div>
 
-                {/* refeições */}
+        
                 <div className="meals">
 
                     <h2>Refeições</h2>

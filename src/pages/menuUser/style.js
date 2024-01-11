@@ -6,6 +6,21 @@ export const Container = styled.div `
 
     height: 114px;
     
+    a{
+        text-decoration: none;
+    }
+
+    main{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        
+        .footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
 
     .header{
         
@@ -37,18 +52,33 @@ export const Container = styled.div `
 
     .container {
         display: flex;
+        flex-direction: column;
+
         width: 372px;
+        height: 677px;
         margin: 0 auto;
+        margin-bottom: 26px;
+        margin-top: 56px;
 
         img{
             position: absolute;
-            align-self: center;
+            margin-top: 14px;
             padding-left: 14px;
         }
 
         Input{
             padding-left: 52px;
             height: 48px;
+        }
+
+        p{
+            color: white;
+            margin-top: 36px;
+            font-family: 'Poppins';
+            font-size: 24px;
+            cursor: pointer;
+            border-bottom: ${({theme}) => theme.COLORS.BORDER_BOTTOM_P} 1px solid;
+            padding-bottom: 10px;
         }
     }
 

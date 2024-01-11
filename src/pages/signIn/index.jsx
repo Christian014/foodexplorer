@@ -3,6 +3,7 @@ import { Container } from "./style";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { TitleAndLogo } from "../../components/titleAndLogo";
+import { Link } from "react-router-dom";
 
 export function SignIn() {
     return (
@@ -32,7 +33,7 @@ export function SignIn() {
 
                 <Button>Entrar</Button>
                 
-                <a href="#signUp">Criar uma conta</a>
+                <Link to= "/signUp">Criar uma conta</Link>
 
             </div>
 

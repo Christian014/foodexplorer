@@ -2,8 +2,12 @@ import { Container } from "./style";
 
 import { TitleAndLogo } from "../titleAndLogo";
 
+//img
 import Menu from "../../assets/Menu.png";
 import Pedidos from  "../../assets/Vector.png";
+import { Link } from "react-router-dom";
+
+
 
 export function NavBar(){
 
@@ -12,8 +16,11 @@ export function NavBar(){
         <Container>
 
             <div className="nav">
-                <img className="img-menu" src={Menu} alt="" />
-
+                
+                <Link to="menuUser">
+                    <img className="img-menu" src={Menu} alt="" />
+                </Link>
+                
                 <div className="titleAndLogo">
                     <TitleAndLogo />
                 </div>

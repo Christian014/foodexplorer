@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
@@ -46,7 +46,7 @@ export function SignUp() {
 
                 <Button>Entrar</Button>
 
-                <a href="#signIn">Ja tenho uma conta</a>
+                <Link to="signIn">Ja tenho uma conta</Link>
 
             </div>
 
