@@ -2,6 +2,7 @@ export default{
     COLORS: {
 
         P_FOOTER_COLOR: "#4d585e",
+        P_NAVBAR_ADMIN: "#82F3FF",
         H3_FOOTER_COLOR: "#efece4",
         H1_COLOR: "#ffffff",
         LINK_COLOR:"#dfe0e1",

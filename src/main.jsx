@@ -7,7 +7,8 @@ import CreateGlobalStyle from "../global";
 import { ThemeProvider } from 'styled-components';
 
 //approutes
-import { AppRoutes } from './routes';
+import { AppRoutes } from './routes/routes';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
