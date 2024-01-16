@@ -1,11 +1,11 @@
 import { Container } from "./style";
-import { NavBarAdmin } from "../../components/navBarAdmin";
+import { NavBarAdmin } from "../../components/componentsAdmin/navBarAdmin";
 import Lanches from "../../assets/lanches.png"
 
 import { Footer } from "../../components/footer";
 
-import { CarouselAdmin } from "../../components/carouselAdmin";
-import { MenuAdmin } from "../menuAdmin";
+import { CarouselAdmin } from "../../components/componentsAdmin/carouselAdmin";
+
 
 export function HomeAdmin(){
 

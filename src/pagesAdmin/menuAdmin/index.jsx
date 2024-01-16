@@ -29,11 +29,11 @@ export function MenuAdmin() {
                     <img src={Lupa} alt="" />
                     <Input className=" input" placeholder="Busque por pratos ou ingredientes" />
                     
-                    <Link to="/newDishAdmin">
+                    <Link to="/dishCustomAdmin">
                         <p className="paragrafo">Novo Prato</p>
                     </Link>
 
-                    <Link to="/">
+                    <Link to="/signIn">
                         <p className="paragrafo">Sair</p>
                     </Link>
                 </div>

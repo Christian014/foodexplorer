@@ -46,7 +46,7 @@ export function SignUp() {
 
                 <Button>Entrar</Button>
 
-                <Link to="signIn">Ja tenho uma conta</Link>
+                <Link to="/signIn">Ja tenho uma conta</Link>
 
             </div>
 

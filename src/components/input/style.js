@@ -15,7 +15,10 @@ export const Container = styled.input `
 
     font-family: 'Roboto', sans-serif;
     
-    color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+    color: white;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT};
     
+    ::placeholder{
+        color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+    }
 `;
