@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import setaPraBaixo from "../../assets/setaPraBaixo.png";
+import { Tag } from "../../components/tags/index";
 
 
-export const Container = styled.div `
+export const Container = styled.div`
     color: white;
     h1{
         font-family: 'Poppins';
@@ -11,6 +13,9 @@ export const Container = styled.div `
     }
     @media(max-width: 428px){
 
+        p{
+            color: ${({theme}) => theme.COLORS.LABEL_COLOR};
+        }
         a{
             color: white;
         }
@@ -32,6 +37,7 @@ export const Container = styled.div `
             
             p{
                 font-size: 16px;
+                
             }
 
             img{
@@ -59,7 +65,7 @@ export const Container = styled.div `
             width: 100%;
             height: 48px;
 
-            background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+            background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
 
             input{
                 width: 100%;
@@ -85,6 +91,7 @@ export const Container = styled.div `
             p{
                 margin-bottom: 16px;
                 font-family: 'Roboto';
+                color: ${({theme}) => theme.COLORS.LABEL_COLOR};
                 
             }
             input{
@@ -96,19 +103,100 @@ export const Container = styled.div `
                 color: white;
                 padding-left: 14px;
                 box-sizing: border-box;
-                background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                 outline: none;
             }
 
             input::placeholder{
-                color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+                color: ${({ theme }) => theme.COLORS.PLACEHOLDER_INPUT};
+            }
+        }
+
+        .category{
+
+            p{
+                font-family: 'Roboto';
+                font-size: 16px;
+                color: ${({theme}) => theme.COLORS.LABEL_COLOR};
+            }
+
+            select{
+            width: 95%;
+            height: 48px;
+            border-radius: 8px;
+            padding-left: 11px;
+
+            outline: none;
+            border: none;
+            
+
+            background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT};
+            color: ${({ theme }) => theme.COLORS.LABEL_COLOR};
+
+            background-image: url("${setaPraBaixo}");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+
+            -webkit-appearance: none;
+            -moz-appearance:    none;
+            appearance:         none;
+
+            
+        }
+
+        .select{
+            width: 100%;
+            height: 48px;
+            
+            margin: 8px 0;
+            
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: ${({ theme }) => theme.COLORS.BACKGROUND_INPUT};
+            display: grid;
+
+            img{
+                position: fixed;
+                align-self: center;
+                right: 47px;
+            }
+            
+        }
+        }
+
+        .ingredients{
+            p{
+                margin-bottom: 16px;
+                font-family: 'Roboto';
+                font-size: 16px;
+                color: ${({theme}) => theme.COLORS.LABEL_COLOR};
+            }
+            .tags{
+                border-radius: 8px;
+                background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                display: flex;
+                gap: 16px;
+                height: 48px;
+                align-items: center;
+                padding: 8px;
+                box-sizing: border-box;
+
+                button{
+                    cursor: pointer;
+                    width: 116px;
+                    height: 32px;
+                    border-radius: 8px;
+                    border: 1px dashed;
+                    background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                    color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+
+                    
+
+                    img{
+                        padding-left: 3px;
+                    }
+                }
             }
         }
 }
-
-    
-
-        
-
-    
 `;
