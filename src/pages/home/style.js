@@ -4,7 +4,7 @@ export const Container = styled.div `
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_GLOBAL};
 
-    @media (max-width: 428px){
+    @media (max-width: 640px){
         
 
         .banner{

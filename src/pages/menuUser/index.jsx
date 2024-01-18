@@ -31,7 +31,7 @@ export function MenuUser() {
                     <Input className=" input" placeholder="Busque por pratos ou ingredientes" />
                     
 
-                    <Link to="/">
+                    <Link to="/signIn">
                         <p className="paragrafo">Sair</p>
                     </Link>
                 </div>

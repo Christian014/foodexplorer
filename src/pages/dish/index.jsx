@@ -1,5 +1,6 @@
 import { Container } from "./style";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 //components
 import { NavBar } from "../../components/navBar";
@@ -42,7 +43,9 @@ const [amount, setAmount] = useState(1)
                 <div className="back">
 
                     <img src={Voltar} alt="voltar" />
-                    <p>voltar</p>
+                    <Link to = "/">
+                        <p>voltar</p>
+                    </Link>
 
                 </div>
 

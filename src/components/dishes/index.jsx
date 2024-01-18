@@ -9,6 +9,7 @@ import Increment from "../../assets/increment.png";
 import Decrement from "../../assets/decrement.png";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -43,7 +44,9 @@ export function Dish(){
             </div>
 
 
-            <img className="ravanelo" src={Ravanelo} alt="" />
+            <Link to= "/dish">
+                <img className="ravanelo" src={Ravanelo} alt="" />
+            </Link>
 
             <p>Salada de Ravanello <SlArrowRight className="arrowRight"/> </p>
 

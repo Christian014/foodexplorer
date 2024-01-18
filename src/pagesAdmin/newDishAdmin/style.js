@@ -261,12 +261,8 @@ export const Container = styled.div`
             gap: 32px;
             margin-bottom: 53px;
 
-            Button{
-                width: 160px;
-            }
-            #delete-btt{
-                background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
-            }
+            
+            
             #save-btt{
                 background-color: ${({theme}) => theme.COLORS.BACKGROUND_BUTTON_SAVE}
             }

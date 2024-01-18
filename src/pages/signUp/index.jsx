@@ -18,7 +18,9 @@ export function SignUp() {
 
                 </div>
 
-                <form action="">
+                <form>
+
+                    <h1 className="h1-desktop">Crie Sua Conta</h1>
 
                     <div className="name">
 
@@ -40,13 +42,13 @@ export function SignUp() {
                         <Input placeholder="No mínimo 6 caracteres" />
 
                     </div>
+
+                    <div className="auth-buttons">
+                        <Button>Entrar</Button>
+
+                        <Link to="/signIn">Ja tenho uma conta</Link>
+                    </div>
                 </form>
-
-
-
-                <Button>Entrar</Button>
-
-                <Link to="/signIn">Ja tenho uma conta</Link>
 
             </div>
 

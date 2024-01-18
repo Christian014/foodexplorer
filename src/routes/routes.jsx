@@ -4,8 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 
 
 
-//login e cadastro user
-import { AuthRoutes } from './routesUser/auth.routes';
+
 
 //user logado
 import { PagesRoutes } from "./routesUser/pages.routes";
@@ -18,7 +17,7 @@ export function AppRoutes(){
     return(
 
         <BrowserRouter>
-            <RoutesAdmin />
+            <PagesRoutes />
         </BrowserRouter>
         
 
