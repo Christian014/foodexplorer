@@ -4,21 +4,32 @@ export const Container = styled.div `
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_GLOBAL};
 
-    @media (max-width: 640px){
+    @media ( max-width: 1190px){
         
+        .swiper{
+            width: 600px;
+            height: 300px;
+        }
 
         .banner{
 
-            margin-left: 30px;
+            height: 120px;
+            display: flex;
+            background-color: rgb(9,29,38);
+            color: white;
+            margin: 0 auto;
+            width: 90%;
+
             margin-top: 44px;
             
+            /* margin-left: 30px;
             width: 376px;
             height: 120px;
 
             display: flex;
 
             background-color: rgb(9,29,38);
-            color: white;
+            color: white; */
 
             img{
 
@@ -57,7 +68,7 @@ export const Container = styled.div `
         }
 
         .meals{
-
+            padding-left: 24px;
             h2{
 
                 margin-top: 62px;

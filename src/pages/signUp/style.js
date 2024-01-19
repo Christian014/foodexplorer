@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    @media (min-width: 641px){
+    @media (min-width: 1191px){
         .container{
             display: flex;
             align-items: center;
@@ -80,7 +80,7 @@ export const Container = styled.div`
 
 
     //mobile first    
-    @media (max-width: 640px) {
+    @media (max-width: 1190px) {
         //h1 do desktop
         .h1-desktop{
             visibility: hidden;

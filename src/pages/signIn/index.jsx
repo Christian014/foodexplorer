@@ -17,23 +17,29 @@ export function SignIn() {
 
                 </div>
 
-                <div className="email">
+                <div className="login">
 
-                    <label>Email</label>
-                    <Input placeholder="Exemplo: exemplo@exemplo.com" />
+                    <h1>Faça Login</h1>
+
+                    <div className="email">
+
+                        <label>Email</label>
+                        <Input placeholder="Exemplo: exemplo@exemplo.com" />
+
+                    </div>
+
+                    <div className="password">
+
+                        <label>Senha</label>
+                        <Input placeholder="No mínimo 6 caracteres" />
+
+                    </div>
+
+                    <Button>Entrar</Button>
+
+                    <Link to="/signUp">Criar uma conta</Link>
 
                 </div>
-
-                <div className="password">
-
-                    <label>Senha</label>
-                    <Input placeholder="No mínimo 6 caracteres" />
-
-                </div>
-
-                <Button>Entrar</Button>
-                
-                <Link to= "/signUp">Criar uma conta</Link>
 
             </div>
 
