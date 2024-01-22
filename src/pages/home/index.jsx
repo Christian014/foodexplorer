@@ -18,7 +18,7 @@ export function Home(){
                 <NavBar />
 
                 <div className="banner">
-
+                    <div className="img-desktop"></div>
                     <img src={Lanches} alt="" />
                     
                     <div className="banner-text">
@@ -33,9 +33,22 @@ export function Home(){
         
                 <div className="meals">
 
-                    <h2>Refeições</h2>
+                    
                     
                     <div className="dishes">
+                    <div className="h2-dishes">
+                        <h2>Refeições</h2>
+                    </div>
+                        <Carousel />
+
+                    </div>
+
+                    <h2>Pratos Principais</h2>
+                    
+                    <div className="dishes">
+                    <div className="h2-dishes">
+                        <h2>Refeições</h2>
+                    </div>
 
                         <Carousel />
 
@@ -44,15 +57,7 @@ export function Home(){
                     <h2>Pratos Principais</h2>
                     
                     <div className="dishes">
-
-                        <Carousel />
-
-                    </div>
-
-                    <h2>Pratos Principais</h2>
                     
-                    <div className="dishes">
-
                         <Carousel />
 
                     </div>

@@ -1,7 +1,31 @@
 import styled from "styled-components";
+import ravanelo200 from "../../assets/dish/ravanelo200.png";
 
 export const Container = styled.div `
+    @media(min-width: 1920px){
+        width: 304px;
+        height: 462px;
 
+        .img-dish{
+            margin-top: 24px;
+            margin-bottom: 15px;
+            width: 176px;
+            height: 175px;
+            background-image: url(${ravanelo200});
+        }
+
+        .ravanelo{
+            visibility: hidden;
+            position: absolute;
+        }
+
+        p{
+            font-size: 24px;
+        }
+    }
+
+
+    //default media
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_DISH};
 
     margin-left: 24px;

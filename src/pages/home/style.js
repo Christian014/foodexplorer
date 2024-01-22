@@ -1,15 +1,88 @@
 import styled from "styled-components";
+import desktopimg from "../../assets/desktopimg.png"
+export const Container = styled.div`
 
-export const Container = styled.div `
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_GLOBAL};
+    color: white;
 
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_GLOBAL};
+    @media(min-width: 1920px){
+        .dishes{
+                height: 462px;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
 
-    @media ( max-width: 1190px){
-        
-        .swiper{
-            width: 600px;
-            height: 300px;
+                .h2-dishes{
+                    width: 80%;
+                }
         }
+    
+        .meals{
+            h2{
+                margin-top: 64px;
+            }
+        }
+    
+        .banner{
+            height: 260px;
+            display: flex;
+            background-color: rgb(9,29,38);
+            color: white;
+            margin: 0 164px;
+            
+            
+            margin-top: 164px;
+    
+            img{
+                
+                visibility: hidden;
+            }
+    
+            .img-desktop{
+                background-image: url(${desktopimg});
+                width: 656px;
+                height: 412px;
+                margin-top: -145px;
+                position: absolute;
+                margin-left: -60px;
+                position: absolute;
+            }
+        }
+    
+        .banner-text{
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 3px;
+    
+    
+    
+            h1{
+        
+                
+    
+                font-size: 40px;
+                font-family: 'Poppins', sans-serif;
+    
+            }
+    
+            
+    
+            p{
+    
+                font-size: 12px;
+                font-family: 'Poppins', sans-serif;
+    
+            }
+        }
+    }
+
+    @media ( max-width: 640px){
+        
+        
 
         .banner{
 
@@ -22,14 +95,7 @@ export const Container = styled.div `
 
             margin-top: 44px;
             
-            /* margin-left: 30px;
-            width: 376px;
-            height: 120px;
-
-            display: flex;
-
-            background-color: rgb(9,29,38);
-            color: white; */
+            
 
             img{
 
@@ -80,7 +146,14 @@ export const Container = styled.div `
                 color: white;
 
             }
+
+            
+            
         }
+
+        
+
+        
     }
 
 `;

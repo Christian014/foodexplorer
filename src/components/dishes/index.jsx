@@ -46,6 +46,7 @@ export function Dish(){
 
             <Link to= "/dish">
                 <img className="ravanelo" src={Ravanelo} alt="" />
+                <div className="img-dish"></div>
             </Link>
 
             <p>Salada de Ravanello <SlArrowRight className="arrowRight"/> </p>
