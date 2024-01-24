@@ -4,6 +4,7 @@ import { Button } from "../button";
 import { SlArrowRight } from "react-icons/sl";
 
 import Coracao from "../../assets/coracao.png";
+import CoracaoColor from "../../assets/coracao-color.png";
 import Ravanelo from "../../assets/dish/ravanelo100.png";
 import Increment from "../../assets/increment.png";
 import Decrement from "../../assets/decrement.png";
@@ -35,12 +36,23 @@ export function Dish(){
     };
 
 
+    const [classeAtiva, setClasseAtiva] = useState(false);
+
+    // Função para alternar a classe
+    const alternarClasse = () => {
+      // Atualize o estado para o oposto do estado atual
+      setClasseAtiva((estadoAtual) => !estadoAtual);
+    };
+    
+    
+
     return(
 
         <Container>
 
             <div className="favorite">
-                <img className="coracao" src={Coracao} alt="" />
+                <img onClick={alternarClasse}  className = {` coracao ${classeAtiva ? "visibility-hidden" : ""}`} id="coracao" src={Coracao} alt="" />
+                <img  onClick={alternarClasse}  className = {` coracao-color  ${classeAtiva ? "" : "visibility-hidden"}`} id="coracaoColor" src={CoracaoColor} alt="" />
             </div>
 
 

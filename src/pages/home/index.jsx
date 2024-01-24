@@ -34,30 +34,32 @@ export function Home(){
                 <div className="meals">
 
                     
-                    
+                    <h2 className="h2-mobile">Pratos Principais</h2>
                     <div className="dishes">
                     <div className="h2-dishes">
-                        <h2>Refeições</h2>
+                        <h2 className="h2-desktop">Refeições</h2>
                     </div>
                         <Carousel />
 
                     </div>
 
-                    <h2>Pratos Principais</h2>
+                    <h2 className="h2-mobile">Pratos Principais</h2>
                     
                     <div className="dishes">
                     <div className="h2-dishes">
-                        <h2>Refeições</h2>
+                        <h2 className="h2-desktop">Refeições</h2>
                     </div>
 
                         <Carousel />
 
                     </div>
 
-                    <h2>Pratos Principais</h2>
+                    <h2 className="h2-mobile">Pratos Principais</h2>
                     
                     <div className="dishes">
-                    
+                    <div className="h2-dishes">
+                        <h2 className="h2-desktop">Refeições</h2>
+                    </div>
                         <Carousel />
 
                     </div>

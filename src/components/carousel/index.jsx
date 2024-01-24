@@ -4,6 +4,11 @@ import { Container } from './style';
 
 import { Dish } from '../dishes';
 
+import 'swiper/swiper-bundle.css';
+import { Navigation } from 'swiper/modules';
+import "swiper/css/navigation";
+
+
 
 
 
@@ -18,6 +23,9 @@ export function Carousel() {
         slidesPerView={2}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
+        grabCursor={true}
+        modules={[Navigation]}
+        navigation={true}
         breakpoints={{
           800: {
             slidesPerView: 3,

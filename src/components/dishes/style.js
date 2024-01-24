@@ -3,6 +3,7 @@ import ravanelo200 from "../../assets/dish/ravanelo200.png";
 
 export const Container = styled.div `
     @media(min-width: 1920px){
+        box-sizing: border-box;
         width: 304px;
         height: 462px;
 
@@ -67,6 +68,19 @@ export const Container = styled.div `
             margin-top: 16px;
             margin-right: 16px;
 
+        }
+
+        .visibility-hidden{
+            visibility: hidden;
+        }
+
+        .coracao-color{
+            position: absolute;
+            right: 0;
+            width: 24px;
+
+            margin-top: 16px;
+            margin-right: 16px;
         }
     }
     

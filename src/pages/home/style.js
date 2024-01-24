@@ -6,8 +6,8 @@ export const Container = styled.div`
     color: white;
 
     @media(min-width: 1920px){
+        box-sizing: border-box;
         .dishes{
-                height: 462px;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
@@ -21,6 +21,13 @@ export const Container = styled.div`
         .meals{
             h2{
                 margin-top: 64px;
+                margin-bottom: 24px;
+                font-family: 'Poppins';
+            }
+
+            .h2-mobile{
+                position: absolute;
+                visibility: hidden;
             }
         }
     
@@ -145,6 +152,11 @@ export const Container = styled.div`
                 font-size: 18px;
                 color: white;
 
+            }
+
+            .h2-desktop{
+                position: absolute;
+                visibility: hidden;
             }
 
             
