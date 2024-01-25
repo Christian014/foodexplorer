@@ -47,7 +47,7 @@ export function Home(){
                     
                     <div className="dishes">
                     <div className="h2-dishes">
-                        <h2 className="h2-desktop">Refeições</h2>
+                        <h2 className="h2-desktop">Sobremesas</h2>
                     </div>
 
                         <Carousel />
@@ -58,7 +58,7 @@ export function Home(){
                     
                     <div className="dishes">
                     <div className="h2-dishes">
-                        <h2 className="h2-desktop">Refeições</h2>
+                        <h2 className="h2-desktop">Bebidas</h2>
                     </div>
                         <Carousel />
 

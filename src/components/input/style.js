@@ -21,4 +21,9 @@ export const Container = styled.input `
     ::placeholder{
         color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
     }
+
+    @media(min-width: 1920px){
+        width: 581px;
+        padding-left: 100px;
+    }
 `;
