@@ -23,7 +23,7 @@ export const Container = styled.input `
     }
 
     @media(min-width: 1920px){
-        width: 581px;
-        padding-left: 100px;
+        
+        padding-left: 10px;
     }
 `;

@@ -22,7 +22,7 @@ export function NavBar(){
 
             <div className="nav">
                 
-                <Link to="menuUser">
+                <Link to="/menuUser">
                     <img className="img-menu" src={Menu} alt="" />
                 </Link>
                 
@@ -41,7 +41,9 @@ export function NavBar(){
                     <Button children="Pedidos (0)"/>
                 </div>
 
-                <img src={exitDesktop} alt="" />
+                <Link to="signIn">
+                    <img className="exit-desktop" src={exitDesktop} alt="" />
+                </Link>
 
                 <div className="pedidos">
                     <img className="img-pedido" src={Pedidos} alt="" />

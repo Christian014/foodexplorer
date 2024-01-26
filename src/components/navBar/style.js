@@ -17,14 +17,27 @@ export const Container = styled.div `
         visibility: hidden;
     }
 
-    Input.input{
-        width: 581px;
+    .div-input{
+        display: flex;
+        Input{
+            width: 581px;
+            padding-left: 135px;
+        }
+
+        img{
+            padding-left: 100px;
+            position: absolute;
+            align-self: center;
+        }
     }
 
+    
+
     .nav{
+
         padding: 0 0 0 0;
         display: flex;
-        height: 100%;
+        height: 104px;
         align-items: center;
         gap: 32px;
         justify-content: space-evenly;
@@ -34,21 +47,14 @@ export const Container = styled.div `
 
     .btt{
         display: flex;
+        Button{
+            width: 216px;
+        }
         
         img{
             position: absolute;
             align-self: center;
             padding-left: 38px;
-        }
-    }
-
-    .div-input{
-        display: flex;
-
-        img{
-            position: absolute;
-            padding-left: 55px;
-            align-self: center;
         }
     }
 }
@@ -66,6 +72,11 @@ export const Container = styled.div `
         display: flex;
         justify-content: space-between;
         padding: 56px 28px 24px 28px;
+
+        .btt, .div-input, .exit-desktop{
+            position: absolute;
+            visibility: hidden;
+        }
     }
 }
     height: 114px;

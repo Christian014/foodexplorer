@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
+    @media(max-width: 640px){
+        padding-left: 62px;
+    }
 
     color: ${({theme}) => theme.COLORS.H1_COLOR};
 
@@ -22,6 +25,7 @@ export const Container = styled.div `
     }
 
     @media(min-width: 1920px){
+        align-items: center;
         h1{
             font-size: 24px;
             font-family: 'Roboto';

@@ -7,6 +7,26 @@ export const Container = styled.div`
 
     @media(min-width: 1920px){
         box-sizing: border-box;
+
+        .div-input{
+            Input{
+                width: 581px;
+                padding-left: 135px;
+            }
+
+            img{
+                padding-left: 100px;
+            }
+        }
+
+        .btt{
+            Button{
+                width: 216px;
+            }
+        }
+
+        
+
         .dishes{
                 display: flex;
                 justify-content: center;

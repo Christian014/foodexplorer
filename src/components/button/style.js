@@ -17,8 +17,6 @@ export const Container = styled.button `
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_BUTTON};
 
     @media(min-width: 1920px){
-        width: 216px;
-
         padding-left: 10px;
     }
 `;

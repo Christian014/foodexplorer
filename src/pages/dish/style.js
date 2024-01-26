@@ -1,6 +1,56 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
+
+@media(min-width: 1920px){
+    .containOneDish{
+        display: flex;
+        height: 100vh;
+
+        .back{
+            height: max-content;
+            align-items: center;
+            gap: 6px;
+            display: flex;
+            color: white;
+            margin-top: 24px;
+            margin-bottom: 42px;
+            
+            
+            a{
+                text-decoration: none;
+                color: white;
+                font-size: 24px;
+                height: max-content;
+            }
+
+            img{
+                width: 12px;
+                height: 22px;
+            }
+        }
+
+        .dishDescription{
+            color: white;
+            display: flex;
+
+            img{
+                margin-top: 100px;
+                width: 390px;
+                height: 390px;
+            }
+
+            .txt-description{
+                margin-top: 145px;
+            }
+        }
+        
+    }
+}
+
+
+//mobile first
+@media (max-width: 640px){
     a{
         text-decoration: none;
     }
@@ -138,5 +188,6 @@ export const Container = styled.div `
     .footer{
         margin-top: 45px;
     }
+}
 
 `;

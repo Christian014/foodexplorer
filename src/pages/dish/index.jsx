@@ -36,7 +36,7 @@ const [amount, setAmount] = useState(1)
 
         <Container>
 
-            <NavBar/>
+            <NavBar className="navbar"/>
 
             <div className="containOneDish">
 
@@ -53,9 +53,11 @@ const [amount, setAmount] = useState(1)
 
                     <img src={Ravanelo} alt="Ravanelo" />
 
-                    <h1>Salada Ravanello</h1>
+                    <div className="txt-description">
+                        <h1>Salada Ravanello</h1>
 
-                    <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                        <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                    </div>
 
                 </div>
 
