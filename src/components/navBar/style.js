@@ -63,7 +63,7 @@ export const Container = styled.div `
 
 //mobile first
 
-@media(max-width: 640px){
+@media(max-width: 1000px){
     Input{
         position: absolute;
         visibility: hidden;

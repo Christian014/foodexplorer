@@ -56,7 +56,11 @@ const [amount, setAmount] = useState(1)
                     <div className="txt-description">
                         <h1>Salada Ravanello</h1>
 
-                        <p>Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                        <p className="p-mobile">Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+
+                        <p className="p-desktop">
+                            Rabanetes, folhas verdes e molho agridoce salpicados com    gergelim. O pão naan dá um toque especial.
+                        </p>
                     </div>
 
                 </div>
@@ -97,9 +101,9 @@ const [amount, setAmount] = useState(1)
 
             </div>
 
-            <div className="footer">
+            
                 <Footer />
-            </div>
+            
         </Container>
 
     )

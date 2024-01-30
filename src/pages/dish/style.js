@@ -5,7 +5,8 @@ export const Container = styled.div `
 @media(min-width: 1920px){
     .containOneDish{
         display: flex;
-        height: 100vh;
+        justify-content: center;
+        
 
         .back{
             height: max-content;
@@ -15,6 +16,8 @@ export const Container = styled.div `
             color: white;
             margin-top: 24px;
             margin-bottom: 42px;
+            left: 22%;;
+            position: absolute;
             
             
             a{
@@ -33,7 +36,7 @@ export const Container = styled.div `
         .dishDescription{
             color: white;
             display: flex;
-
+            
             img{
                 margin-top: 100px;
                 width: 390px;
@@ -42,6 +45,61 @@ export const Container = styled.div `
 
             .txt-description{
                 margin-top: 145px;
+                margin-left: 47px;
+
+                h1{
+                    font-size: 40px;
+                    font-family: 'Poppins';
+                }
+
+                p.p-mobile{
+                    position: absolute;
+                    visibility: hidden;
+                }
+
+                p.p-desktop{
+                    margin-top: 24px;
+                    font-size: 24px;
+                    font-family: 'Poppins';
+                    width: 660px;
+                }
+            }
+        }
+
+        .tags{
+            margin-top: 17%;
+            margin-left: 14%;
+            justify-content: center;
+            gap: 12px;
+            position: absolute;
+            display: flex;
+        }
+
+        .buttons{
+            position: absolute;
+            margin-top: 22%;
+            margin-left: 3.5%;
+            display: flex;
+            gap: 33px;
+            align-items: center;
+
+            .img-pedidos{
+                position: absolute;
+                visibility: hidden;
+            }
+
+            .pedidos{
+                display: flex;
+                align-items: center;
+                gap: 14px;
+            }
+
+            Button{
+                width: 162px;
+                padding: 0;
+            }
+            strong{
+                color: white;
             }
         }
         
@@ -50,7 +108,7 @@ export const Container = styled.div `
 
 
 //mobile first
-@media (max-width: 640px){
+@media (max-width: 1000px){
     a{
         text-decoration: none;
     }
@@ -84,6 +142,7 @@ export const Container = styled.div `
                 font-size: 24px;
                 font-family: 'Poppins';
             }
+            
 
             img{
                 width: 12px;
@@ -121,6 +180,11 @@ export const Container = styled.div `
                 color: white;
                 font-size: 16px;
                 font-family: 'Poppins';
+            }
+
+            p.p-desktop{
+                position: absolute;
+                visibility: hidden;
             }
 
         }
@@ -185,9 +249,7 @@ export const Container = styled.div `
     }
 
 
-    .footer{
-        margin-top: 45px;
-    }
+    
 }
 
 `;

@@ -3,12 +3,21 @@ import styled from "styled-components";
 export const Container = styled.div `
 
 @media(min-width: 1920px){
-    margin-top: 48px;
+    
+
+    /* .content-footer{
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        height: 77px;
+        width: 100%;
+    } */
 }
 
 //mobile first
-    height: 77px;
-    width: 100%;
+    /* height: 77px;
+    width: 100%; */
+    
     
 
     .content-footer{
@@ -16,7 +25,10 @@ export const Container = styled.div `
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
+        height: 77px;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
     
         p{
             color: ${({theme}) => theme.COLORS.P_FOOTER_COLOR};
