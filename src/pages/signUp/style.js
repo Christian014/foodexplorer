@@ -10,12 +10,27 @@ export const Container = styled.div`
             
         }
 
+        .titleAndLogo{
+            align-items: center;
+            display: flex;
+
+            img{
+                width: 49px;
+                height: 49px;
+            }
+
+            h1{
+                font-size: 42px;
+            }
+        }
+
         a, h1, p {
             font-family: 'Roboto';
         }
         
         .h1-desktop{
             align-self: center;
+            font-family: 'Poppins';
         }
 
         h1{
@@ -73,6 +88,14 @@ export const Container = styled.div`
             display: flex;
             flex-direction: column;
             gap: 8px;
+        }
+    }
+
+    @media(max-width: 1266px){
+        .titleAndLogo{
+            h1{
+                font-size: 30px;
+            }
         }
     }
 

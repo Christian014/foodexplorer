@@ -5,7 +5,7 @@ export const Container = styled.div `
     width: 90%;
     
 
-    @media(min-width: 1920px){
+    @media(min-width: 1240px){
         width: 83%;
 
         .swiper-button-prev{
@@ -32,7 +32,7 @@ export const Container = styled.div `
         
     }
 
-    @media (max-width: 640px){
+    @media (max-width: 1239px){
         .swiper-button-prev{
             position: absolute;
             visibility: hidden;

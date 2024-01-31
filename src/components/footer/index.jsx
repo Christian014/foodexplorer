@@ -8,8 +8,10 @@ export function Footer(){
         <Container>
             <div className="content-footer">
 
-                    <img src={Polygon} alt="polygon" />
-                    <p>food explorer</p>
+                    <div className="txt-foot">
+                        <img src={Polygon} alt="polygon" />
+                        <p>food explorer</p>
+                    </div>
 
                 <h3>© 2023 - Todos os direitos reservados.</h3>
 

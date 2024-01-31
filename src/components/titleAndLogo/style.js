@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div `
-    @media(max-width: 640px){
+
+    display: flex;
+    align-items: center;
+    
+    @media(max-width: 1190px){
         padding-left: 62px;
     }
 
@@ -24,17 +28,17 @@ export const Container = styled.div `
         height: 24px;
     }
 
-    @media(min-width: 1920px){
+    @media(min-width: 1191px){
         align-items: center;
         h1{
-            font-size: 24px;
+            font-size: 42px;
             font-family: 'Roboto';
             font-weight: bold;
         }
 
         img{
-            width: 30px;
-            height: 30px;
+            width: 49px;
+            height: 49px;
         }
     }
 

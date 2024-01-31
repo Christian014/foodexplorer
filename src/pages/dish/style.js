@@ -6,6 +6,12 @@ export const Container = styled.div `
     .containOneDish{
         display: flex;
         justify-content: center;
+
+        .footer{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
         
 
         .back{
@@ -108,7 +114,7 @@ export const Container = styled.div `
 
 
 //mobile first
-@media (max-width: 1000px){
+@media (max-width: 1919px){
     a{
         text-decoration: none;
     }

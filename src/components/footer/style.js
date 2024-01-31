@@ -2,33 +2,37 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
-@media(min-width: 1920px){
-    
-
-    /* .content-footer{
-        position: absolute;
-        bottom: 0;
+@media(min-width: 1000px){
         display: flex;
-        height: 77px;
-        width: 100%;
-    } */
+        justify-content: space-around;
+
+    .content-footer{
+        display: flex;
+        justify-content: space-around;
+    }
 }
 
 //mobile first
-    /* height: 77px;
-    width: 100%; */
-    
-    
+
+@media (max-width: 999px){
+    .content-footer{
+        justify-content: center;
+    }
+}
 
     .content-footer{
         background-color: #001119;
         display: flex;
-        justify-content: center;
+        
         align-items: center;
         height: 77px;
         width: 100%;
         position: absolute;
         bottom: 0;
+
+        div{
+            display: flex;
+        }
     
         p{
             color: ${({theme}) => theme.COLORS.P_FOOTER_COLOR};

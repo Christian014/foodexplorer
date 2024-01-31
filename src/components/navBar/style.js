@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div `  
 
-@media (min-width: 1920px){
+@media (min-width: 1305px){
 
     .img-menu{
         position: absolute;
@@ -61,9 +61,11 @@ export const Container = styled.div `
 
 
 
+
+
 //mobile first
 
-@media(max-width: 1000px){
+@media(max-width: 1304px){
     Input{
         position: absolute;
         visibility: hidden;

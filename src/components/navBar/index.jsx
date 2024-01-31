@@ -41,7 +41,7 @@ export function NavBar(){
                     <Button children="Pedidos (0)"/>
                 </div>
 
-                <Link to="signIn">
+                <Link to="/signIn">
                     <img className="exit-desktop" src={exitDesktop} alt="" />
                 </Link>
 

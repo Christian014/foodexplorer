@@ -68,7 +68,9 @@ export function Home(){
 
             </main>
 
-            <Footer />
+            <div className="footer">
+                <Footer />
+            </div>
             
         </Container>
     )

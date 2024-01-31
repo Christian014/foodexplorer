@@ -5,7 +5,11 @@ export const Container = styled.div`
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_GLOBAL};
     color: white;
 
-    @media(min-width: 1920px){
+    main{
+        margin-bottom: 48px;
+    }
+
+    @media(min-width: 1240px){
         box-sizing: border-box;
 
         .div-input{
@@ -23,6 +27,12 @@ export const Container = styled.div`
             Button{
                 width: 216px;
             }
+        }
+
+        .footer{
+            position: relative;
+            bottom: 0;
+            margin-top: 110px;
         }
 
         
@@ -107,8 +117,12 @@ export const Container = styled.div`
         }
     }
 
-    @media ( max-width: 640px){
-        
+    @media ( max-width: 1239px){
+        .footer{
+            position: relative;
+            bottom: 0;
+            margin-top: 110px;
+        }
         
 
         .banner{

@@ -102,7 +102,9 @@ const [amount, setAmount] = useState(1)
             </div>
 
             
-                <Footer />
+                <div className="footer">
+                    <Footer />
+                </div>
             
         </Container>
 
