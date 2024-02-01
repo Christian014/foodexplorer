@@ -62,7 +62,9 @@ export function HomeAdmin(){
 
             </main>
 
-            <Footer />
+            <div className="footer">
+                <Footer />
+            </div>
             
         </Container>
     )

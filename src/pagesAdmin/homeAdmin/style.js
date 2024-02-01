@@ -4,15 +4,24 @@ export const Container = styled.div `
 
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_GLOBAL};
 
-    @media (max-width: 428px){
+    .footer{
+            position: absolute;
+            
+
+            position: absolute;
+            width: 100%;
+            margin-top: 115px;
+        }
+
+    @media (max-width: 1099px){
         
 
         .banner{
 
             margin-left: 30px;
             margin-top: 44px;
+            margin-right: 18px;
             
-            width: 376px;
             height: 120px;
 
             display: flex;
@@ -70,6 +79,19 @@ export const Container = styled.div `
 
             }
         }
+
+        .footer{
+            position: absolute;
+            
+
+            position: absolute;
+            width: 100%;
+            margin-top: 115px;
+        }
+    }
+
+    @media( min-width: 1100px){
+        
     }
 
 `;

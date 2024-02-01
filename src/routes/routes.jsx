@@ -17,7 +17,7 @@ export function AppRoutes(){
     return(
 
         <BrowserRouter>
-            <PagesRoutes />
+            <RoutesAdmin />
         </BrowserRouter>
         
 

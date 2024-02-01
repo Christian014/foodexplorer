@@ -4,8 +4,39 @@ export const Container = styled.div `
 
     height: 114px;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR};
-    
+
     .nav{
+        display: flex;
+        justify-content: space-between;
+        padding: 56px 28px 24px 28px;
+
+       
+
+    .titleAndLogo{
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            p{
+                color: ${({theme}) => theme.COLORS.P_NAVBAR_ADMIN};
+                font-family: 'Roboto';
+                font-size: 12px;
+            }
+    }
+
+    .btts-nav{
+        button{
+            width: 216px;
+        }
+    }
+    }
+
+    
+
+    
+    
+    @media(max-width: 1099px){
+        .nav{
         display: flex;
         justify-content: space-between;
         padding: 56px 28px 24px 28px;
@@ -66,6 +97,7 @@ export const Container = styled.div `
             color: white;
             background-color: ${({theme}) => theme.COLORS.BACKGROUND_BUTTON};
         }
+    }
     }
 
 `;
