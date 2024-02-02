@@ -1,3 +1,4 @@
+import Lanches from "../../assets/desktopimg.png";
 import styled from "styled-components";
 
 export const Container = styled.div `
@@ -91,7 +92,50 @@ export const Container = styled.div `
     }
 
     @media( min-width: 1100px){
-        
+        main{
+            .lanhces{
+                position: absolute;
+                visibility: hidden;
+            }
+            .img-banner{
+                    background-image: url(${Lanches});
+                    position: absolute;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: 412px;
+                    width: 650px;
+
+                    margin-top: 17px;
+                    margin-left: 46px;
+                }
+
+            .banner{
+                background-color: rgb(9,29,38);
+                color: white;
+
+                margin: 0 100px;
+                margin-top: 170px;
+                height: 260px;
+                border-radius: 8px;
+
+                
+                display: flex;
+                align-items: center;
+                justify-content: end;
+
+                .banner-text{
+                    margin-right: 30px;
+                }
+
+                h1{
+                    font-family: 'Poppins';
+                }
+
+                p{
+                    font-family: 'Roboto';
+                }
+            }
+        }
     }
 
 `;

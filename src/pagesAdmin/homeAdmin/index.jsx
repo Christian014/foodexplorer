@@ -17,10 +17,12 @@ export function HomeAdmin(){
                 
                     <NavBarAdmin />
                 
-
+                <div className="img-banner" />
                 <div className="banner">
 
-                    <img src={Lanches} alt="" />
+                    
+                        <img className="lanhces" src={Lanches} alt="" />
+                    
                     
                     <div className="banner-text">
 

@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-import { TitleAndLogo } from "../../titleAndLogo";
+import { TitleAndLogoAdmin } from "../../componentsAdmin/titleAndLogoAdmin";
 import { Link } from "react-router-dom";
 import { Input } from "../../input";
 import { Button } from "../../button";
@@ -25,13 +25,15 @@ export function NavBarAdmin(){
                 </Link>
                 
                 <div className="titleAndLogo">
-                    <TitleAndLogo />
-                    <p>Admin</p>
+                    <TitleAndLogoAdmin />
+                    <div className="p-admin">
+                        <p>Admin</p>
+                    </div>
                 </div>
 
                 <div className="input-nav">
-                    <img src={Lupa} alt="" />
-                    <Input />
+                    <img className="lupa" src={Lupa} alt="" />
+                    <Input placeholder="Busque por pratos ou ingredientes"/>
                 </div>
 
                 <div className="btts-nav">

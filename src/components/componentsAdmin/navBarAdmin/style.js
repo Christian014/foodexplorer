@@ -2,25 +2,57 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
-    height: 114px;
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR};
+    /* height: 114px;
+    background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR}; */
 
     .nav{
+        height: 114px;
+        background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR};
         display: flex;
-        justify-content: space-between;
-        padding: 56px 28px 24px 28px;
+        justify-content: space-around;
+        align-items: center;
 
+        .input-nav{
+            display: flex;
+            Input{
+                width: 581px;
+                height: 48px;
+                text-align: center;
+            }
+
+            .lupa{
+                position: absolute;
+                right: 65%;
+                align-self: center;
+            }
+        }
+        
+        
+        .img-menu{
+            position: absolute;
+            visibility: hidden;
+        }
+        a{
+            position: absolute;
+            visibility: hidden;
+            margin: 0;
+        }
        
 
     .titleAndLogo{
-            margin: 0 auto;
+            
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 8px;
             p{
                 color: ${({theme}) => theme.COLORS.P_NAVBAR_ADMIN};
                 font-family: 'Roboto';
                 font-size: 12px;
+            }
+
+            .p-admin{
+                align-self: end;
             }
     }
 
@@ -34,12 +66,27 @@ export const Container = styled.div `
     
 
     
-    
-    @media(max-width: 1099px){
+    //mobile
+    @media(max-width: 1199px){
         .nav{
         display: flex;
         justify-content: space-between;
         padding: 56px 28px 24px 28px;
+
+        .input-nav, .btts-nav, .exit{
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .img-menu{
+            
+            visibility: visible;
+        }
+        a{
+            
+            visibility: visible;
+            margin: 0;
+        }
 
         .img-menu{
             width: 24px;
@@ -51,6 +98,7 @@ export const Container = styled.div `
         .titleAndLogo{
             margin: 0 auto;
             display: flex;
+            flex-direction: row;
             align-items: center;
             gap: 8px;
             p{
@@ -62,6 +110,7 @@ export const Container = styled.div `
             
         
         .img-pedido{
+            visibility: visible;
             width: 26px;
             height: 22px;
             cursor: pointer;
