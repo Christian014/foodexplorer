@@ -19,7 +19,7 @@ export const Container = styled.div `
             box-sizing: border-box;
             margin-left: 46px;
             padding-right: 233px;
-            background-color: rgba(0, 0, 0, .3);
+            
             height: 476px;
             margin-top: -15%;
         }
@@ -32,7 +32,7 @@ export const Container = styled.div `
             box-sizing: border-box;
             margin-right: 40px;
             padding-left: 233px;
-            background-color: rgba(0, 0, 0, .3);
+            
             height: 476px;
             margin-top: -15%;
         }

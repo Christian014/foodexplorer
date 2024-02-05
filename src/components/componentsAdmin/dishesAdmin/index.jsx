@@ -21,10 +21,12 @@ export function DishAdmin(){
                 </Link>
             </div>
 
-
+            
             <img className="ravanelo img-dish" src={Ravanelo} alt="" />
 
-            <p>Salada de Ravanello <SlArrowRight className="arrowRight"/> </p>
+            <p className="title">Salada de Ravanello <SlArrowRight className="arrowRight"/></p>
+            <p className="description">massa fresca com camarões e pesto</p>
+            
 
             <strong>R$ 49,90</strong>
         </Container>

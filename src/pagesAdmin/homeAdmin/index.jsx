@@ -39,7 +39,7 @@ export function HomeAdmin(){
                     <h2>Refeições</h2>
                     
                     <div className="dishes">
-
+                        
                         <CarouselAdmin />
 
                     </div>

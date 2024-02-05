@@ -15,6 +15,9 @@ export const Container = styled.div `
 //mobile first
 
 @media (max-width: 999px){
+    position: absolute;
+    width: 100%;
+    height: 77px;
     .content-footer{
         justify-content: center;
     }

@@ -4,6 +4,7 @@ import { Tag } from "../../components/tags/index";
 
 
 export const Container = styled.div`
+    
     color: white;
     h1{
         font-family: 'Poppins';
@@ -11,7 +12,8 @@ export const Container = styled.div`
     a{
         text-decoration: none;
     }
-    @media(max-width: 428px){
+
+    @media(max-width: 600px){
 
         p{
             color: ${({theme}) => theme.COLORS.LABEL_COLOR};

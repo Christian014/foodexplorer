@@ -13,6 +13,11 @@ export const Container = styled.div `
     flex-direction: column;
     align-items: center;
 
+    .description{
+        
+        visibility: hidden;
+    }
+
     p{
         color: white;
         font-family: 'Poppins', sans-serif;
@@ -91,6 +96,36 @@ export const Container = styled.div `
         width: 160px;
         height: 32px;
         margin-top: 16px;
+    }
+
+    @media (min-width: 1500px){
+        width: 304px;
+        height: 462px;
+
+        .img-dish{
+            width: 176px;
+            height: 176px;
+        }
+
+        p{
+            margin-bottom: 15px;
+        }
+
+        .title{
+            font-size: 24px;
+            font-weight: bold;
+
+            
+        }
+
+        .description{
+            font-size: 14px;
+            visibility: visible;
+        }
+
+        strong{
+            font-size: 32px;
+        }
     }
 
 `;

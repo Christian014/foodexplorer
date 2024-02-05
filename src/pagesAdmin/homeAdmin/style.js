@@ -92,6 +92,12 @@ export const Container = styled.div `
     }
 
     @media( min-width: 1100px){
+        h2{
+            color: white;
+            font-family: 'Poppins';
+            width: 78%;
+            margin: 0 auto;
+        }
         main{
             .lanhces{
                 position: absolute;
@@ -114,6 +120,7 @@ export const Container = styled.div `
                 color: white;
 
                 margin: 0 100px;
+                margin-bottom: 62px;
                 margin-top: 170px;
                 height: 260px;
                 border-radius: 8px;
@@ -133,6 +140,17 @@ export const Container = styled.div `
 
                 p{
                     font-family: 'Roboto';
+                }
+            }
+
+            .meals{
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                .dishes{
+                    width: 90%;
+                    margin: 0 auto;
                 }
             }
         }
