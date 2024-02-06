@@ -5,6 +5,7 @@ import Lanches from "../../assets/lanches.png"
 import { Footer } from "../../components/footer";
 
 import { CarouselAdmin } from "../../components/componentsAdmin/carouselAdmin";
+import { Link } from "react-router-dom";
 
 
 export function HomeAdmin(){
@@ -14,8 +15,10 @@ export function HomeAdmin(){
         <Container>
 
             <main>
-                
-                    <NavBarAdmin />
+            
+                   
+                <NavBarAdmin />
+                    
                 
                 <div className="img-banner" />
                 <div className="banner">
@@ -44,7 +47,7 @@ export function HomeAdmin(){
 
                     </div>
 
-                    <h2>Pratos Principais</h2>
+                    <h2>Sobremesas</h2>
                     
                     <div className="dishes">
 
@@ -52,7 +55,7 @@ export function HomeAdmin(){
 
                     </div>
 
-                    <h2>Pratos Principais</h2>
+                    <h2>Bebidas</h2>
                     
                     <div className="dishes">
 

@@ -20,7 +20,7 @@ export function NavBarAdmin(){
 
             <div className="nav">
                 
-                <Link to="/menuAdmin">
+                <Link className="link-menu" to="/menuAdmin">
                     <img className="img-menu" src={Menu} alt="" />
                 </Link>
                 
@@ -36,8 +36,13 @@ export function NavBarAdmin(){
                     <Input placeholder="Busque por pratos ou ingredientes"/>
                 </div>
 
+                
                 <div className="btts-nav">
-                    <Button children="Novo prato"/>
+                    
+                    <Link to="/dishNewAdmin">
+                        <Button children= "Novo prato"/>
+                    </Link>
+                    
                 </div>
 
                 <div className="exit">

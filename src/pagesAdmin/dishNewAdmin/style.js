@@ -14,14 +14,16 @@ export const Container = styled.div`
     }
 
     @media(max-width: 999px){
+        //footer
         .sc-jSguLX {
             position: relative;
         }
         .ingredients-price{
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 32px;
         }
+        
         .p-upload-desktop{
             position: absolute;
             visibility: hidden;
@@ -282,10 +284,7 @@ export const Container = styled.div`
             margin-bottom: 53px;
 
             Button{
-                width: 160px;
-            }
-            #delete-btt{
-                background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                width: 100%;
             }
             #save-btt{
                 background-color: ${({theme}) => theme.COLORS.BACKGROUND_BUTTON_SAVE}

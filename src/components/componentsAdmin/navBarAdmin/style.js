@@ -4,13 +4,18 @@ export const Container = styled.div `
 
     /* height: 114px;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR}; */
-
+    
     .nav{
         height: 114px;
         background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR};
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        Link{
+            text-decoration: none;
+        }
+        
 
         .input-nav{
             display: flex;
@@ -32,7 +37,7 @@ export const Container = styled.div `
             position: absolute;
             visibility: hidden;
         }
-        a{
+        .link-menu{
             position: absolute;
             visibility: hidden;
             margin: 0;
@@ -68,10 +73,16 @@ export const Container = styled.div `
     
     //mobile
     @media(max-width: 1199px){
+        .btts-nav button{
+            visibility: hidden;
+            position: absolute;
+        }
         .nav{
         display: flex;
         justify-content: space-between;
         padding: 56px 28px 24px 28px;
+
+        
 
         .input-nav, .btts-nav, .exit{
             position: absolute;

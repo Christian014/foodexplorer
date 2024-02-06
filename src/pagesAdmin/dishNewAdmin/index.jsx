@@ -14,7 +14,7 @@ import Mais from "../../assets/mais.png"
 
 
 
-export function DishCustomAdmin() {
+export function DishNewAdmin() {
     return (
         <Container>
             <NavBarAdmin />
@@ -29,7 +29,7 @@ export function DishCustomAdmin() {
                         </div>
                     </Link>
 
-                    <h1>Editar prato</h1>
+                    <h1>Adicionar Prato</h1>
 
                     <div className="img-name-category">
                     <div className="img-dish">
@@ -90,7 +90,7 @@ export function DishCustomAdmin() {
                     </div>
 
                     <div className="save-delete">
-                        <Button id="delete-btt">Excluir Prato</Button>
+                        
                         <Button id="save-btt">Salvar Alterações</Button>
                     </div>
 

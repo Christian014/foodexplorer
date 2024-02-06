@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div `
 
 @media(min-width: 1000px){
+    position: absolute;
+    bottom: 0;
+    width: 100%;
         display: flex;
         justify-content: space-around;
 
@@ -16,6 +19,8 @@ export const Container = styled.div `
 
 @media (max-width: 999px){
     position: absolute;
+    bottom: 0;
+    /* position: absolute; */
     width: 100%;
     height: 77px;
     .content-footer{
@@ -30,8 +35,7 @@ export const Container = styled.div `
         align-items: center;
         height: 77px;
         width: 100%;
-        position: absolute;
-        bottom: 0;
+        
 
         div{
             display: flex;
