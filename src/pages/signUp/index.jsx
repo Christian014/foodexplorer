@@ -7,21 +7,35 @@ import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { TitleAndLogo } from "../../components/titleAndLogo";
 
+import { api } from "../../services/api";
 
 
 export function SignUp() {
-    const [name, setName] = useState("")
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    function handleSignUp(){
-        console.log(name, email, password)
-    }
 
+    //tirando o default do button e chamando os states funcao handleSignUp
     function stopDefAction(evt) {
         evt.preventDefault();
-        console.log("click")
+
+        if(!name || !email || !password){
+            return alert("Preencha Todos os Campos")
+        }
+        
+
+        api.post("/register", {name, email, password})
+        .then(() => {
+            alert("Usuario cadastrado com sucesso");
+        })
+        .catch(() => {
+            alert("Email ja esta sendo ultilizado")
+        })
+
+        console.log(name, email, password)
       }
+
     return (
         <Container>
 
@@ -40,27 +54,27 @@ export function SignUp() {
                     <div className="name">
 
                         <label>Seu Nome</label>
-                        <Input placeholder="Exemplo: Maria da Silva" onChange={(e) => setName(e.target.value)}/>
+                        <Input placeholder="Exemplo: Maria da Silva" onChange={e => setName(e)}/>
 
                     </div>
 
                     <div className="email">
 
                         <label>Email</label>
-                        <Input placeholder="Exemplo: exemplo@exemplo.com" onChange={(e) => setEmail(e.target.value)} />
+                        <Input type="text" placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e)} />
 
                     </div>
 
                     <div className="password">
 
                         <label>Senha</label>
-                        <Input placeholder="No mínimo 6 caracteres"  onChange={(e) => setPassword(e.target.value)}/>
+                        <Input type="password" placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e)} />
 
 
                     </div>
             
                     <div className="auth-buttons">
-                        <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e); handleSignUp();}}>Cadastrar</Button>
+                        <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e)}}>Cadastrar</Button>
                         
                         <Link to="/signIn">Ja tenho uma conta</Link>
                     </div>

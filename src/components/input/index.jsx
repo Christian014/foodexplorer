@@ -1,11 +1,16 @@
 import { Container } from "./style";
 
-export function Input({placeholder}){
+export function Input({type, placeholder, onChange }){
 
     return (
 
-        <Container placeholder = {placeholder}>
+        <Container
+         type={type} 
 
+         placeholder={placeholder} 
+
+         onChange={e => onChange(e.target.value)}>
+            
         </Container>
 
     )

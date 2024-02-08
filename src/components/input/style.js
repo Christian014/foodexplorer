@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.input `
-
+    
     box-sizing: border-box;
 
     width: 100%;

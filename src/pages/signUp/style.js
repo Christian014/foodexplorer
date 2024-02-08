@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     @media (min-width: 1191px){
+        #name{
+            position: absolute;
+        }
+
         .container{
             display: flex;
             align-items: center;
