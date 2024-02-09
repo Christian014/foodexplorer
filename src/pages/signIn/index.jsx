@@ -1,11 +1,29 @@
 import { Container } from "./style";
+import { api } from "../../services/api"
 
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { TitleAndLogo } from "../../components/titleAndLogo";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export function SignIn() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    function login(evt){
+        evt.preventDefault();
+
+        if(!email || !password){
+            return alert("digite todos os campos");
+        }
+
+        api.post("/login", {email, password})
+
+        console.log( email, password)
+        
+    };
+
     return (
         <Container>
 
@@ -24,18 +42,18 @@ export function SignIn() {
                     <div className="email">
 
                         <label>Email</label>
-                        <Input placeholder="Exemplo: exemplo@exemplo.com" />
+                        <Input type={"text"} placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e)}/>
 
                     </div>
 
                     <div className="password">
 
                         <label>Senha</label>
-                        <Input placeholder="No mínimo 6 caracteres" />
+                        <Input type={"password"} placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e)}/>
 
                     </div>
 
-                    <Button>Entrar</Button>
+                    <Button onClick = {login}>Entrar</Button>
 
                     <Link to="/signUp">Criar uma conta</Link>
 
