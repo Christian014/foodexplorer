@@ -23,18 +23,24 @@ export function SignUp() {
         if(!name || !email || !password){
             return alert("Preencha Todos os Campos")
         }
-        
-
         api.post("/register", {name, email, password})
-        .then(() => {
-            alert("Usuario cadastrado com sucesso");
-        })
-        .catch(() => {
-            alert("Email ja esta sendo ultilizado")
-        })
+        .then((res) => {
 
-        console.log(name, email, password)
-      }
+            if(res.status === 200)
+            alert(message)
+
+        })
+        .catch((error => {
+
+            if(error.response){
+                alert(error.response.data.message)
+            }else{
+                alert("email ja está sendo utilizado")
+            }
+
+        }));
+        
+      };
 
     return (
         <Container>

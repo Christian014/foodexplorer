@@ -8,13 +8,7 @@ import { DishCustomAdmin } from "../../pagesAdmin/dishCustomAdmin";
 import { DishNewAdmin } from "../../pagesAdmin/dishNewAdmin";
 import { DishAdmin } from "../../pagesAdmin/dishAdmin";
 
-
-//auth
-import { SignIn } from "../../pages/signIn";
-import { SignUp } from "../../pages/signUp";
-
-
-export function RoutesAdmin(){
+export function adminRoutes(){
     return(
 
         <Routes>
@@ -23,11 +17,6 @@ export function RoutesAdmin(){
             <Route path="dishNewAdmin" element={<DishNewAdmin />} />
             <Route path="dishAdmin" element={<DishAdmin />} />
 
-            
-
-            
-            <Route path="signIn" element={<SignIn />} />
-            <Route path="signUp" element={<SignUp />} />
             <Route path="/" element={<HomeAdmin/>} />
         </Routes>
         

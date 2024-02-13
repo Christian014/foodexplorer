@@ -1,23 +1,20 @@
 import { BrowserRouter } from "react-router-dom";
 
-
-
-
-
-
+//auth routes
+import { AuthRoutes } from "./routesUser/auth.routes";
 
 //user logado
-import { PagesRoutes } from "./routesUser/pages.routes";
+import { userRoutes } from "./routesUser/pages.routes";
 
 //rotas admin
-import { RoutesAdmin } from "./routesAdmin/routes.admin";
+import { adminRoutes } from "./routesAdmin/routes.admin";
 
 
 export function AppRoutes(){
     return(
 
         <BrowserRouter>
-            <RoutesAdmin />
+            <AuthRoutes />
         </BrowserRouter>
         
 

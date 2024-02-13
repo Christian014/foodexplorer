@@ -19,9 +19,19 @@ export function SignIn() {
         }
 
         api.post("/login", {email, password})
+        .then((res) => {
+            if(res.status === 200){
+                alert("logado com sucesso")
+            }
+        })
+        .catch((error) => {
+            if(error.response){
+                alert(error.response.data.message)
+            }
+            console.error("Erro durante o login:", error.message);
+            alert("Erro ao fazer login");
+        })
 
-        console.log( email, password)
-        
     };
 
     return (
