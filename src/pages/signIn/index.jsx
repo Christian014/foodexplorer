@@ -1,5 +1,6 @@
 import { Container } from "./style";
-import { api } from "../../services/api"
+import { api } from "../../services/api";
+import { useAuth } from "../../hooks/auth";
 
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
@@ -8,10 +9,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export function SignIn() {
+
+    const { signIn } = useAuth();
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     function login(evt){
+        signIn({ email, password });
+
         evt.preventDefault();
 
         if(!email || !password){
@@ -29,7 +35,7 @@ export function SignIn() {
                 alert(error.response.data.message)
             }
             console.error("Erro durante o login:", error.message);
-            alert("Erro ao fazer login");
+            
         })
 
     };

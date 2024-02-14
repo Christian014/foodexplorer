@@ -26,17 +26,17 @@ export function SignUp() {
         api.post("/register", {name, email, password})
         .then((res) => {
 
-            if(res.status === 200)
-            alert(message)
+            if(res.status === 200){
+
+                alert("cadastrado com sucesso")
+            }
 
         })
         .catch((error => {
-
-            if(error.response){
-                alert(error.response.data.message)
-            }else{
-                alert("email ja está sendo utilizado")
-            }
+        
+            
+            alert("email ja está sendo utilizado", error)
+        
 
         }));
         

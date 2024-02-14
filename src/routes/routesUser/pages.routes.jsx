@@ -7,7 +7,7 @@ import { Home } from '../../pages/home';
 import { Dish } from '../../pages/dish';
 import { MenuUser } from '../../pages/menuUser';
 
-export function userRoutes(){
+export function UserRoutes(){
     return(
 
         <Routes>
