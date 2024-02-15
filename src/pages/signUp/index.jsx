@@ -82,7 +82,7 @@ export function SignUp() {
                     <div className="auth-buttons">
                         <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e)}}>Cadastrar</Button>
                         
-                        <Link to="/signIn">Ja tenho uma conta</Link>
+                        <Link to="/">Ja tenho uma conta</Link>
                     </div>
                 </form>
 

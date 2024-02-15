@@ -8,7 +8,7 @@ import { AuthRoutes } from "./routesUser/auth.routes";
 import { UserRoutes } from "./routesUser/pages.routes";
 
 //rotas admin
-import { adminRoutes } from "./routesAdmin/routes.admin";
+import { AdminRoutes } from "./routesAdmin/routes.admin";
 
 
 export function AppRoutes(){
@@ -16,7 +16,9 @@ export function AppRoutes(){
     return(
 
         <BrowserRouter>
-            {user ? <UserRoutes/> : <AuthRoutes />}
+            {
+                user ? <AdminRoutes/> : <AuthRoutes />
+            }
         </BrowserRouter>
         
 

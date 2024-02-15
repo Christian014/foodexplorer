@@ -3,7 +3,9 @@ import { Container } from "./style";
 import { TitleAndLogo } from "../titleAndLogo";
 import { Input } from "../input";
 import { Link } from "react-router-dom";
-import { Button } from "../button"
+import { Button } from "../button";
+
+import { useAuth } from "../../hooks/auth"
 
 //img
 import Menu from "../../assets/Menu.png";
@@ -15,6 +17,7 @@ import exitDesktop from "../../assets/exitDesktop.png"
 
 
 export function NavBar(){
+    const { logOut } = useAuth()
 
     return(
 
@@ -41,9 +44,9 @@ export function NavBar(){
                     <Button children="Pedidos (0)"/>
                 </div>
 
-                <Link to="/signIn">
-                    <img className="exit-desktop" src={exitDesktop} alt="" />
-                </Link>
+                
+                    <img className="exit-desktop" src={exitDesktop} alt="" onClick={logOut} />
+                
 
                 <div className="pedidos">
                     <img className="img-pedido" src={Pedidos} alt="" />

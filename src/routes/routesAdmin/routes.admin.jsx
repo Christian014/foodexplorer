@@ -8,7 +8,7 @@ import { DishCustomAdmin } from "../../pagesAdmin/dishCustomAdmin";
 import { DishNewAdmin } from "../../pagesAdmin/dishNewAdmin";
 import { DishAdmin } from "../../pagesAdmin/dishAdmin";
 
-export function adminRoutes(){
+export function AdminRoutes(){
     return(
 
         <Routes>
