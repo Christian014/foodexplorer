@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.div `
+export const Container = styled.span `
     width: max-content;
     
     padding: 8px 16px;

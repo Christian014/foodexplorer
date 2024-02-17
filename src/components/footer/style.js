@@ -18,7 +18,7 @@ export const Container = styled.div `
 //mobile first
 
 @media (max-width: 999px){
-    position: absolute;
+    
     bottom: 0;
     /* position: absolute; */
     width: 100%;

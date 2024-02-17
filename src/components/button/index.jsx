@@ -2,11 +2,11 @@ import { Container } from "./style";
 
 
 
-export function Button({ children, event, ...props }){
+export function Button({ children, event, onClick, ...props }){
 
     return(
 
-        <Container {...props}> 
+        <Container onClick={onClick} {...props}> 
             {children}
             
             

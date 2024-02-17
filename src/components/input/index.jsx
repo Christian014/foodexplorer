@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export function Input({type, placeholder, onChange }){
+export function Input({type, placeholder, onChange ,...props}){
 
     return (
 
@@ -8,8 +8,9 @@ export function Input({type, placeholder, onChange }){
          type={type} 
 
          placeholder={placeholder} 
-
-         onChange={e => onChange(e.target.value)}>
+         onChange={onChange}
+         {...props}
+         >
             
         </Container>
 

@@ -6,15 +6,50 @@ import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Footer } from "../../components/footer"
 
+import { api } from "../../services/api";
+
 //img
 import MenorQue from "../../assets/MenorQue.png";
 import Upload from "../../assets/upload.png";
 import Close from "../../assets/close.png";
 import Mais from "../../assets/mais.png"
+import { useState } from "react";
 
 
 
 export function DishNewAdmin() {
+
+    const [tags, setTags] = useState([])
+    const [newTags, setNewTags] = useState("")
+    function handleAddTag(){
+        setTags(prevState => [...prevState, newTags])
+    }
+
+
+    const [image, setImage] = useState("");
+    const [name, setName] = useState("");
+    const [price, setPrice] = useState("");
+    const [category, setCategory] = useState("Refeição");
+    const [description, setDescription] = useState("");
+
+    const handlePriceChange = (e) => {
+        setPrice(e.target.value);
+    };
+    
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('name', name);
+    formData.append('price', price);
+    formData.append('category', category);
+    formData.append('description', description);
+
+    
+
+    async function handleUpload(){
+        console.log(category)
+
+        api.post("/dish", formData)
+    }
     return (
         <Container>
             <NavBarAdmin />
@@ -36,7 +71,10 @@ export function DishNewAdmin() {
                         <p className="p-img-fo-prato">Imagem do prato</p>
 
                         <div className="upload">
-                            <input type="file" name="" id="" />
+                            <input type="file"
+                             id="inptUpload"
+                              onChange={e => setImage(e.target.files[0])}
+                              />
                             <img src={Upload} alt="upload" />
                             <p className="p-upload-mobile" >Selecione imagem para alterá-la</p>
                             <p className="p-upload-desktop">Selecione imagem</p>
@@ -46,16 +84,21 @@ export function DishNewAdmin() {
 
                     <div className="name">
                         <p>Nome</p>
-                        <input type="text" placeholder="Salada César" />
+                        <input type="text"
+                         placeholder="Salada César"
+                        onChange={e => setName(e.target.value)}
+                        />
                     </div>
 
                     <div className="category">
                         <p>Categoria</p>
                         <div className="select">
 
-                            <select>
-                                <option value="volvo">Refeição</option>
-                                <option value="saab">Bebidas</option>
+                            <select value={category} 
+                            onChange={e => setCategory(e.target.value)}
+                            >
+                                <option value="Refeição">Refeição</option>
+                                <option value="Bebidas">Bebidas</option>
                             </select>
 
 
@@ -70,15 +113,26 @@ export function DishNewAdmin() {
                         <p>Ingredientes</p>
 
                         <div className="tags">
-                            <TagAdmin tagname="Pão Naan" icon={Close} />
-                            <button>Adicionar <img src={Mais} alt="" /> </button>
+                            {
+                                
+                                <TagAdmin tagname="Pão Naan" icon={Close} />
+                            }
+                            
+                            
+
+                            <button onClick={handleAddTag} onChange={e => setNewTags(e.target.value)}>
+                                Adicionar <img src={Mais} alt="" />
+                            </button>
                         </div>
 
                     </div>
 
                     <div className="price">
                         <p>Preço</p>
-                        <Input className="inpt" placeholder="R$ 40,00" />
+                        <Input className="inpt"
+                         placeholder="R$ 40,00"
+                         onChange={handlePriceChange}
+                        />
                     </div>
                     </div>
 
@@ -86,12 +140,13 @@ export function DishNewAdmin() {
                         <p>Descrição</p>
 
 
-                        <textarea wrap="hard" cols="30" rows="10" placeholder="A Salada César é uma opção refrescante para o verão."></textarea>
+                        <textarea wrap="hard" cols="30" rows="10" placeholder="A Salada César é uma opção refrescante para o verão." onChange={e => setDescription(e.target.value)}></textarea>
                     </div>
 
                     <div className="save-delete">
                         
-                        <Button id="save-btt">Salvar Alterações</Button>
+                        <Button id="save-btt" onClick={handleUpload}>Salvar Alterações</Button>
+                        
                     </div>
 
                 </div>

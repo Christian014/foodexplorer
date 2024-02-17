@@ -17,7 +17,7 @@ export function SignUp() {
 
 
     //tirando o default do button e chamando os states funcao handleSignUp
-    function stopDefAction(evt) {
+    async function stopDefAction(evt) {
         evt.preventDefault();
 
         if(!name || !email || !password){
@@ -26,17 +26,17 @@ export function SignUp() {
         api.post("/register", {name, email, password})
         .then((res) => {
 
-            if(res.status === 200){
-
+           if(res.status == 200){
+               
                 alert("cadastrado com sucesso")
-            }
 
+           }
         })
         .catch((error => {
         
             
             alert("email ja está sendo utilizado", error)
-        
+            console.log(error)
 
         }));
         
