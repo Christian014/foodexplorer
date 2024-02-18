@@ -17,7 +17,7 @@ export function AppRoutes(){
 
         <BrowserRouter>
             {
-                user ? <UserRoutes/> : <AuthRoutes />
+                user ? <AdminRoutes/> : <AuthRoutes />
             }
         </BrowserRouter>
         

@@ -22,7 +22,10 @@ export function DishNewAdmin() {
     const [tags, setTags] = useState([])
     const [newTags, setNewTags] = useState("")
     function handleAddTag(){
-        setTags(prevState => [...prevState, newTags])
+        setTags(prevState => [...prevState, newTags]);
+        console.log(tags)
+        console.log(newTags)
+        console.log(...prevState)
     }
 
 
@@ -49,6 +52,13 @@ export function DishNewAdmin() {
         console.log(category)
 
         api.post("/dish", formData)
+        .then((res) => {
+            if(res.status === 200){
+                alert("Cadastrado com sucesso");
+            }
+        }).catch((error) => {
+            alert("erro ao cadastrar", error);
+        })
     }
     return (
         <Container>
@@ -113,16 +123,19 @@ export function DishNewAdmin() {
                         <p>Ingredientes</p>
 
                         <div className="tags">
-                            {
-                                
-                                <TagAdmin tagname="Pão Naan" icon={Close} />
+                            { 
+                                tags.map((tag, index) => (
+
+                                    <TagAdmin  icon={Close} key={String(index)} value={tag} onClick={() => {}}/>
+                                ))
                             }
                             
                             
-
-                            <button onClick={handleAddTag} onChange={e => setNewTags(e.target.value)}>
-                                Adicionar <img src={Mais} alt="" />
-                            </button>
+                            
+                            
+                                <img src={Mais} alt="" onClick={handleAddTag}/>
+                                <input type="text" placeholder="Adicionar" onChange={e => setNewTags(e.target.value)}/>
+                            
                         </div>
 
                     </div>

@@ -208,7 +208,7 @@ export const Container = styled.div`
                 padding: 8px;
                 box-sizing: border-box;
 
-                button{
+                input{
                     cursor: pointer;
                     width: 116px;
                     height: 32px;

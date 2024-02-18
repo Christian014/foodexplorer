@@ -58,14 +58,14 @@ export function SignIn() {
                     <div className="email">
 
                         <label>Email</label>
-                        <Input type={"text"} placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e)}/>
+                        <Input type={"text"} placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e.target.value)}/>
 
                     </div>
 
                     <div className="password">
 
                         <label>Senha</label>
-                        <Input type={"password"} placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e)}/>
+                        <Input type={"password"} placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e.target.value)}/>
 
                     </div>
 

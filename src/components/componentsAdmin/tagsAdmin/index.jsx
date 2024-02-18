@@ -1,14 +1,15 @@
 
 import { Container } from "./style";
 
-export function TagAdmin({tagname, icon}){
+export function TagAdmin({tagname, icon, onChange, onClick, value}){
     
 
     
     return(
-        <Container>
+        <Container onChange={onChange} onClick={onClick}>
             {tagname}
             <img src={icon} />
+            {value}
         </Container>
     )
 }

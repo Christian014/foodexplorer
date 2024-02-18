@@ -19,6 +19,8 @@ export function SignUp() {
     //tirando o default do button e chamando os states funcao handleSignUp
     async function stopDefAction(evt) {
         evt.preventDefault();
+        console.log("click")
+        console.log(name, email, password)
 
         if(!name || !email || !password){
             return alert("Preencha Todos os Campos")
@@ -60,21 +62,21 @@ export function SignUp() {
                     <div className="name">
 
                         <label>Seu Nome</label>
-                        <Input placeholder="Exemplo: Maria da Silva" onChange={e => setName(e)}/>
+                        <Input placeholder="Exemplo: Maria da Silva" onChange={e => setName(e.target.value)}/>
 
                     </div>
 
                     <div className="email">
 
                         <label>Email</label>
-                        <Input type="text" placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e)} />
+                        <Input type="text" placeholder="Exemplo: exemplo@exemplo.com" onChange={e => setEmail(e.target.value)} />
 
                     </div>
 
                     <div className="password">
 
                         <label>Senha</label>
-                        <Input type="password" placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e)} />
+                        <Input type="password" placeholder="No mínimo 6 caracteres" onChange={e => setPassword(e.target.value)} />
 
 
                     </div>
