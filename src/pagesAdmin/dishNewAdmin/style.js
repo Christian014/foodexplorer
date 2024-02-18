@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import setaPraBaixo from "../../assets/setaPraBaixo.png";
-import { Tag } from "../../components/tags/index";
-
 
 export const Container = styled.div`
     
@@ -208,6 +206,9 @@ export const Container = styled.div`
                 padding: 8px;
                 box-sizing: border-box;
 
+                flex-wrap: wrap;
+                height: max-content;
+
                 input{
                     cursor: pointer;
                     width: 116px;
@@ -217,12 +218,16 @@ export const Container = styled.div`
                     background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                     color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
 
+                    padding-left: 18px;
+                    box-sizing: border-box;
                     
 
-                    img{
-                        padding-left: 3px;
-                    }
+                    
                 }
+                .addTag{
+                        
+                        margin-left: -34px;
+                    }
             }
         }
 
@@ -438,7 +443,21 @@ export const Container = styled.div`
                         box-sizing: border-box;
                         border-radius: 8px;
 
-                       
+                        input{
+                            cursor: pointer;
+                            width: 116px;
+                            height: 32px;
+                            border-radius: 8px;
+                            border: 1px dashed;
+                            background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                            color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
+                            flex-wrap: wrap;
+                            padding-left: 18px;
+                            box-sizing: border-box;
+                        }
+                        .addTag{
+                            margin-left: -37px;
+                        }
 
                         button{
                             width: 116px;

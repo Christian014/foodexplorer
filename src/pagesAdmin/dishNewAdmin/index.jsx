@@ -129,13 +129,10 @@ export function DishNewAdmin() {
                                     <TagAdmin  icon={Close} key={String(index)} value={tag} onClick={() => {}}/>
                                 ))
                             }
-                            
-                            
-                            
-                            
-                                <img src={Mais} alt="" onClick={handleAddTag}/>
-                                <input type="text" placeholder="Adicionar" onChange={e => setNewTags(e.target.value)}/>
-                            
+                                
+                                    <input type="text" placeholder="Adicionar" onChange={e => setNewTags(e.target.value)}/>
+                                    <img src={Mais} className="addTag" alt="" onClick={handleAddTag}/>
+                                
                         </div>
 
                     </div>
