@@ -209,7 +209,7 @@ export const Container = styled.div`
                 flex-wrap: wrap;
                 height: max-content;
 
-                input{
+                input {
                     cursor: pointer;
                     width: 116px;
                     height: 32px;
@@ -220,7 +220,7 @@ export const Container = styled.div`
 
                     padding-left: 18px;
                     box-sizing: border-box;
-                    
+                    outline: 0;
 
                     
                 }
@@ -454,6 +454,7 @@ export const Container = styled.div`
                             flex-wrap: wrap;
                             padding-left: 18px;
                             box-sizing: border-box;
+                            outline: 0;
                         }
                         .addTag{
                             margin-left: -37px;

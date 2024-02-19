@@ -19,12 +19,13 @@ import { useState } from "react";
 
 export function DishNewAdmin() {
 
-    const [tags, setTags] = useState([])
-    const [newTags, setNewTags] = useState("")
+    const [ingredients, setIngredients] = useState([])
+    const [newIngredients, setNewIngredients] = useState("")
+
     function handleAddTag(){
-        setTags(prevState => [...prevState, newTags]);
-        console.log(tags)
-        console.log(newTags)
+        setIngredients(prevState => [...prevState, newIngredients]);
+        console.log(ingredients)
+        console.log(newIngredients)
         console.log(...prevState)
     }
 
@@ -45,6 +46,7 @@ export function DishNewAdmin() {
     formData.append('price', price);
     formData.append('category', category);
     formData.append('description', description);
+    formData.append('ingredients', ingredients)
 
     
 
@@ -109,6 +111,7 @@ export function DishNewAdmin() {
                             >
                                 <option value="Refeição">Refeição</option>
                                 <option value="Bebidas">Bebidas</option>
+                                <option value="Sobremesas">Sobremesas</option>
                             </select>
 
 
@@ -124,13 +127,13 @@ export function DishNewAdmin() {
 
                         <div className="tags">
                             { 
-                                tags.map((tag, index) => (
+                                ingredients.map((ingredients, index) => (
 
-                                    <TagAdmin  icon={Close} key={String(index)} value={tag} onClick={() => {}}/>
+                                    <TagAdmin  icon={Close} key={String(index)} value={ingredients} onClick={() => {}}/>
                                 ))
                             }
                                 
-                                    <input type="text" placeholder="Adicionar" onChange={e => setNewTags(e.target.value)}/>
+                                    <input className="addNewTag" type="text" placeholder="Adicionar" onChange={e => setNewIngredients(e.target.value)}/>
                                     <img src={Mais} className="addTag" alt="" onClick={handleAddTag}/>
                                 
                         </div>

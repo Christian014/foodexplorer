@@ -5,10 +5,12 @@ import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import "swiper/css/navigation";
 
+import { useState } from "react";
+
 import { DishAdmin } from '../dishesAdmin';
 
-export function CarouselAdmin (){
-
+export function CarouselAdmin ({dish}){
+  
   return (
 
     <Container>
@@ -34,28 +36,11 @@ export function CarouselAdmin (){
 
 
       <SwiperSlide>
-        <DishAdmin />
+        {dish}
       </SwiperSlide>
+    
       
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
 
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
       
     </Swiper>
     </Container>

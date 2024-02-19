@@ -6,9 +6,13 @@ import { Footer } from "../../components/footer";
 
 import { CarouselAdmin } from "../../components/componentsAdmin/carouselAdmin";
 import { Link } from "react-router-dom";
+import { DishAdmin } from "../../components/componentsAdmin/dishesAdmin";
+import { api } from "../../services/api";
 
 
 export function HomeAdmin(){
+
+    function handleAddDish(){}
 
     return(
 
@@ -41,15 +45,15 @@ export function HomeAdmin(){
 
                     <h2>Refeições</h2>
                     
-                    <div className="dishes">
+                    <div className="dishes refeicoes">
                         
-                        <CarouselAdmin />
+                    <CarouselAdmin dish={DishAdmin}/>
 
                     </div>
 
                     <h2>Sobremesas</h2>
                     
-                    <div className="dishes">
+                    <div className="dishes sobremesas">
 
                         <CarouselAdmin />
 
@@ -57,7 +61,7 @@ export function HomeAdmin(){
 
                     <h2>Bebidas</h2>
                     
-                    <div className="dishes">
+                    <div className="dishes bebidas">
 
                         <CarouselAdmin />
 
