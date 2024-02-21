@@ -9,7 +9,7 @@ import { useState } from "react";
 
 import { DishAdmin } from '../dishesAdmin';
 
-export function CarouselAdmin ({dish}){
+export function CarouselAdmin (){
   
   return (
 
@@ -36,7 +36,7 @@ export function CarouselAdmin ({dish}){
 
 
       <SwiperSlide>
-        {dish}
+        <DishAdmin />
       </SwiperSlide>
     
       

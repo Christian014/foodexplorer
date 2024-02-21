@@ -16,22 +16,6 @@ import Voltar from "../../assets/MenorQue.png";
 import Menu from "../../assets/Vector.png";
 
 export function DishAdmin(){
-
-const [amount, setAmount] = useState(1)
-
-
-    function incrementNum(){
-        setAmount((prevState) => prevState + 1)
-    }
-
-    function decrementNum(){
-        if(amount > 1){
-            setAmount((prevState) => prevState - 1)
-        }else{
-            alert("quantidade inválida")
-        }
-    }
-
     return(
 
         <Container>
@@ -78,12 +62,6 @@ const [amount, setAmount] = useState(1)
                 </div>
 
                 <div className="buttons">
-
-                    
-
-
-
-                    
 
                     <Link to="/dishCustomAdmin">
                     
