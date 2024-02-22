@@ -10,10 +10,7 @@ import { Tag } from "../../components/tags";
 
 //img
 import Ravanelo from "../../assets/dish/ravanelo400.png";
-import Increment from "../../assets/increment.png";
-import Decrement from "../../assets/decrement.png";
 import Voltar from "../../assets/MenorQue.png";
-import Menu from "../../assets/Vector.png";
 
 export function DishAdmin(){
     return(

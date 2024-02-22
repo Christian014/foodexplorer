@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+    
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_DISH};
 
     margin-left: 24px;
@@ -31,6 +32,8 @@ export const Container = styled.div `
         margin-bottom: 12px;
 
         width: 88px;
+        height: 88px;
+        border-radius: 50%;
 
     }
 
@@ -105,6 +108,7 @@ export const Container = styled.div `
         .img-dish{
             width: 176px;
             height: 176px;
+            border-radius: 50%;
         }
 
         p{

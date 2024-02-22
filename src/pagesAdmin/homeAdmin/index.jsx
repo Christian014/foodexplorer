@@ -47,7 +47,7 @@ export function HomeAdmin(){
                     
                     <div className="dishes refeicoes">
                         
-                    <CarouselAdmin dish={DishAdmin}/>
+                    <CarouselAdmin/>
 
                     </div>
 

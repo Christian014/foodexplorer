@@ -5,20 +5,46 @@ import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import "swiper/css/navigation";
 
-import { useState } from "react";
+import { api } from "../../../services/api"
+import { useState, useEffect } from "react";
 
 import { DishAdmin } from '../dishesAdmin';
 
 export function CarouselAdmin (){
-  
+
+  const [dishes, setDishes] = useState([]);
+
+  useEffect(() => {
+     async function fetchDataDishes (){
+
+        try{
+
+          const response = await api.get("/dish");
+          const dishes = response.data
+
+          dishes.forEach(dish => {
+            const { id, image, name, price, description } = dish;
+            console.log(id, image, name, price, description);
+
+            setDishes(dishes);
+          })
+
+          
+
+        }catch(error){() => {
+          console.error(error)
+        }}
+    }
+    fetchDataDishes()
+  }, [])
+
   return (
 
     <Container>
       <Swiper
       spaceBetween={16}
       slidesPerView={2}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
+      
       grabCursor={true}
         modules={[Navigation]}
         navigation={true}
@@ -35,9 +61,16 @@ export function CarouselAdmin (){
 
 
 
-      <SwiperSlide>
-        <DishAdmin />
-      </SwiperSlide>
+        {dishes.map(dish => (
+          <SwiperSlide key={dish.id}>
+            <DishAdmin
+              image={dish.image}
+              name={dish.name}
+              price={dish.price}
+              description={dish.description}
+            />
+          </SwiperSlide>
+        ))}
     
       
 

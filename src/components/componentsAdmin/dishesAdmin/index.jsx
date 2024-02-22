@@ -7,7 +7,7 @@ import Ravanelo from "../../../assets/dish/ravanelo100.png";
 
 import { Link } from "react-router-dom";
 
-export function DishAdmin(){
+export function DishAdmin({image, name, price, category, ingredients, description}){
 
 
     return(
@@ -24,15 +24,15 @@ export function DishAdmin(){
             
             <Link to="dishAdmin">
             
-            <img className="ravanelo img-dish" src={Ravanelo} alt="" />
+            <img className="img-dish" src= {"http://localhost:3333/dish/" + image} alt="" />
             </Link>
             
 
-            <p className="title">Salada de Ravanello <SlArrowRight className="arrowRight"/></p>
-            <p className="description">massa fresca com camarões e pesto</p>
+            <p className="title">{name} <SlArrowRight className="arrowRight"/></p>
+            <p className="description">{description}</p>
             
 
-            <strong>R$ 49,90</strong>
+            <strong>R$ {price}</strong>
         </Container>
 
     )
