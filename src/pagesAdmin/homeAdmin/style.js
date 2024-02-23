@@ -15,7 +15,6 @@ export const Container = styled.div `
         }
 
     @media (max-width: 1099px){
-        
 
         .banner{
 

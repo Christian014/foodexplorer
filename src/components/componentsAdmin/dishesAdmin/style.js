@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
     
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_DISH};
 

@@ -1,37 +1,62 @@
 import { Container } from "./style";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSearchParams } from 'react-router-dom';
 
+import { api } from "../../services/api";
 
 //components
 import { NavBar } from "../../components/navBar";
 import { Footer } from "../../components/footer";
-import { Button } from "../../components/button"; 
+import { Button } from "../../components/button";
 import { Tag } from "../../components/tags";
 
 //img
 import Ravanelo from "../../assets/dish/ravanelo400.png";
 import Voltar from "../../assets/MenorQue.png";
 
-export function DishAdmin(){
+export function DishAdmin() {
 
     const [searchParams] = useSearchParams();
     const id = searchParams.get('id');
+
+    const [previewDish, setPreviewDish] = useState([]);
+    const [ingredients, setIngredients] = useState("")
+
     
-    console.log(id)
-    return(
+    useEffect(() => {
+        async function PreviewDish() {
+            try {
+                const dados = await api.post("/dishPreView", { id })
+                const previewDish = dados.data
+
+                console.log(previewDish.response)
+
+                setPreviewDish(previewDish.response)
+            } catch {
+                console.log("eror")
+            }
+        }
+        PreviewDish()
+    }, [])
+
+    console.log(previewDish.ingredients)
+    
+    
+    
+
+    return (
 
         <Container>
 
-            <NavBar className="navbar"/>
+            <NavBar className="navbar" />
 
             <div className="containOneDish">
 
                 <div className="back">
 
                     <img src={Voltar} alt="voltar" />
-                    <Link to = "/">
+                    <Link to="/">
                         <p>voltar</p>
                     </Link>
 
@@ -39,52 +64,50 @@ export function DishAdmin(){
 
                 <div className="dishDescription">
 
-                    <img src={Ravanelo} alt="Ravanelo" />
+                    <img src={`http://localhost:3333/dish/`+ previewDish.image} alt="Ravanelo" />
 
                     <div className="txt-description">
-                        <h1>Salada Ravanello</h1>
+                        <h1>{previewDish.name}</h1>
 
-                        <p className="p-mobile">Rabanetes, folhas verdes e molho agridoce salpicados com gergelim.</p>
+                        <p className="p-mobile">
+                            {previewDish.description}
+                        </p>
 
                         <p className="p-desktop">
-                            Rabanetes, folhas verdes e molho agridoce salpicados com    gergelim. O pão naan dá um toque especial.
+                            {previewDish.description}
                         </p>
                     </div>
 
                 </div>
 
                 <div className="tags">
+
+                    <Tag tagname="alface" />
                     
-                    <Tag tagname= "alface"/>
-                    <Tag tagname= "cebola"/>
-                    <Tag tagname= "pão naan"/>
-                    <Tag tagname= "pepino"/>
-                    <Tag tagname= "rabanete"/>
-                    <Tag tagname= "tomate"/>
-                    
-                    
+
+
                 </div>
 
                 <div className="buttons">
 
                     <Link to="/dishCustomAdmin">
-                    
-                    <Button
-                        className = "btt"
-                        children= "Editar Prato"
-                    />
+
+                        <Button
+                            className="btt"
+                            children="Editar Prato"
+                        />
                     </Link>
-                    
-                
+
+
                 </div>
 
             </div>
 
-            
-                <div className="footer">
-                    <Footer />
-                </div>
-            
+
+            <div className="footer">
+                <Footer />
+            </div>
+
         </Container>
 
     )
