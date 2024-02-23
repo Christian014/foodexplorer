@@ -13,6 +13,9 @@ import { DishAdmin } from '../dishesAdmin';
 export function CarouselAdmin (){
 
   const [dishes, setDishes] = useState([]);
+  
+  
+  
 
   useEffect(() => {
      async function fetchDataDishes (){
@@ -24,7 +27,7 @@ export function CarouselAdmin (){
 
           dishes.forEach(dish => {
             const { id, image, name, price, description } = dish;
-            console.log(id, image, name, price, description);
+            
 
             setDishes(dishes);
           })
@@ -37,6 +40,11 @@ export function CarouselAdmin (){
     }
     fetchDataDishes()
   }, [])
+
+  async function selectDish(){
+    
+  }
+
 
   return (
 
@@ -64,10 +72,13 @@ export function CarouselAdmin (){
         {dishes.map(dish => (
           <SwiperSlide key={dish.id}>
             <DishAdmin
+              id={dish.id}
               image={dish.image}
               name={dish.name}
               price={dish.price}
               description={dish.description}
+              
+              onClick={selectDish}
             />
           </SwiperSlide>
         ))}

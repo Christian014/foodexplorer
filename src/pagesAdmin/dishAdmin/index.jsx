@@ -1,6 +1,8 @@
 import { Container } from "./style";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useSearchParams } from 'react-router-dom';
+
 
 //components
 import { NavBar } from "../../components/navBar";
@@ -13,6 +15,11 @@ import Ravanelo from "../../assets/dish/ravanelo400.png";
 import Voltar from "../../assets/MenorQue.png";
 
 export function DishAdmin(){
+
+    const [searchParams] = useSearchParams();
+    const id = searchParams.get('id');
+    
+    console.log(id)
     return(
 
         <Container>
