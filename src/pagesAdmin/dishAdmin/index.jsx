@@ -12,7 +12,6 @@ import { Button } from "../../components/button";
 import { Tag } from "../../components/tags";
 
 //img
-import Ravanelo from "../../assets/dish/ravanelo400.png";
 import Voltar from "../../assets/MenorQue.png";
 
 export function DishAdmin() {
@@ -21,7 +20,7 @@ export function DishAdmin() {
     const id = searchParams.get('id');
 
     const [previewDish, setPreviewDish] = useState([]);
-    const [ingredients, setIngredients] = useState("")
+ 
 
     
     useEffect(() => {
@@ -40,7 +39,24 @@ export function DishAdmin() {
         PreviewDish()
     }, [])
 
-    console.log(previewDish.ingredients)
+        const ingredients = previewDish.ingredients;
+
+        if(ingredients == undefined){
+            return console.log("ingredients vazio")
+        }
+
+        const dividindoIngredients = ingredients.split(",")
+        console.log(dividindoIngredients)
+
+
+        const tagsIngredients = dividindoIngredients.map((ingredient, index) => (
+            
+                  <Tag tagname={ingredient} />
+            
+            ));
+
+              
+        
     
     
     
@@ -82,10 +98,8 @@ export function DishAdmin() {
 
                 <div className="tags">
 
-                    <Tag tagname="alface" />
-                    
-
-
+                    {tagsIngredients}
+            
                 </div>
 
                 <div className="buttons">
