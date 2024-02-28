@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 
 export function DishAdmin({ image, name, price, category, ingredients, description, id, onClick }) {
 
-
-    console.log(id)
-
     return (
 
         <Container onClick={onClick} id={id}>
 
             <div className="edit">
-                <Link to="/dishCustomAdmin">
+                <Link to={{
+                    pathname: "/dishCustomAdmin",
+                    search: `?id=${id}`,
+                }}>
                     <img className="pencil" src={Pencil} alt="" />
                 </Link>
             </div>

@@ -111,6 +111,11 @@ export const Container = styled.div `
         width: 304px;
         height: 462px;
 
+        .description{
+            text-align: center;
+            width: 90%;
+        }
+
         .img-dish{
             width: 176px;
             height: 176px;

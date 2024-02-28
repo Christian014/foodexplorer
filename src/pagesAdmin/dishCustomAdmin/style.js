@@ -206,8 +206,10 @@ export const Container = styled.div`
                 padding: 8px;
                 box-sizing: border-box;
 
-                button{
+                .ingredientsTag{
                     cursor: pointer;
+                    box-sizing: border-box;
+                    
                     width: 116px;
                     height: 32px;
                     border-radius: 8px;
@@ -441,7 +443,7 @@ export const Container = styled.div`
 
                        
 
-                        button{
+                        .ingredientsTag{
                             width: 116px;
                             height: 32px;
                             border: 1px dashed ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
@@ -449,6 +451,13 @@ export const Container = styled.div`
                             background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                             border-radius: 8px;
                             cursor: pointer;
+
+                            padding: 0 20px 0 10px;
+                            box-sizing: border-box;
+                        }
+
+                        .img-ingredients{
+                            margin-left: -39px;
                         }
                     }
                 }

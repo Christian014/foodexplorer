@@ -8,9 +8,11 @@ export const Container = styled.span `
 
     border-radius: 8px;
     color: white;
-
+    align-items: center;
+    gap: 5px;
     font-family: 'Roboto';
     font-size: 14px;
+    display: flex;
     
     img{
         width: 8px;

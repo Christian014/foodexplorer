@@ -55,11 +55,6 @@ export function DishAdmin() {
             
             ));
 
-              
-        
-    
-    
-    
 
     return (
 
@@ -104,7 +99,14 @@ export function DishAdmin() {
 
                 <div className="buttons">
 
-                    <Link to="/dishCustomAdmin">
+                <Link
+                to={{
+                    pathname: "/dishCustomAdmin",
+                    search: `?id=${id}`,
+                }}
+            >
+
+                    
 
                         <Button
                             className="btt"

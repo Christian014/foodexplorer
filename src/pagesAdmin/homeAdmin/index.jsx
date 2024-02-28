@@ -12,7 +12,7 @@ import { api } from "../../services/api";
 
 export function HomeAdmin(){
 
-    function handleAddDish(){}
+    
 
     return(
 

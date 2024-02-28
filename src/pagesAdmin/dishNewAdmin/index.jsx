@@ -22,11 +22,8 @@ export function DishNewAdmin() {
     const [ingredients, setIngredients] = useState([])
     const [newIngredients, setNewIngredients] = useState("")
 
-    function handleAddTag(){
+    function handleAddTag() {
         setIngredients(prevState => [...prevState, newIngredients]);
-        console.log(ingredients)
-        console.log(newIngredients)
-        console.log(...prevState)
     }
 
 
@@ -39,7 +36,7 @@ export function DishNewAdmin() {
     const handlePriceChange = (e) => {
         setPrice(e.target.value);
     };
-    
+
     const formData = new FormData();
     formData.append('image', image);
     formData.append('name', name);
@@ -48,19 +45,19 @@ export function DishNewAdmin() {
     formData.append('description', description);
     formData.append('ingredients', ingredients)
 
-    
 
-    async function handleUpload(){
+
+    async function handleUpload() {
         console.log(category)
 
         api.post("/dish", formData)
-        .then((res) => {
-            if(res.status === 200){
-                alert("Cadastrado com sucesso");
-            }
-        }).catch((error) => {
-            alert("erro ao cadastrar", error);
-        })
+            .then((res) => {
+                if (res.status === 200) {
+                    alert("Cadastrado com sucesso");
+                }
+            }).catch((error) => {
+                alert("erro ao cadastrar", error);
+            })
     }
     return (
         <Container>
@@ -79,74 +76,74 @@ export function DishNewAdmin() {
                     <h1>Adicionar Prato</h1>
 
                     <div className="img-name-category">
-                    <div className="img-dish">
-                        <p className="p-img-fo-prato">Imagem do prato</p>
+                        <div className="img-dish">
+                            <p className="p-img-fo-prato">Imagem do prato</p>
 
-                        <div className="upload">
-                            <input type="file"
-                             id="inptUpload"
-                              onChange={e => setImage(e.target.files[0])}
-                              />
-                            <img src={Upload} alt="upload" />
-                            <p className="p-upload-mobile" >Selecione imagem para alterá-la</p>
-                            <p className="p-upload-desktop">Selecione imagem</p>
-                        </div>
-
-                    </div>
-
-                    <div className="name">
-                        <p>Nome</p>
-                        <input type="text"
-                         placeholder="Salada César"
-                        onChange={e => setName(e.target.value)}
-                        />
-                    </div>
-
-                    <div className="category">
-                        <p>Categoria</p>
-                        <div className="select">
-
-                            <select value={category} 
-                            onChange={e => setCategory(e.target.value)}
-                            >
-                                <option value="Refeição">Refeição</option>
-                                <option value="Bebidas">Bebidas</option>
-                                <option value="Sobremesas">Sobremesas</option>
-                            </select>
-
+                            <div className="upload">
+                                <input type="file"
+                                    id="inptUpload"
+                                    onChange={e => setImage(e.target.files[0])}
+                                />
+                                <img src={Upload} alt="upload" />
+                                <p className="p-upload-mobile" >Selecione imagem para alterá-la</p>
+                                <p className="p-upload-desktop">Selecione imagem</p>
+                            </div>
 
                         </div>
 
+                        <div className="name">
+                            <p>Nome</p>
+                            <input type="text"
+                                placeholder="Salada César"
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </div>
 
-                    </div>
+                        <div className="category">
+                            <p>Categoria</p>
+                            <div className="select">
+
+                                <select value={category}
+                                    onChange={e => setCategory(e.target.value)}
+                                >
+                                    <option value="Refeição">Refeição</option>
+                                    <option value="Bebidas">Bebidas</option>
+                                    <option value="Sobremesas">Sobremesas</option>
+                                </select>
+
+
+                            </div>
+
+
+                        </div>
                     </div>
 
                     <div className="ingredients-price">
-                    <div className="ingredients">
-                        <p>Ingredientes</p>
+                        <div className="ingredients">
+                            <p>Ingredientes</p>
 
-                        <div className="tags">
-                            { 
-                                ingredients.map((ingredients, index) => (
+                            <div className="tags">
+                                {
+                                    ingredients.map((ingredients, index) => (
 
-                                    <TagAdmin  icon={Close} key={String(index)} value={ingredients} onClick={() => {}}/>
-                                ))
-                            }
-                                
-                                    <input className="addNewTag" type="text" placeholder="Adicionar" onChange={e => setNewIngredients(e.target.value)}/>
-                                    <img src={Mais} className="addTag" alt="" onClick={handleAddTag}/>
-                                
+                                        <TagAdmin icon={Close} key={String(index)} value={ingredients} onClick={() => { }} />
+                                    ))
+                                }
+
+                                <input className="addNewTag" type="text" placeholder="Adicionar" onChange={e => setNewIngredients(e.target.value)} />
+                                <img src={Mais} className="addTag" alt="" onClick={handleAddTag} />
+
+                            </div>
+
                         </div>
 
-                    </div>
-
-                    <div className="price">
-                        <p>Preço</p>
-                        <Input className="inpt"
-                         placeholder="R$ 40,00"
-                         onChange={handlePriceChange}
-                        />
-                    </div>
+                        <div className="price">
+                            <p>Preço</p>
+                            <Input className="inpt"
+                                placeholder="R$ 40,00"
+                                onChange={handlePriceChange}
+                            />
+                        </div>
                     </div>
 
                     <div className="description">
@@ -157,13 +154,13 @@ export function DishNewAdmin() {
                     </div>
 
                     <div className="save-delete">
-                        
+
                         <Button id="save-btt" onClick={handleUpload}>Salvar Alterações</Button>
-                        
+
                     </div>
 
                 </div>
-            <Footer />  
+                <Footer />
             </main>
         </Container>
     )

@@ -218,7 +218,7 @@ export const Container = styled.div`
                     background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                     color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
 
-                    padding-left: 18px;
+                    padding: 0 30px 0 10px;
                     box-sizing: border-box;
                     outline: 0;
 
@@ -226,7 +226,7 @@ export const Container = styled.div`
                 }
                 .addTag{
                         
-                        margin-left: -34px;
+                        margin-left: -37px;
                     }
             }
         }
@@ -452,7 +452,7 @@ export const Container = styled.div`
                             background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                             color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
                             flex-wrap: wrap;
-                            padding-left: 18px;
+                            padding: 0 30px 0 10px;
                             box-sizing: border-box;
                             outline: 0;
                         }
