@@ -38,11 +38,6 @@ export function DishCustomAdmin() {
         async function previewDish(){
 
             const dataDish = await api.post("/dishPreView", {id})
-            const { image, name, description, ingredients, category, price } = dataDish.data.response
-            
-            // console.log(image, name, description, ingredients, category, price)
-            // console.log(dataDish.data)
-
             setData(dataDish.data)
         }
         previewDish()
@@ -51,26 +46,36 @@ export function DishCustomAdmin() {
     function ingredientsUpdate(){
         setAddIngredients(prevstate => [...prevstate, ingredients])
     }
+
+    const formData = new FormData();
+    formData.append('image', image);
+    formData.append('name', name);
+    formData.append('price', price);
+    formData.append('category', category);
+    formData.append('description', description);
+    formData.append('ingredients', ingredients);
+    formData.append('id', id);
     
-    function handleUpdate(){
+    function handleUpdate(){    
+        try{
+            api.put("/dish", formData);
+            alert("atualizado com sucesso");
+        }catch{
+            alert("error internal")
+        }
         
-        
-        api.put("/dish", {id})
-        
+    }
+
+    async function deleteDish(){
+        try{
+            api.delete(`/dish/${id}`)
+            alert("prato deletado")
+        }catch{
+            alert("erro ao deletar")
+        }
     }
     
     
-    const dbIngredient = data.response
-
-    if(dbIngredient == undefined){
-        
-
-        return console.log("error")
-    }
-
-        
-
-
     const ingredient = addIngredients.map((ingredient, index) => (
 
          <TagAdmin tagname={ingredient} icon={Close} />
@@ -97,7 +102,7 @@ export function DishCustomAdmin() {
                         <p className="p-img-fo-prato">Imagem do prato</p>
 
                         <div className="upload">
-                            <input type="file" name="" id="" onChange={e => setImage(e.target.value)}/>
+                            <input type="file" name="" id="" onChange={e => setImage(e.target.files[0])}/>
                             <img src={Upload} alt="upload" />
                             <p className="p-upload-mobile" >Selecione imagem para alterá-la</p>
                             <p className="p-upload-desktop">Selecione imagem</p>
@@ -156,7 +161,7 @@ export function DishCustomAdmin() {
                     </div>
 
                     <div className="save-delete">
-                        <Button id="delete-btt">Excluir Prato</Button>
+                        <Button onClick={deleteDish} id="delete-btt">Excluir Prato</Button>
                         <Button onClick={handleUpdate} id="save-btt">Salvar Alterações</Button>
                     </div>
 

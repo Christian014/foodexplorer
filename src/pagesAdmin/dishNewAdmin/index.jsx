@@ -43,7 +43,7 @@ export function DishNewAdmin() {
     formData.append('price', price);
     formData.append('category', category);
     formData.append('description', description);
-    formData.append('ingredients', ingredients)
+    formData.append('ingredients', ingredients);
 
 
 
