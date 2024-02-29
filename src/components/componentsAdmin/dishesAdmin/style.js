@@ -21,7 +21,7 @@ export const Container = styled.div `
     align-items: center;
 
     .description{
-        
+        position: absolute;
         visibility: hidden;
     }
 
@@ -136,6 +136,7 @@ export const Container = styled.div `
         .description{
             font-size: 14px;
             visibility: visible;
+            position: static;
         }
 
         strong{

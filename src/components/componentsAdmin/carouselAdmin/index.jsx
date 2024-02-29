@@ -13,9 +13,6 @@ import { DishAdmin } from '../dishesAdmin';
 export function CarouselAdmin (){
 
   const [dishes, setDishes] = useState([]);
-  
-  
-  
 
   useEffect(() => {
      async function fetchDataDishes (){
@@ -40,10 +37,6 @@ export function CarouselAdmin (){
     }
     fetchDataDishes()
   }, [])
-
-  async function selectDish(){
-    
-  }
 
 
   return (
@@ -78,7 +71,7 @@ export function CarouselAdmin (){
               price={dish.price}
               description={dish.description}
               
-              onClick={selectDish}
+              
             />
           </SwiperSlide>
         ))}

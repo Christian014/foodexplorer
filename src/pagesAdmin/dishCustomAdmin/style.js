@@ -217,12 +217,14 @@ export const Container = styled.div`
                     background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
                     color: ${({theme}) => theme.COLORS.PLACEHOLDER_INPUT};
 
+                    padding: 0 30px 0 10px;
                     
 
-                    img{
-                        padding-left: 3px;
-                    }
+                    
                 }
+                .img-ingredients{
+                        margin-left: -37px;
+                    }
             }
         }
 

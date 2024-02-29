@@ -16,7 +16,7 @@ import MenorQue from "../../assets/MenorQue.png";
 import Upload from "../../assets/upload.png";
 import Close from "../../assets/close.png";
 import Mais from "../../assets/mais.png"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
@@ -27,21 +27,54 @@ export function DishCustomAdmin() {
     const [category, setCategory] = useState("Refeição");
     const [price, setPrice] = useState("");
 
+    const [data, setData] = useState([])
     const [addIngredients, setAddIngredients] = useState([])
     const [ingredients, setIngredients] = useState("");
 
     const [searchParams] = useSearchParams();
     const id = searchParams.get('id')
 
+    useEffect(() => {
+        async function previewDish(){
+
+            const dataDish = await api.post("/dishPreView", {id})
+            const { image, name, description, ingredients, category, price } = dataDish.data.response
+            
+            // console.log(image, name, description, ingredients, category, price)
+            // console.log(dataDish.data)
+
+            setData(dataDish.data)
+        }
+        previewDish()
+    }, [])
+
     function ingredientsUpdate(){
         setAddIngredients(prevstate => [...prevstate, ingredients])
     }
     
     function handleUpdate(){
-        console.log(image, name, description, category, price)
+        
+        
         api.put("/dish", {id})
         
     }
+    
+    
+    const dbIngredient = data.response
+
+    if(dbIngredient == undefined){
+        
+
+        return console.log("error")
+    }
+
+        
+
+
+    const ingredient = addIngredients.map((ingredient, index) => (
+
+         <TagAdmin tagname={ingredient} icon={Close} />
+    ))
 
     return (
         <Container>
@@ -100,12 +133,10 @@ export function DishCustomAdmin() {
 
                         <div className="tags">
                             {
-                                addIngredients.map((ingredient, index) => (
-
-                                    <TagAdmin tagname="Pão Naan" icon={Close} key={String(index)} value={ingredient} onClick={() => {}}/>
-                                ))
+                                
+                                ingredient
                             }
-                            <input className="ingredientsTag"  placeholder="Adicionar"/>
+                            <input className="ingredientsTag"  placeholder="Adicionar" onChange={e => setIngredients(e.target.value)}/>
                             <img className="img-ingredients" src={Mais} alt="" onClick={ingredientsUpdate}/>
                         </div>
 
