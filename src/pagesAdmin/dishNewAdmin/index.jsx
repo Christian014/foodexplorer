@@ -58,8 +58,6 @@ export function DishNewAdmin() {
 
 
     async function handleUpload() {
-        console.log(category)
-
         api.post("/dish", formData)
             .then((res) => {
                 if (res.status === 200) {

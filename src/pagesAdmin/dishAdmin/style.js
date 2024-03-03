@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+.dishImg{
+    border-radius: 50%;
+}
+
 @media(min-width: 1920px){
     
     .containOneDish{
@@ -82,7 +86,7 @@ export const Container = styled.div `
 
         .tags{
             margin-top: 17%;
-            margin-left: 14%;
+            
             justify-content: center;
             gap: 12px;
             position: absolute;

@@ -13,9 +13,9 @@ export function UserRoutes(){
 
         <Routes>
             <Route path="/" element={<Home />}/>
-            <Route path="dish" element={<Dish />} />
-            <Route path="menuUser" element={<MenuUser />} />
-            <Route path="dishDetails" element={<DishDetails />} />
+            <Route path="/dish" element={<Dish />} />
+            <Route path="/menuUser" element={<MenuUser />} />
+            <Route path="/dishDetails" element={<DishDetails />} />
         </Routes>
         
     )

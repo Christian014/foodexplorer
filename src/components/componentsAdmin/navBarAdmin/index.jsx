@@ -9,12 +9,19 @@ import { Button } from "../../button";
 import Menu from "../../../assets/Menu.png";
 import Lupa from "../../../assets/lupa.png";
 import ExitDesktop from "../../../assets/exitDesktop.png";
-import { useAuth } from "../../../hooks/auth";
+
+import { useState } from "react";
 
 
-export function NavBarAdmin(){
+export function NavBarAdmin({ onSearch }){
 
-    const { logOut } = useAuth()
+    const [searchValue, setSearchValue] = useState("");
+
+  const handleSearch = (value) => {
+    setSearchValue(value);
+    onSearch(value);
+  };
+
     return(
 
         <Container>
@@ -34,7 +41,10 @@ export function NavBarAdmin(){
 
                 <div className="input-nav">
                     <img className="lupa" src={Lupa} alt="" />
-                    <Input placeholder="Busque por pratos ou ingredientes"/>
+                    <Input
+            placeholder="Busque por pratos ou ingredientes"
+            onChange={(e) => handleSearch(e.target.value)}
+          />
                 </div>
 
                 
@@ -46,11 +56,10 @@ export function NavBarAdmin(){
                     
                 </div>
 
-                
-                    <div className="exit">
-                        <img src={ExitDesktop} alt="" onClick={logOut}/>
-                    </div>
-                
+                <div className="exit">
+                    <img src={ExitDesktop} alt="" />
+                </div>
+
                 
             </div>
 

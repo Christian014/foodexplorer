@@ -28,6 +28,7 @@ export function DishCustomAdmin() {
     const [price, setPrice] = useState("");
 
     const [data, setData] = useState([])
+
     const [addIngredients, setAddIngredients] = useState([])
     const [ingredients, setIngredients] = useState("");
 
@@ -53,17 +54,27 @@ export function DishCustomAdmin() {
     formData.append('price', price);
     formData.append('category', category);
     formData.append('description', description);
-    formData.append('ingredients', ingredients);
+    formData.append('ingredients', addIngredients);
     formData.append('id', id);
     
-    function handleUpdate(){    
-        try{
-            api.put("/dish", formData);
-            alert("atualizado com sucesso");
-        }catch{
-            alert("error internal")
-        }
+    function handleUpdate(){   
         
+        
+        console.log(addIngredients)
+        if(!image){
+            alert("tem campos importantes faltando para atualizar")
+        }else{
+            alert("atualizado com sucesso");
+            try{
+            
+                api.put("/dish", formData);
+                
+            
+            
+            }catch{
+                alert("error internal")
+            }
+        }
     }
 
     async function deleteDish(){
@@ -74,12 +85,16 @@ export function DishCustomAdmin() {
             alert("erro ao deletar")
         }
     }
+
+    function deleteTag(index) {
+        const updatedIngredients = addIngredients.filter((_, i) => i !== index);
+        setAddIngredients(updatedIngredients);
+    }
     
     
     const ingredient = addIngredients.map((ingredient, index) => (
-
-         <TagAdmin tagname={ingredient} icon={Close} />
-    ))
+        <TagAdmin tagname={ingredient} icon={Close} key={index} onClick={() => deleteTag(index)} />
+    ));
 
     return (
         <Container>

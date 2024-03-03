@@ -13,14 +13,35 @@ import { AdminRoutes } from "./routesAdmin/routes.admin";
 
 export function AppRoutes(){
     const { user } = useAuth()
+
+    if(user){
+        const userAuth = user.autenticacao
+        console.log(userAuth)
+    }
+    
+    
+    
     return(
 
-        <BrowserRouter>
-            {
-                user ? <AdminRoutes/> : <AuthRoutes />
-            }
-        </BrowserRouter>
+        
+            <BrowserRouter>
+                {
+                    user ? (
+                        <>
+                            {user.autenticacao === "admin" ? (
+                                <AdminRoutes />
+                            ) : (
+                                <UserRoutes />
+                            )}
+                        </>
+                    ) : (
+                        <AuthRoutes />
+                    )
+                }
+            </BrowserRouter>
+        
+    )
         
 
-    )
+    
 }

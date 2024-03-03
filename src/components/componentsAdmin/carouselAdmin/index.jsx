@@ -5,48 +5,40 @@ import 'swiper/swiper-bundle.css';
 import { Navigation } from 'swiper/modules';
 import "swiper/css/navigation";
 
-import { api } from "../../../services/api"
-import { useState, useEffect } from "react";
-
+import { api } from "../../../services/api";
+import { useEffect, useState } from "react";
 import { DishAdmin } from '../dishesAdmin';
 
-export function CarouselAdmin (){
+export function CarouselAdmin({ category, searchValue }) {
+  const [filteredDishes, setFilteredDishes] = useState([]);
 
-  const [dishes, setDishes] = useState([]);
+  console.log(filteredDishes)
 
   useEffect(() => {
-     async function fetchDataDishes (){
+    async function fetchDataDishes() {
+      try {
+        const response = await api.get("/dish");
+        let filteredByCategory = response.data.filter(dish => dish.category === category);
 
-        try{
+        if (searchValue) {
+          filteredByCategory = filteredByCategory.filter(dish => dish.name.toLowerCase().includes(searchValue.toLowerCase()));
+        }
 
-          const response = await api.get("/dish");
-          const dishes = response.data
-
-          dishes.forEach(dish => {
-            const { id, image, name, price, description } = dish;
-            
-
-            setDishes(dishes);
-          })
-
-          
-
-        }catch(error){() => {
-          console.error(error)
-        }}
+        setFilteredDishes(filteredByCategory);
+      } catch (error) {
+        console.error(error);
+      }
     }
-    fetchDataDishes()
-  }, [])
 
+    fetchDataDishes();
+  }, [category, searchValue]);
 
   return (
-
     <Container>
       <Swiper
-      spaceBetween={16}
-      slidesPerView={2}
-      
-      grabCursor={true}
+        spaceBetween={16}
+        slidesPerView={2}
+        grabCursor={true}
         modules={[Navigation]}
         navigation={true}
         breakpoints={{
@@ -57,12 +49,10 @@ export function CarouselAdmin (){
           1024: {
             slidesPerView: 4,
             spaceBetween: 20
-          }}}
-    >
-
-
-
-        {dishes.map(dish => (
+          }
+        }}
+      >
+        {filteredDishes.map(dish => (
           <SwiperSlide key={dish.id}>
             <DishAdmin
               id={dish.id}
@@ -70,17 +60,10 @@ export function CarouselAdmin (){
               name={dish.name}
               price={dish.price}
               description={dish.description}
-              
-              
             />
           </SwiperSlide>
         ))}
-    
-      
-
-      
-    </Swiper>
+      </Swiper>
     </Container>
-
   );
-};
+}

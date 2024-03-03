@@ -75,7 +75,7 @@ export function DishAdmin() {
 
                 <div className="dishDescription">
 
-                    <img src={`http://localhost:3333/dish/`+ previewDish.image} alt="Ravanelo" />
+                    <img className="dishImg" src={`http://localhost:3333/dish/`+ previewDish.image} alt="Ravanelo" />
 
                     <div className="txt-description">
                         <h1>{previewDish.name}</h1>
