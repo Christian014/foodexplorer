@@ -7,8 +7,11 @@ import { Input } from "../../components/input";
 import { Footer } from "../../components/footer";
 import { Link } from "react-router-dom";
 
+import { useAuth } from "../../hooks/auth";
+
 export function MenuAdmin() {
 
+    const { logOut } = useAuth()
     return (
 
         <Container>
@@ -33,9 +36,11 @@ export function MenuAdmin() {
                         <p className="paragrafo">Novo Prato</p>
                     </Link>
 
-                    <Link to="/signIn">
-                        <p className="paragrafo">Sair</p>
-                    </Link>
+                    
+                        <Link to="/">
+                            <p className="paragrafo" onClick={logOut}>Sair</p>
+                        </Link>
+                    
                 </div>
 
                 

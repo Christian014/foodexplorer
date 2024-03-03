@@ -16,8 +16,9 @@ export function SignIn() {
     const [password, setPassword] = useState("")
 
     function login(evt){
+        
         signIn({ email, password });
-
+        
         evt.preventDefault();
 
         if(!email || !password){
@@ -31,10 +32,8 @@ export function SignIn() {
             }
         })
         .catch((error) => {
-            if(error.response){
-                alert(error.response.data.message)
-            }
-            console.error("Erro durante o login:", error.message);
+ 
+            console.error("Erro durante o login:", error);
             
         })
 

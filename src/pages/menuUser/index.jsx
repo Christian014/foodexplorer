@@ -7,9 +7,10 @@ import { Input } from "../../components/input";
 import { Footer } from "../../components/footer";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from "../../hooks/auth"
 
 export function MenuUser() {
-
+const {logOut} = useAuth()
     return (
 
         <Container>
@@ -31,8 +32,8 @@ export function MenuUser() {
                     <Input className=" input" placeholder="Busque por pratos ou ingredientes" />
                     
 
-                    <Link to="/signIn">
-                        <p className="paragrafo">Sair</p>
+                    <Link to="/">
+                        <p className="paragrafo" onClick={logOut}>Sair</p>
                     </Link>
                 </div>
 
