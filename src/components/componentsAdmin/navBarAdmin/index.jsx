@@ -9,11 +9,12 @@ import { Button } from "../../button";
 import Menu from "../../../assets/Menu.png";
 import Lupa from "../../../assets/lupa.png";
 import ExitDesktop from "../../../assets/exitDesktop.png";
-
+import { useAuth } from "../../../hooks/auth";
 
 
 export function NavBarAdmin(){
 
+    const { logOut } = useAuth()
     return(
 
         <Container>
@@ -45,10 +46,11 @@ export function NavBarAdmin(){
                     
                 </div>
 
-                <div className="exit">
-                    <img src={ExitDesktop} alt="" />
-                </div>
-
+                
+                    <div className="exit">
+                        <img src={ExitDesktop} alt="" onClick={logOut}/>
+                    </div>
+                
                 
             </div>
 

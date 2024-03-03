@@ -1,15 +1,15 @@
 
 import { Container } from "./style";
+import { useState } from "react";
 
-export function TagAdmin({tagname, icon, onChange, onClick, value}){
-    
-
+export function TagAdmin({tagname, icon, onChange, onClick, value, index}){
     
     return(
-        <Container onChange={onChange} onClick={onClick}>
+        <Container onChange={onChange}>
             {tagname}
             {value}
-            <img src={icon} />
+            <img src={icon} onClick={onClick}/>
+            
         </Container>
     )
 }

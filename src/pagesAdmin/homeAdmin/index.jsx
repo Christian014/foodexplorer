@@ -1,13 +1,11 @@
 import { Container } from "./style";
 import { NavBarAdmin } from "../../components/componentsAdmin/navBarAdmin";
 import Lanches from "../../assets/lanches.png"
-
 import { Footer } from "../../components/footer";
-
 import { CarouselAdmin } from "../../components/componentsAdmin/carouselAdmin";
 import { Link } from "react-router-dom";
-import { DishAdmin } from "../../components/componentsAdmin/dishesAdmin";
-import { api } from "../../services/api";
+
+import { SignIn } from "../../pages/signIn"
 
 
 export function HomeAdmin(){
@@ -24,11 +22,14 @@ export function HomeAdmin(){
                 <NavBarAdmin />
                     
                 
+                
                 <div className="img-banner" />
-                <div className="banner">
-
-                    
-                        <img className="lanhces" src={Lanches} alt="" />
+                
+                    <div className="banner">
+                        
+                        
+                            <img className="lanhces" src={Lanches} alt="" />
+                        
                     
                     
                     <div className="banner-text">

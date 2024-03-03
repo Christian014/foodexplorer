@@ -26,6 +26,16 @@ export function DishNewAdmin() {
         setIngredients(prevState => [...prevState, newIngredients]);
     }
 
+    
+    function deleteTag(index){
+        
+        const newTags = ingredients.filter((_, i) => i !== index)
+        setIngredients(newTags)
+        console.log(newTags)
+        console.log(index)
+    }
+    
+
 
     const [image, setImage] = useState("");
     const [name, setName] = useState("");
@@ -126,7 +136,7 @@ export function DishNewAdmin() {
                                 {
                                     ingredients.map((ingredients, index) => (
 
-                                        <TagAdmin icon={Close} key={String(index)} value={ingredients} onClick={() => { }} />
+                                        <TagAdmin icon={Close} key={String(index)} value={ingredients} onClick={() => deleteTag(index)}/>
                                     ))
                                 }
 
