@@ -2,6 +2,16 @@ import styled from "styled-components";
 import ravanelo200 from "../../assets/dish/ravanelo200.png";
 
 export const Container = styled.div `
+    @media(max-width:1919px){
+        .img-dish{
+            border-radius: 50%;
+            margin-top: 24px;
+            margin-bottom: 15px;
+            width: 176px;
+            height: 175px;
+            
+        }
+    }
     @media(min-width: 1920px){
         box-sizing: border-box;
         width: 304px;
@@ -33,7 +43,7 @@ export const Container = styled.div `
     margin-left: 24px;
 
     width: 210px;
-    height: 292px;
+    
 
     display: flex;
     flex-direction: column;

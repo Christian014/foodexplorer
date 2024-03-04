@@ -18,7 +18,7 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
 
     const [dishAmount, setDishAmount] = useState(1);
-
+    
     const incrementDishAmount = () => {
 
         setDishAmount((prevAmount) => prevAmount + 1);
@@ -55,12 +55,12 @@ export function Dish({ image, name, price, category, ingredients, description, i
                 <img onClick={alternarClasse} className={` coracao-color  ${classeAtiva ? "" : "visibility-hidden"}`} id="coracaoColor" src={CoracaoColor} alt="" />
             </div>
 
-            
-            <Link to={{pathname: "/dish", search: `?id=${id}`,}}>
-                
-                
-                    <img className="img-dish" src={"http://localhost:3333/dish/" + image} alt="" />
-                
+
+            <Link to={{ pathname: "/dish", search: `?id=${id}`, }}>
+
+
+                <img className="img-dish" src={"http://localhost:3333/dish/" + image} alt="" />
+
             </Link>
 
             <p>{name} <SlArrowRight className="arrowRight" /> </p>

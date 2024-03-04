@@ -17,17 +17,18 @@ export function Carousel({ category, searchValue }) {
 
   const [filteredDishes, setFilteredDishes] = useState([]);
 
-  console.log(filteredDishes)
-
   useEffect(() => {
     async function fetchDataDishes() {
       try {
         const response = await api.get("/dish");
         let filteredByCategory = response.data.filter(dish => dish.category === category);
-
+        console.log(filteredByCategory)
         if (searchValue) {
-          filteredByCategory = filteredByCategory.filter(dish => dish.name.toLowerCase().includes(searchValue.toLowerCase()));
-        }
+          filteredByCategory = filteredByCategory.filter(dish => 
+              dish.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+              (Array.isArray(dish.ingredients.split(',')) && dish.ingredients.split(',').some(ingredient => ingredient.trim().toLowerCase().includes(searchValue.toLowerCase())))
+          );
+      }
 
         setFilteredDishes(filteredByCategory);
       } catch (error) {
