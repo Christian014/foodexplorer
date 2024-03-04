@@ -4,18 +4,24 @@ import Lanches from "../../assets/lanches.png"
 
 import { Footer } from "../../components/footer";
 
-
+import { useState } from "react";
 
 import { Carousel } from "../../components/carousel";
 
 export function Home(){
+
+    const [searchValue, setSearchValue] = useState("");
+
+    const handleSearchHome = (value) => {
+        setSearchValue(value);
+    };
 
     return(
 
         <Container>
 
             <main>
-                <NavBar />
+                <NavBar onSearch={handleSearchHome}/>
 
                 <div className="banner">
                     <div className="img-desktop"></div>
@@ -39,7 +45,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Refeições</h2>
                     </div>
-                        <Carousel />
+                        <Carousel category="Refeição" searchValue={searchValue} />
 
                     </div>
 
@@ -50,7 +56,7 @@ export function Home(){
                         <h2 className="h2-desktop">Sobremesas</h2>
                     </div>
 
-                        <Carousel />
+                        <Carousel category="Sobremesas" searchValue={searchValue}/>
 
                     </div>
 
@@ -60,7 +66,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Bebidas</h2>
                     </div>
-                        <Carousel />
+                        <Carousel category="Bebidas" searchValue={searchValue}/>
 
                     </div>
 

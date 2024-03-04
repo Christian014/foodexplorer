@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div `
 
+.image{
+    border-radius: 50%;
+}
+
 @media(min-width: 1920px){
     
     .containOneDish{

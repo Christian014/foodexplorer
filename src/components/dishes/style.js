@@ -8,11 +8,12 @@ export const Container = styled.div `
         height: 462px;
 
         .img-dish{
+            border-radius: 50%;
             margin-top: 24px;
             margin-bottom: 15px;
             width: 176px;
             height: 175px;
-            background-image: url(${ravanelo200});
+            
         }
 
         .ravanelo{

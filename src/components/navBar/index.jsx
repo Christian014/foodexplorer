@@ -14,11 +14,17 @@ import lupa from "../../assets/lupa.png";
 import pedidos from "../../assets/Vector.png";
 import exitDesktop from "../../assets/exitDesktop.png"
 
+import { useState } from "react";
 
 
-export function NavBar(){
+export function NavBar({ onSearch }){
     const { logOut } = useAuth()
+    const [searchValue, setSearchValue] = useState("");
 
+    const handleSearchHome = (value) => {
+        setSearchValue(value);
+        onSearch(value);
+      };
     return(
 
         <Container>
@@ -36,7 +42,7 @@ export function NavBar(){
 
                 <div className="div-input">
                     <img src={lupa} alt="" />
-                    <Input className=" input" placeholder="Busque por pratos ou ingredientes" /> 
+                    <Input className=" input" placeholder="Busque por pratos ou ingredientes" onChange={(e) => handleSearchHome(e.target.value)}/> 
                 </div>
 
                 <div className="btt">

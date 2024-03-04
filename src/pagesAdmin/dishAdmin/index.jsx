@@ -20,9 +20,9 @@ export function DishAdmin() {
     const id = searchParams.get('id');
 
     const [previewDish, setPreviewDish] = useState([]);
- 
 
-    
+
+
     useEffect(() => {
         async function PreviewDish() {
             try {
@@ -39,21 +39,21 @@ export function DishAdmin() {
         PreviewDish()
     }, [])
 
-        const ingredients = previewDish.ingredients;
+    const ingredients = previewDish.ingredients;
 
-        if(ingredients == undefined){
-            return console.log("ingredients vazio")
-        }
+    if (ingredients == undefined) {
+        return console.log("ingredients vazio")
+    }
 
-        const dividindoIngredients = ingredients.split(",")
-        console.log(dividindoIngredients)
+    const dividindoIngredients = ingredients.split(",")
+    console.log(dividindoIngredients)
 
 
-        const tagsIngredients = dividindoIngredients.map((ingredient, index) => (
-            
-                  <Tag tagname={ingredient} />
-            
-            ));
+    const tagsIngredients = dividindoIngredients.map((ingredient, index) => (
+
+        <Tag tagname={ingredient} />
+
+    ));
 
 
     return (
@@ -75,7 +75,7 @@ export function DishAdmin() {
 
                 <div className="dishDescription">
 
-                    <img className="dishImg" src={`http://localhost:3333/dish/`+ previewDish.image} alt="Ravanelo" />
+                    <img className="dishImg" src={`http://localhost:3333/dish/` + previewDish.image} alt="Ravanelo" />
 
                     <div className="txt-description">
                         <h1>{previewDish.name}</h1>
@@ -94,19 +94,19 @@ export function DishAdmin() {
                 <div className="tags">
 
                     {tagsIngredients}
-            
+
                 </div>
 
                 <div className="buttons">
 
-                <Link
-                to={{
-                    pathname: "/dishCustomAdmin",
-                    search: `?id=${id}`,
-                }}
-            >
+                    <Link
+                        to={{
+                            pathname: "/dishCustomAdmin",
+                            search: `?id=${id}`,
+                        }}
+                    >
 
-                    
+
 
                         <Button
                             className="btt"
