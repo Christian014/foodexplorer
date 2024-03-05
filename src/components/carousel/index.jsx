@@ -53,7 +53,7 @@ export function Carousel({ category, searchValue }) {
         breakpoints={{
           500:{
             slidesPerView: 1,
-            centeredSlides
+            
           },
           800: {
             slidesPerView: 3,
