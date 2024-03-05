@@ -59,7 +59,7 @@ export function Dish({ image, name, price, category, ingredients, description, i
             <Link to={{ pathname: "/dish", search: `?id=${id}`, }}>
 
 
-                <img className="img-dish" src={"http://localhost:3333/dish/" + image} alt="" />
+                <img className="img-dish" src={"https://api-foodexplorer-si8p.onrender.com/dish/" + image} alt="" />
 
             </Link>
 

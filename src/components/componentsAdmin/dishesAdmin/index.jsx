@@ -26,7 +26,7 @@ export function DishAdmin({ image, name, price, category, ingredients, descripti
             >
 
 
-                <img className="img-dish" src={"http://localhost:3333/dish/" + image} alt="" />
+                <img className="img-dish" src={"https://api-foodexplorer-si8p.onrender.com/dish/" + image} alt="" />
 
 
 
