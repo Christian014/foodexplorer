@@ -42,6 +42,9 @@ export function CarouselAdmin({ category, searchValue }) {
         modules={[Navigation]}
         navigation={true}
         breakpoints={{
+          300: {
+            slidesPerView: 1,
+          },
           500: {
             slidesPerView: 1,
             
