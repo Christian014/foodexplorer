@@ -51,9 +51,18 @@ export function Carousel({ category, searchValue }) {
         modules={[Navigation]}
         navigation={true}
         breakpoints={{
-          500:{
+          300:{
             slidesPerView: 1,
+          },
+
+          500:{
+            slidesPerView: 2,
             
+          },
+
+          600:{
+            slidesPerView: 3,
+            spaceBetween: 20
           },
           800: {
             slidesPerView: 3,

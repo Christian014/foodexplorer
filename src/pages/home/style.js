@@ -9,6 +9,14 @@ export const Container = styled.div`
         margin-bottom: 48px;
     }
 
+    @media(max-width: 400px){
+        .banner{
+            p{
+                visibility: hidden;
+            }
+        }
+    }
+
     @media(min-width: 1240px){
         box-sizing: border-box;
 

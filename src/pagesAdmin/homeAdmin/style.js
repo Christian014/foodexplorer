@@ -1,9 +1,9 @@
 import Lanches from "../../assets/desktopimg.png";
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
 
-    background-color: ${({theme}) => theme.COLORS.BACKGROUND_GLOBAL};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_GLOBAL};
 
     .footer{
             position: absolute;
@@ -13,6 +13,13 @@ export const Container = styled.div `
             width: 100%;
             margin-top: 115px;
         }
+        @media(max-width: 400px){
+        .banner{
+            p{
+                visibility: hidden;
+            }
+        }
+    }
 
     @media (max-width: 1099px){
 
