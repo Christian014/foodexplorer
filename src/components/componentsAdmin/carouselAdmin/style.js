@@ -38,11 +38,6 @@ export const Container = styled.div `
         }
 
 }
-
-
-
-        
-
         .swiper-slide{
             display: flex;
             justify-content: center;

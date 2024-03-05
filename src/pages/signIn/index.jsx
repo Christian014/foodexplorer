@@ -32,7 +32,7 @@ export function SignIn() {
             }
         })
         .catch((error) => {
- 
+            alert("email ou senha invalido")
             console.error("Erro durante o login:", error);
             
         })
