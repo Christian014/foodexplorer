@@ -95,7 +95,7 @@ export function Dish() {
 
                 <div className="dishDescription">
 
-                    <img className="image" src={`http://localhost:3333/dish/` + previewDish.image} alt="" />
+                    <img className="image" src={`https://api-foodexplorer-si8p.onrender.com/dish/` + previewDish.image} alt="" />
 
                     <div className="txt-description">
                         <h1>{previewDish.name}</h1>
