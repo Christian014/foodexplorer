@@ -49,6 +49,10 @@ export function CarouselAdmin({ category, searchValue }) {
             slidesPerView: 2,
             
           },
+          600: {
+            slidesPerView: 3,
+            spaceBetween: 20
+          },
           800: {
             slidesPerView: 3,
             spaceBetween: 20
