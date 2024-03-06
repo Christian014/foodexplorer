@@ -47,7 +47,11 @@ export function NavBar({ onSearch }){
 
                 <div className="btt">
                     <img src={pedidos} alt="" />
-                    <Button children="Pedidos (0)"/>
+                    
+                        
+                        <Button children="Pedidos (0)"/>
+                    
+                    
                 </div>
 
                 
@@ -55,8 +59,10 @@ export function NavBar({ onSearch }){
                 
 
                 <div className="pedidos">
+                <Link to="/requestDish">
                     <img className="img-pedido" src={Pedidos} alt="" />
                     <span>0</span>
+                </Link>
                 </div>
             </div>
 

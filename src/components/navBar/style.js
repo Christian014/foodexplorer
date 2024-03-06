@@ -72,6 +72,7 @@ export const Container = styled.div `
     }
     .nav{
         display: flex;
+        align-items: center;
         justify-content: space-between;
         padding: 56px 28px 24px 28px;
 
@@ -81,7 +82,7 @@ export const Container = styled.div `
         }
     }
 }
-    height: 114px;
+    /* height: 114px; */
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_NAVBAR};
     
     .nav{

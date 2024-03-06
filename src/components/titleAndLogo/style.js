@@ -6,7 +6,7 @@ export const Container = styled.div `
     align-items: center;
     
     @media(max-width: 1190px){
-        padding-left: 62px;
+        /* padding-left: 62px; */
     }
 
     color: ${({theme}) => theme.COLORS.H1_COLOR};
