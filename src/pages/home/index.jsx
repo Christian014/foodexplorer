@@ -40,7 +40,7 @@ export function Home(){
                 <div className="meals">
 
                     
-                    <h2 className="h2-mobile">Pratos Principais</h2>
+                    <h2 className="h2-mobile">Refeições</h2>
                     <div className="dishes">
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Refeições</h2>
@@ -49,7 +49,7 @@ export function Home(){
 
                     </div>
 
-                    <h2 className="h2-mobile">Pratos Principais</h2>
+                    <h2 className="h2-mobile">Sobremesas</h2>
                     
                     <div className="dishes">
                     <div className="h2-dishes">
@@ -60,7 +60,7 @@ export function Home(){
 
                     </div>
 
-                    <h2 className="h2-mobile">Pratos Principais</h2>
+                    <h2 className="h2-mobile">Bebidas</h2>
                     
                     <div className="dishes">
                     <div className="h2-dishes">
