@@ -15,12 +15,12 @@ export function SignUp() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const [button, setButton] = useState("Cadastrando")
+    const [button, setButton] = useState("Cadastrar")
 
     //tirando o default do button e chamando os states funcao handleSignUp
     async function stopDefAction(evt) {
         evt.preventDefault();
-        setButton(button)
+        setButton("Cadastrando")
         console.log(name, email, password)
 
         if(!name || !email || !password){
@@ -86,7 +86,7 @@ export function SignUp() {
                     </div>
             
                     <div className="auth-buttons">
-                        <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e)}}>Cadastrar</Button>
+                        <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e)}}>{button}</Button>
                         
                         <Link to="/">Ja tenho uma conta</Link>
                     </div>
