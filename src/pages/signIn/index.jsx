@@ -6,7 +6,7 @@ import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { TitleAndLogo } from "../../components/titleAndLogo";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 export function SignIn() {
 
@@ -29,7 +29,12 @@ export function SignIn() {
         api.post("/login", {email, password})
         .then((res) => {
             if(res.status === 200){
-                setButton("Carregando")
+
+                setTimeout(() => {
+                    setButton("Carregando")
+                  }, 3000);
+                
+                
             }
         })
         .catch((error) => {
