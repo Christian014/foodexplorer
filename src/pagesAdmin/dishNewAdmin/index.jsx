@@ -62,7 +62,7 @@ export function DishNewAdmin() {
             .then((res) => {
                 if (res.status === 200) {
                     
-                    window.location("/")
+                    window.location.href("/")
                     alert("Cadastrado com sucesso");
                 }
             }).catch((error) => {
