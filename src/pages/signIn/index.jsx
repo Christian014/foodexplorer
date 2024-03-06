@@ -30,10 +30,11 @@ export function SignIn() {
         .then((res) => {
             if(res.status === 200){
 
+                setButton("Carregando")
                 setTimeout(() => {
                     console.log("carregando")
                 }, 3000);
-                setButton("Carregando")
+                
                 
                 
             }
