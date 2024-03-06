@@ -1,7 +1,6 @@
 import { Container } from "./style";
 
 import { Link } from "react-router-dom";
-import { redirect } from 'react-router-dom';
 import { useState } from "react";
 
 import { Input } from "../../components/input";
@@ -35,7 +34,7 @@ export function SignUp() {
            if(res.status == 200){
                
                 alert("cadastrado com sucesso")
-                return redirect("/")
+                window.location.href = "/";
            }
         })
         .catch((error => {
