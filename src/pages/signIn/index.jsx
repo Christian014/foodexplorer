@@ -21,14 +21,14 @@ export function SignIn() {
         signIn({ email, password });
         
         evt.preventDefault();
-
+        setButton("Carregando")
         if(!email || !password){
             return alert("digite todos os campos");
         }
 
         api.post("/login", {email, password})
         .then((res) => {
-            setButton("Carregando")
+            
             if(res.status === 200){
                 console.log("carregando")
                 
