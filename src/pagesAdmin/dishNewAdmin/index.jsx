@@ -61,6 +61,8 @@ export function DishNewAdmin() {
         api.post("/dish", formData)
             .then((res) => {
                 if (res.status === 200) {
+                    
+                    window.location("/")
                     alert("Cadastrado com sucesso");
                 }
             }).catch((error) => {
