@@ -15,11 +15,12 @@ export function SignUp() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const [button, setButton] = useState()
 
     //tirando o default do button e chamando os states funcao handleSignUp
     async function stopDefAction(evt) {
         evt.preventDefault();
-        console.log("click")
+        setButton("Cadastrando")
         console.log(name, email, password)
 
         if(!name || !email || !password){
@@ -33,7 +34,7 @@ export function SignUp() {
 
            if(res.status == 200){
                
-                alert("cadastrado com sucesso")
+                
                 window.location.href = "/";
            }
         })
