@@ -15,7 +15,7 @@ export function SignUp() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    const [button, setButton] = useState()
+    const [button, setButton] = useState("")
 
     //tirando o default do button e chamando os states funcao handleSignUp
     async function stopDefAction(evt) {
