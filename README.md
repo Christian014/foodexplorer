@@ -40,3 +40,5 @@ Executando o FrontEnd
 - 0 navegue até o diretorio foodexplorer
 - 1 npm install
 - 2 npm run dev
+
+- deploy https://foodexplorerdevchris.netlify.app/
