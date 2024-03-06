@@ -14,6 +14,7 @@ export function SignIn() {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [button, setButton] = useState("Entrar")
 
     function login(evt){
         
@@ -28,7 +29,7 @@ export function SignIn() {
         api.post("/login", {email, password})
         .then((res) => {
             if(res.status === 200){
-                alert("logado com sucesso")
+                setButton("Carregando")
             }
         })
         .catch((error) => {
@@ -68,7 +69,7 @@ export function SignIn() {
 
                     </div>
 
-                    <Button onClick = {login}>Entrar</Button>
+                    <Button onClick = {login}>{button}</Button>
 
                     <Link to="/signUp">Criar uma conta</Link>
 
