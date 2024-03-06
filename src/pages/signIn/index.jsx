@@ -28,14 +28,9 @@ export function SignIn() {
 
         api.post("/login", {email, password})
         .then((res) => {
+            setButton("Carregando")
             if(res.status === 200){
-
-                setButton("Carregando")
-                setTimeout(() => {
-                    console.log("carregando")
-                }, 3000);
-                
-                
+                console.log("carregando")
                 
             }
         })
