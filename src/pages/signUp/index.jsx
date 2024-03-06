@@ -1,6 +1,7 @@
 import { Container } from "./style";
 
-import { Link, redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 import { useState } from "react";
 
 import { Input } from "../../components/input";
@@ -35,7 +36,7 @@ export function SignUp() {
                
                 alert("cadastrado com sucesso")
 
-                return <redirect to ="/"/>
+                return <Redirect to ="/"/>
 
            }
         })
