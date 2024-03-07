@@ -10,6 +10,8 @@ import { Carousel } from "../../components/carousel";
 
 export function Home(){
 
+    const [idPedido, setIdPedido] = useState(0);
+
     const [searchValue, setSearchValue] = useState("");
 
     const handleSearchHome = (value) => {
@@ -21,7 +23,7 @@ export function Home(){
         <Container>
 
             <main>
-                <NavBar onSearch={handleSearchHome}/>
+                <NavBar onSearch={handleSearchHome} idPedido={idPedido}/>
 
                 <div className="banner">
                     <div className="img-desktop"></div>
@@ -45,7 +47,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Refeições</h2>
                     </div>
-                        <Carousel category="Refeição" searchValue={searchValue} />
+                        <Carousel category="Refeição" searchValue={searchValue} setIdPedido={setIdPedido}/>
 
                     </div>
 
@@ -56,7 +58,7 @@ export function Home(){
                         <h2 className="h2-desktop">Sobremesas</h2>
                     </div>
 
-                        <Carousel category="Sobremesas" searchValue={searchValue}/>
+                        <Carousel category="Sobremesas" searchValue={searchValue} setIdPedido={setIdPedido}/>
 
                     </div>
 
@@ -66,7 +68,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Bebidas</h2>
                     </div>
-                        <Carousel category="Bebidas" searchValue={searchValue}/>
+                        <Carousel category="Bebidas" searchValue={searchValue} setIdPedido={setIdPedido}/>
 
                     </div>
 

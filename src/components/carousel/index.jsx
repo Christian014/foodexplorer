@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 
 
-export function Carousel({ category, searchValue }) {
+export function Carousel({ category, searchValue, setIdPedido }) {
 
   const [filteredDishes, setFilteredDishes] = useState([]);
 
@@ -81,6 +81,8 @@ export function Carousel({ category, searchValue }) {
               name={dish.name}
               price={dish.price}
               description={dish.description}
+              setIdPedido={setIdPedido}
+              
             />
           </SwiperSlide>
         ))}

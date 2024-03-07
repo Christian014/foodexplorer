@@ -14,8 +14,9 @@ import { Link } from "react-router-dom";
 
 
 
-export function Dish({ image, name, price, category, ingredients, description, id, onClick }) {
+export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido }) {
 
+    
 
     const [dishAmount, setDishAmount] = useState(1);
     
@@ -43,7 +44,23 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
         setClasseAtiva((estadoAtual) => !estadoAtual);
     };
+        
 
+        const [pedido, setPedido] = useState(0);
+        const [idPedidos, setIdPedidos] = useState([]);
+        
+        function incluirPedido(id) {
+            
+            setPedido(dishAmount)
+            setIdPedido = setIdPedido(pedido + dishAmount);
+            
+            setIdPedidos([...idPedidos, id]);
+            
+            console.log("pedido", pedido);
+        }
+
+        console.log(idPedidos);
+        
 
 
     return (
@@ -77,7 +94,7 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
             </div>
 
-            <Button>inluir</Button>
+            <Button onClick={() => incluirPedido(id)}>inluir</Button>
         </Container>
 
     )

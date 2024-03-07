@@ -68,6 +68,7 @@ export const Container = styled.div `
                 font-family: 'Roboto';
                 font-weight: 400;
                 font-size: 12px;
+                cursor: pointer;
             }
         }
 
