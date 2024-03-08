@@ -19,10 +19,11 @@ export function Carousel({ category, searchValue, setIdPedido }) {
 
   useEffect(() => {
     async function fetchDataDishes() {
+      
       try {
         const response = await api.get("/dish");
         let filteredByCategory = response.data.filter(dish => dish.category === category);
-        console.log(filteredByCategory)
+        
         if (searchValue) {
           filteredByCategory = filteredByCategory.filter(dish => 
               dish.name.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -38,6 +39,10 @@ export function Carousel({ category, searchValue, setIdPedido }) {
 
     fetchDataDishes();
   }, [category, searchValue]);
+
+  const handleSelectDish = (id) => {
+    setIdPedido(id);
+  };
 
   return (
 
@@ -82,6 +87,7 @@ export function Carousel({ category, searchValue, setIdPedido }) {
               price={dish.price}
               description={dish.description}
               setIdPedido={setIdPedido}
+              onSelectDish={handleSelectDish}
               
             />
           </SwiperSlide>

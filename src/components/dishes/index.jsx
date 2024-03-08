@@ -16,10 +16,10 @@ import { Link } from "react-router-dom";
 
 export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido }) {
 
-    
+
 
     const [dishAmount, setDishAmount] = useState(1);
-    
+
     const incrementDishAmount = () => {
 
         setDishAmount((prevAmount) => prevAmount + 1);
@@ -39,28 +39,25 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
     const [classeAtiva, setClasseAtiva] = useState(false);
 
-
     const alternarClasse = () => {
 
         setClasseAtiva((estadoAtual) => !estadoAtual);
     };
-        
 
-        const [pedido, setPedido] = useState(0);
-        const [idPedidos, setIdPedidos] = useState([]);
-        
-        function incluirPedido(id) {
-            
-            setPedido(dishAmount)
-            setIdPedido = setIdPedido(pedido + dishAmount);
-            
-            setIdPedidos([...idPedidos, id]);
-            
-            console.log("pedido", pedido);
-        }
 
-        console.log(idPedidos);
+    const [pedido, setPedido] = useState(0);
+    const [idPedidos, setIdPedidos] = useState([id]);
+
+    function incluirPedido(id) {
+
+        setPedido([...idPedidos, id])
         
+        setIdPedido = setIdPedido(idPedidos);
+
+        setIdPedidos([...idPedidos, id]);
+    }
+
+
 
 
     return (

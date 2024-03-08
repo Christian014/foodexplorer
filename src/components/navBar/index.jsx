@@ -18,8 +18,8 @@ import exitDesktop from "../../assets/exitDesktop.png";
 import { useState } from "react";
 
 
-export function NavBar({ onSearch, idPedido }) {
-    const [pedido, setPedido] = useState(0);
+export function NavBar({ onSearch, idPedido, setIdPedido }) {
+    
 
     const { logOut } = useAuth();
     const [searchValue, setSearchValue] = useState("");
@@ -57,7 +57,7 @@ export function NavBar({ onSearch, idPedido }) {
                 <img className="exit-desktop" src={exitDesktop} alt="" onClick={logOut} />
 
                 <div className="pedidos">
-                    <Link to="/requestDish">
+                    <Link to="/requestDish" state={{idPedido}}>
                         <img className="img-pedido" src={Pedidos} alt="" />
                         <span>{idPedido}</span>
                     </Link>

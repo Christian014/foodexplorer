@@ -32,7 +32,7 @@ export function Dish() {
 
     useEffect(() => {
         async function PreviewDish() {
-            console.log("ola", id)
+
             try {
                 const dados = await api.post("/dishPreView", { id })
                 const previewDish = dados.data

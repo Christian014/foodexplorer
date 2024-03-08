@@ -18,12 +18,13 @@ export function Home(){
         setSearchValue(value);
     };
 
+    console.log(setIdPedido)
     return(
 
         <Container>
 
             <main>
-                <NavBar onSearch={handleSearchHome} idPedido={idPedido}/>
+                <NavBar onSearch={handleSearchHome} idPedido={idPedido} setIdPedido={setIdPedido}/>
 
                 <div className="banner">
                     <div className="img-desktop"></div>

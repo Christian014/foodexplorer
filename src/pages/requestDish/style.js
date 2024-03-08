@@ -44,13 +44,14 @@ export const Container = styled.div `
     gap: 25px;
     
     .one-pedido{
-
+        
         display: flex;
         
         gap: 13px;
         align-items: center;
 
         img{
+            border-radius: 50%;
             width: 72px;
             height: 72px;
         }
