@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 
 
-export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido }) {
+export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds }) {
 
 
 
@@ -48,13 +48,14 @@ export function Dish({ image, name, price, category, ingredients, description, i
     const [pedido, setPedido] = useState(0);
     const [idPedidos, setIdPedidos] = useState([id]);
 
+    
     function incluirPedido(id) {
-
         setPedido([...idPedidos, id])
         
         setIdPedido = setIdPedido(idPedidos);
-
         setIdPedidos([...idPedidos, id]);
+        
+        setIds(prevIds => [...prevIds, id]);
     }
 
 

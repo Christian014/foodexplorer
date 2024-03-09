@@ -18,7 +18,8 @@ export function Home(){
         setSearchValue(value);
     };
 
-    console.log(setIdPedido)
+    
+    
     return(
 
         <Container>

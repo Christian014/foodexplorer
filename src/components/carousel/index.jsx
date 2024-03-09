@@ -17,6 +17,7 @@ export function Carousel({ category, searchValue, setIdPedido }) {
 
   const [filteredDishes, setFilteredDishes] = useState([]);
 
+  const [idPedidosCarousel, setIdPedidosCarousel] = useState([]);
   useEffect(() => {
     async function fetchDataDishes() {
       
@@ -43,6 +44,8 @@ export function Carousel({ category, searchValue, setIdPedido }) {
   const handleSelectDish = (id) => {
     setIdPedido(id);
   };
+
+  console.log("Ids de pedidos no Carousel:", idPedidosCarousel);
 
   return (
 
@@ -87,8 +90,8 @@ export function Carousel({ category, searchValue, setIdPedido }) {
               price={dish.price}
               description={dish.description}
               setIdPedido={setIdPedido}
+              setIds={setIdPedidosCarousel}
               onSelectDish={handleSelectDish}
-              
             />
           </SwiperSlide>
         ))}
