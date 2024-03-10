@@ -68,7 +68,7 @@ export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPe
             
           },
 
-          600:{
+          750:{
             slidesPerView: 3,
             spaceBetween: 20
           },
