@@ -11,9 +11,11 @@ export function RequestDish({image, name}){
     const { state } = useLocation();
     const idPedido = state;
     const id = idPedido.idPedido[0]
-    console.log(id)
-
+    
+    const [idsreq, setIdsReq] = useState([])
     const [data, setData] = useState("")
+    console.log("dasdadsadsadsadas",idPedido)
+    //idpedido esta recebendo o arrays com os ids
 
     useEffect(() => {
         async function dishes(){
@@ -23,7 +25,6 @@ export function RequestDish({image, name}){
                     const response = data.data
 
                     const oneDish = response.response
-                    console.log(oneDish)
                     setData(oneDish)
                 }else{
                     console.log("sem id")

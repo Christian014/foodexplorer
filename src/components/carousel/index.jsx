@@ -46,8 +46,6 @@ export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPe
     setIdPedido(id);
     setIds(prevIds => [...prevIds, id]);
   };
-  console.log("Ids de pedidos no Carousel:", idPedidosCarousel);
-
 
   return (
 

@@ -25,13 +25,12 @@ export function Home(){
         setIdPedidosAll((prevIds) => [...prevIds, idPedido])
         
     }
-    console.log(idPedidosAll)
     return(
 
         <Container>
 
             <main>
-                <NavBar onSearch={handleSearchHome} idPedido={idPedido} setIdPedido={setIdPedido} />
+                <NavBar onSearch={handleSearchHome} idPedido={idPedidosAll} setIdPedido={setIdPedido} />
 
                 <div className="banner">
                     <div className="img-desktop"></div>
