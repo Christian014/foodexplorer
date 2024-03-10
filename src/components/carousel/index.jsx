@@ -74,11 +74,11 @@ export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPe
           },
           800: {
             slidesPerView: 3,
-            spaceBetween: 20
+            spaceBetween: 30
           },
           1024: {
             slidesPerView: 4,
-            spaceBetween: 20
+            spaceBetween: 30
           }}}
       >
         {filteredDishes.map(dish => (

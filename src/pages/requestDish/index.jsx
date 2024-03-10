@@ -3,7 +3,7 @@ import {NavBar} from "../../components/navBar";
 import {Footer} from "../../components/footer"
 import { Button } from "../../components/button";
 import { useLocation } from 'react-router-dom';
-import camaron400 from "../../assets/dish/camaron400.png"
+
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 export function RequestDish({image, name}){
@@ -12,10 +12,9 @@ export function RequestDish({image, name}){
     const idPedido = state;
     const id = idPedido.idPedido[0]
     
-    const [idsreq, setIdsReq] = useState([])
     const [data, setData] = useState("")
     console.log("dasdadsadsadsadas",idPedido)
-    //idpedido esta recebendo o arrays com os ids
+    //idpedido esta recebendo lista com os ids
 
     useEffect(() => {
         async function dishes(){

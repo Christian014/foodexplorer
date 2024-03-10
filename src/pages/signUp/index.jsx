@@ -33,8 +33,7 @@ export function SignUp() {
         .then((res) => {
 
            if(res.status == 200){
-               
-                
+                alert("cadastrado com sucesso")
                 window.location.href = "/";
            }
         })
