@@ -13,11 +13,12 @@ import { useState } from 'react';
 
 
 
-export function Carousel({ category, searchValue, setIdPedido }) {
+export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPedidoCarousel }) {
 
   const [filteredDishes, setFilteredDishes] = useState([]);
 
   const [idPedidosCarousel, setIdPedidosCarousel] = useState([]);
+  
   useEffect(() => {
     async function fetchDataDishes() {
       
@@ -43,9 +44,10 @@ export function Carousel({ category, searchValue, setIdPedido }) {
 
   const handleSelectDish = (id) => {
     setIdPedido(id);
+    setIds(prevIds => [...prevIds, id]);
   };
-
   console.log("Ids de pedidos no Carousel:", idPedidosCarousel);
+
 
   return (
 
@@ -89,8 +91,10 @@ export function Carousel({ category, searchValue, setIdPedido }) {
               name={dish.name}
               price={dish.price}
               description={dish.description}
+              setIds={setIds}
               setIdPedido={setIdPedido}
-              setIds={setIdPedidosCarousel}
+              incluirPedidoCarousel={incluirPedidoCarousel}
+              
               onSelectDish={handleSelectDish}
             />
           </SwiperSlide>

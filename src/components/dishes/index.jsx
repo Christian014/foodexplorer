@@ -14,11 +14,11 @@ import { Link } from "react-router-dom";
 
 
 
-export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds }) {
-
-
-
+export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel }) {
+    
     const [dishAmount, setDishAmount] = useState(1);
+    const [idPedidos, setIdPedidos] = useState([]); // Corrigido aqui
+    const [classeAtiva, setClasseAtiva] = useState(false);
 
     const incrementDishAmount = () => {
 
@@ -36,27 +36,17 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
     };
 
-
-    const [classeAtiva, setClasseAtiva] = useState(false);
-
     const alternarClasse = () => {
 
         setClasseAtiva((estadoAtual) => !estadoAtual);
     };
-
-
-    const [pedido, setPedido] = useState(0);
-    const [idPedidos, setIdPedidos] = useState([id]);
-
     
-    function incluirPedido(id) {
-        setPedido([...idPedidos, id])
-        
-        setIdPedido = setIdPedido(idPedidos);
-        setIdPedidos([...idPedidos, id]);
-        
+    const handleAddToCart = () => {
+        setIdPedido(id);
         setIds(prevIds => [...prevIds, id]);
-    }
+        incluirPedidoCarousel(id); // Chama a função para o Carousel também
+        console.log("IDs de pedidos incluídos:", id);
+      };
 
 
 
@@ -92,7 +82,7 @@ export function Dish({ image, name, price, category, ingredients, description, i
 
             </div>
 
-            <Button onClick={() => incluirPedido(id)}>inluir</Button>
+            <Button onClick={() => handleAddToCart(id)}>incluir</Button>
         </Container>
 
     )
