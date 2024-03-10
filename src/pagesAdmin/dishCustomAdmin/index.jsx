@@ -80,7 +80,7 @@ export function DishCustomAdmin() {
     async function deleteDish(){
         try{
             api.delete(`/dish/${id}`)
-            alert("prato deletado")
+             return alert("prato deletado")
         }catch{
             alert("erro ao deletar")
         }
