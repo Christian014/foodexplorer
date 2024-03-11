@@ -18,12 +18,20 @@ import exitDesktop from "../../assets/exitDesktop.png";
 import { useState } from "react";
 
 
-export function NavBar({ onSearch, idPedido, setIdPedido }) {
+export function NavBar({ onSearch, idPedido, setIdPedido, qtdRequestDish }) {
     
 
     const { logOut } = useAuth();
     const [searchValue, setSearchValue] = useState("");
-
+    const [numRequestDish, setNumRequestDish] = useState([])
+    
+    const arrayPedidos = []
+    
+    if(qtdRequestDish){
+        arrayPedidos.push(qtdRequestDish)
+        console.log("array", arrayPedidos)
+    }
+    
     const handleSearchHome = (value) => {
         setSearchValue(value);
         onSearch(value);
@@ -57,9 +65,9 @@ export function NavBar({ onSearch, idPedido, setIdPedido }) {
                 <img className="exit-desktop" src={exitDesktop} alt="" onClick={logOut} />
 
                 <div className="pedidos">
-                    <Link to="/requestDish" state={{idPedido}}>
+                    <Link to="/requestDish" state={{idPedido, qtdRequestDish}}>
                         <img className="img-pedido" src={Pedidos} alt="" />
-                        <span>{idPedido}</span>
+                        <span>{!qtdRequestDish ? 0 : qtdRequestDish}</span>
                     </Link>
                 </div>
             </div>

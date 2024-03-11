@@ -6,12 +6,17 @@ import { useLocation } from 'react-router-dom';
 
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
+
 export function RequestDish(){
 
     const { state } = useLocation();
-    const idPedido = state;
     
+    const idPedido = state;
+    const qtdRequestDish = state.qtdRequestDish
+
     const [data, setData] = useState([])
+
+    console.log(qtdRequestDish)
 
     useEffect(() => {
         async function dishes(){

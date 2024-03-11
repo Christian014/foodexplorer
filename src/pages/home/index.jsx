@@ -13,6 +13,7 @@ export function Home(){
     const [ids, setIds] = useState([])
     const [idPedido, setIdPedido] = useState(0);
     const [idPedidosAll, setIdPedidosAll] = useState([]);
+    const [qtdRequestDish, setQtdRequestDish] = useState(0)
 
     const [searchValue, setSearchValue] = useState("");
 
@@ -23,14 +24,15 @@ export function Home(){
     
     const incluirPedidoCarousel = (idPedido) => {
         setIdPedidosAll((prevIds) => [...prevIds, idPedido])
-        
     }
+
+    console.log(qtdRequestDish)
     return(
 
         <Container>
 
             <main>
-                <NavBar onSearch={handleSearchHome} idPedido={idPedidosAll} setIdPedido={setIdPedido} />
+                <NavBar onSearch={handleSearchHome} idPedido={idPedidosAll} setIdPedido={setIdPedido} qtdRequestDish={qtdRequestDish}  />
 
                 <div className="banner">
                     <div className="img-desktop"></div>
@@ -54,7 +56,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Refeições</h2>
                     </div>
-                        <Carousel category="Refeição" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds}/>
+                        <Carousel category="Refeição" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds} setQtdRequestDish={setQtdRequestDish}/>
 
                     </div>
 
@@ -65,7 +67,7 @@ export function Home(){
                         <h2 className="h2-desktop">Sobremesas</h2>
                     </div>
 
-                        <Carousel category="Sobremesas" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds}/>
+                        <Carousel category="Sobremesas" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds} setQtdRequestDish={setQtdRequestDish}/>
 
                     </div>
 
@@ -75,7 +77,7 @@ export function Home(){
                     <div className="h2-dishes">
                         <h2 className="h2-desktop">Bebidas</h2>
                     </div>
-                        <Carousel category="Bebidas" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds}/>
+                        <Carousel category="Bebidas" searchValue={searchValue} setIdPedido={setIdPedido} incluirPedidoCarousel ={incluirPedidoCarousel} setIds={setIds} setQtdRequestDish={setQtdRequestDish}/>
 
                     </div>
 

@@ -14,10 +14,10 @@ import { Link } from "react-router-dom";
 
 
 
-export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel }) {
+export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish }) {
     
-    const [dishAmount, setDishAmount] = useState(1);
-    const [idPedidos, setIdPedidos] = useState([]); // Corrigido aqui
+    const [dishAmount, setDishAmount] = useState(0);
+    
     const [classeAtiva, setClasseAtiva] = useState(false);
 
     const incrementDishAmount = () => {
@@ -46,6 +46,7 @@ export function Dish({ image, name, price, category, ingredients, description, i
         setIds(prevIds => [...prevIds, id]);
         incluirPedidoCarousel(id); // Chama a função para o Carousel também
         console.log("IDs de pedidos incluídos:", id);
+        setQtdRequestDish(dishAmount)
       };
 
 
