@@ -4,7 +4,9 @@ export const Container = styled.div `
         width: 100%;
         height: 100vh;
 
-        
+        span{
+            color: white;
+        }
 
         h1.title{
             
@@ -57,6 +59,8 @@ export const Container = styled.div `
         }
 
         .title-and-remove{
+            display: flex;
+            flex-direction: column;
             h2{
                 line-height: 32px;
                 font-size: 20px;

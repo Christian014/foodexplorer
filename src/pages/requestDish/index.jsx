@@ -10,13 +10,13 @@ import { useEffect, useState } from "react";
 export function RequestDish(){
 
     const { state } = useLocation();
-    
+
     const idPedido = state;
-    const qtdRequestDish = state.qtdRequestDish
+    
+    const arrayRequest= state.arrayRequest
 
+    const soma = arrayRequest.reduce((total, valor) => total + valor, 0);
     const [data, setData] = useState([])
-
-    console.log(qtdRequestDish)
 
     useEffect(() => {
         async function dishes(){
@@ -26,6 +26,7 @@ export function RequestDish(){
                     const arrayObectDish =  data.data.response
 
                     setData(arrayObectDish)
+                    
                 }else{
                     console.log("sem id")
                 }
@@ -38,11 +39,15 @@ export function RequestDish(){
         dishes()
     }, [])
     
-
+    const arrayPrice = data.map((price, index) => [price.price.replace(",", ".")])
+    const prices = arrayPrice.map(price => parseFloat(price));
+    const priceTotal = prices.reduce((totalprice, valorprice) => totalprice + valorprice, 0);
+    const priceTotalString = String(priceTotal).replace(".", ",")
+    console.log(priceTotalString)
     
     return(
         <Container>
-            <NavBar className="navbar" />
+            <NavBar className="navbar" qtdRequestDish={soma}/>
 
             <main>
                 <div className="pedido-title">
@@ -53,18 +58,19 @@ export function RequestDish(){
 
                     
 
-                    {data.map(dish => (<div className="one-pedido" key={dish.id}>
+                    {data.map((dish, index) => (<div className="one-pedido" key={dish.id}>
                         <img src={`https://api-foodexplorer-si8p.onrender.com/dish/${dish.image}`} alt="" />
 
+                            <span>{arrayRequest[index]}</span>
                         <div className="title-and-remove">
                             <h2>{dish.name}</h2>
-                            <p>Remover dos Favoritos</p>
+                            <p>Remover dos Pedidos</p>
                         </div>
-  
+ 
                     </div>))}
 
                     <div className="price-total">
-                        <p className="price">Total: R$ 103,88</p>
+                        <p className="price">Total: R${priceTotalString}</p>
                     </div>
        
                 </div>

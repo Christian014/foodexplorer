@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 
 
-export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish }) {
+export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish, setArrayRequest }) {
 
   const [filteredDishes, setFilteredDishes] = useState([]);
   
@@ -43,7 +43,6 @@ export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPe
   const handleSelectDish = (id) => {
     setIdPedido(id);
     setIds(prevIds => [...prevIds, id]);
-    setQtdRequestDish()
   };
 
   return (
@@ -92,6 +91,7 @@ export function Carousel({ category, searchValue, setIdPedido, setIds, incluirPe
               setIdPedido={setIdPedido}
               incluirPedidoCarousel={incluirPedidoCarousel}
               setQtdRequestDish={setQtdRequestDish}
+              setArrayRequest={setArrayRequest}
               onSelectDish={handleSelectDish}
             />
           </SwiperSlide>

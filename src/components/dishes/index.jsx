@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 
 
-export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish }) {
+export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish, setArrayRequest }) {
     
     const [dishAmount, setDishAmount] = useState(0);
     
@@ -44,9 +44,9 @@ export function Dish({ image, name, price, category, ingredients, description, i
     const handleAddToCart = () => {
         setIdPedido(id);
         setIds(prevIds => [...prevIds, id]);
-        incluirPedidoCarousel(id); // Chama a função para o Carousel também
-        console.log("IDs de pedidos incluídos:", id);
+        incluirPedidoCarousel(id);
         setQtdRequestDish(dishAmount)
+        setArrayRequest(prev => [...prev, dishAmount])
       };
 
 
