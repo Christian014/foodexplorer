@@ -20,6 +20,7 @@ export const Container = styled.div `
         main{
             margin-left: 35px;
             margin-top: 56px;
+            height: 70%;
 
             .btt{
                 display: flex;
@@ -34,13 +35,16 @@ export const Container = styled.div `
         }
 
         .footer{
+            margin-top: 5%;
             position: absolute;
-            width: 100%;
             bottom: 0;
+            width: 100%;
         }
 
 .pedidos{
 
+    height: 62%;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -79,8 +83,9 @@ export const Container = styled.div `
 
 
     }
+}
 
-    .price-total{
+.price-total{
         p{
             margin-top: 20px;
             color: white;
@@ -89,8 +94,4 @@ export const Container = styled.div `
             font-size: 20px;
         }
     }
-
-    
-}
-
 `;

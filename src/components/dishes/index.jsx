@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 
 export function Dish({ image, name, price, category, ingredients, description, id, onClick, setIdPedido, setIds, incluirPedidoCarousel, setQtdRequestDish, setArrayRequest }) {
     
-    const [dishAmount, setDishAmount] = useState(0);
+    const [dishAmount, setDishAmount] = useState(1);
     
     const [classeAtiva, setClasseAtiva] = useState(false);
 

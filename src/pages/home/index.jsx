@@ -29,7 +29,6 @@ export function Home(){
         setIdPedidosAll((prevIds) => [...prevIds, idPedido])
     }
 
-    console.log(qtdRequestDish)
     return(
 
         <Container>

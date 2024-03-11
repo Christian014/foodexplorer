@@ -39,11 +39,10 @@ export function RequestDish(){
         dishes()
     }, [])
     
-    const arrayPrice = data.map((price, index) => [price.price.replace(",", ".")])
+    const arrayPrice = data.map((price) => [price.price.replace(",", ".")])
     const prices = arrayPrice.map(price => parseFloat(price));
-    const priceTotal = prices.reduce((totalprice, valorprice) => totalprice + valorprice, 0);
-    const priceTotalString = String(priceTotal).replace(".", ",")
-    console.log(priceTotalString)
+    const priceTotal = prices.reduce((totalprice, valorprice) => totalprice + valorprice, 0).toFixed(2);
+    const priceTotalString = String(priceTotal).replace(".", ",");
     
     return(
         <Container>
@@ -69,11 +68,10 @@ export function RequestDish(){
  
                     </div>))}
 
-                    <div className="price-total">
-                        <p className="price">Total: R${priceTotalString}</p>
-                    </div>
-       
                 </div>
+                    <div className="price-total">
+                        <p className="price">Total: R$ {priceTotalString}</p>
+                    </div>
 
                 <div className="btt">
                     <div className="button">
