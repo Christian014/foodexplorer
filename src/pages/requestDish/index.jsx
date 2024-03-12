@@ -3,20 +3,27 @@ import { NavBar } from "../../components/navBar";
 import { Footer } from "../../components/footer"
 import { Button } from "../../components/button";
 import { useLocation } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
 export function RequestDish() {
-
+    
     const { state } = useLocation();
 
     const idPedido = state;
     const arrayRequest = state.arrayRequest
 
-    const soma = arrayRequest.reduce((total, valor) => total + valor, 0);
+    let soma = arrayRequest.reduce((total, pedido) => total + pedido, 0);
     const [data, setData] = useState([])
+    const [pedidos, setPedidos] = useState(soma)
 
+    function removeDish(index, arrayRequest){
+        const newDishes = data.filter((_, i) => i !== index)
+        setData(newDishes)
+ 
+        setPedidos(pedidos - arrayRequest)
+    }
+    
     useEffect(() => {
         async function dishes() {
 
@@ -35,7 +42,7 @@ export function RequestDish() {
                 console.log(error, "erro")
             }
         }
-
+        
         dishes()
     }, [])
 
@@ -48,7 +55,7 @@ export function RequestDish() {
     return (
         <Container>
 
-            <NavBar className="navbar" qtdRequestDish={soma} />
+            <NavBar className="navbar" qtdRequestDish={pedidos} />
 
 
             <main>
@@ -63,7 +70,7 @@ export function RequestDish() {
                         <span>{arrayRequest[index]}</span>
                         <div className="title-and-remove">
                             <h2>{dish.name}</h2>
-                            <p>Remover dos Pedidos</p>
+                            <p onClick={function remove(){removeDish(index, arrayRequest[index])}}>Remover dos Pedidos</p>
                         </div>
                     </div>))}
 

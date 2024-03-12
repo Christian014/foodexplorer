@@ -41,7 +41,9 @@ export function NavBar({ onSearch, idPedido, setIdPedido, qtdRequestDish, arrayR
                 </Link>
 
                 <div className="titleAndLogo">
-                    <TitleAndLogo />
+                    <Link to="/">
+                        <TitleAndLogo />
+                    </Link>
                 </div>
 
 
@@ -57,7 +59,7 @@ export function NavBar({ onSearch, idPedido, setIdPedido, qtdRequestDish, arrayR
                 <img className="exit-desktop" src={exitDesktop} alt="" onClick={logOut} />
 
                 <div className="pedidos">
-                    <Link to="/requestDish" state={{idPedido, qtdRequestDish, arrayRequest}}>
+                    <Link  to="/requestDish" state={{idPedido, qtdRequestDish, arrayRequest}}>
                         <img className="img-pedido" src={Pedidos} alt="" />
                         <span>{!qtdRequestDish ? 0 : qtdRequestDish}</span>
                     </Link>

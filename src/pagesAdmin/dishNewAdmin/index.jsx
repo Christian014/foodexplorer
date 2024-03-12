@@ -31,8 +31,6 @@ export function DishNewAdmin() {
         
         const newTags = ingredients.filter((_, i) => i !== index)
         setIngredients(newTags)
-        console.log(newTags)
-        console.log(index)
     }
     
 

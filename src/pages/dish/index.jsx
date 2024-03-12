@@ -54,7 +54,6 @@ export function Dish() {
     }
 
     const dividindoIngredients = ingredients.split(",")
-    console.log(dividindoIngredients)
 
 
     const tagsIngredients = dividindoIngredients.map((ingredient, index) => (
