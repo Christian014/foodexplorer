@@ -1,52 +1,55 @@
 import { Container } from "./style";
-import {NavBar} from "../../components/navBar";
-import {Footer} from "../../components/footer"
+import { NavBar } from "../../components/navBar";
+import { Footer } from "../../components/footer"
 import { Button } from "../../components/button";
 import { useLocation } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
 
-export function RequestDish(){
+export function RequestDish() {
 
     const { state } = useLocation();
 
     const idPedido = state;
-    
-    const arrayRequest= state.arrayRequest
+    const arrayRequest = state.arrayRequest
 
     const soma = arrayRequest.reduce((total, valor) => total + valor, 0);
     const [data, setData] = useState([])
 
     useEffect(() => {
-        async function dishes(){
-            try{
-                if(idPedido){
+        async function dishes() {
+
+            try {
+                if (idPedido) {
                     const data = await api.post("/dishRequest", idPedido)
-                    const arrayObectDish =  data.data.response
+                    const arrayObectDish = data.data.response
 
                     setData(arrayObectDish)
-                    
-                }else{
+
+                } else {
                     console.log("sem id")
                 }
-                
-            }catch(error){
+
+            } catch (error) {
                 console.log(error, "erro")
             }
         }
 
         dishes()
     }, [])
-    
+
     const arrayPrice = data.map((price) => [price.price.replace(",", ".")])
     const prices = arrayPrice.map(price => parseFloat(price));
-    const priceTotal = prices.reduce((totalprice, valorprice) => totalprice + valorprice, 0).toFixed(2);
-    const priceTotalString = String(priceTotal).replace(".", ",");
-    
-    return(
+
+    const priceFinal = data.map((dish, index) => arrayRequest[index] * prices[index]);
+    const finalPrice = priceFinal.reduce((accumulator, num) => accumulator + num, 0).toFixed(2)
+    const totalPrice = finalPrice.replace(".", ",")
+    return (
         <Container>
-            <NavBar className="navbar" qtdRequestDish={soma}/>
+
+            <NavBar className="navbar" qtdRequestDish={soma} />
+
 
             <main>
                 <div className="pedido-title">
@@ -54,28 +57,24 @@ export function RequestDish(){
                 </div>
 
                 <div className="pedidos">
-
-                    
-
                     {data.map((dish, index) => (<div className="one-pedido" key={dish.id}>
                         <img src={`https://api-foodexplorer-si8p.onrender.com/dish/${dish.image}`} alt="" />
 
-                            <span>{arrayRequest[index]}</span>
+                        <span>{arrayRequest[index]}</span>
                         <div className="title-and-remove">
                             <h2>{dish.name}</h2>
                             <p>Remover dos Pedidos</p>
                         </div>
- 
                     </div>))}
 
                 </div>
-                    <div className="price-total">
-                        <p className="price">Total: R$ {priceTotalString}</p>
-                    </div>
+                <div className="price-total">
+                    <p className="price">Total: R$ {totalPrice}</p>
+                </div>
 
                 <div className="btt">
                     <div className="button">
-                        <Button children="Avançar"/>
+                        <Button children="Avançar" />
                     </div>
                 </div>
 

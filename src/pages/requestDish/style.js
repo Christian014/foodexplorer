@@ -4,6 +4,9 @@ export const Container = styled.div `
         width: 100%;
         height: 100vh;
 
+        a{
+            text-decoration: none;
+        }
         span{
             color: white;
         }
