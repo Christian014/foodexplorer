@@ -54,7 +54,9 @@ export function NavBar({ onSearch, idPedido, setIdPedido, qtdRequestDish, arrayR
 
                 <div className="btt">
                     <img src={pedidos} alt="" />
-                    <Button children="Pedidos (0)" />
+                    <Link  to="/requestDish" state={{idPedido, qtdRequestDish, arrayRequest}}>
+                        <Button children={`Pedidos (${!qtdRequestDish ? 0 : qtdRequestDish})`} />
+                    </Link>    
                 </div>
                 <img className="exit-desktop" src={exitDesktop} alt="" onClick={logOut} />
 

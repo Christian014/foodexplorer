@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Container = styled.div `
+export const Container = styled.div`
         width: 100%;
         height: 100vh;
 
@@ -20,7 +20,8 @@ export const Container = styled.div `
     
         }
 
-        main{
+        @media(max-width: 1200px){
+            main{
             margin-left: 35px;
             margin-top: 56px;
             height: 70%;
@@ -76,7 +77,7 @@ export const Container = styled.div `
             }
 
             p{
-                color: ${({theme}) => theme.COLORS.BACKGROUND_BUTTON_SAVE};
+                color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_SAVE};
                 font-family: 'Roboto';
                 font-weight: 400;
                 font-size: 12px;
@@ -97,4 +98,247 @@ export const Container = styled.div `
             font-size: 20px;
         }
     }
+        }
+
+        @media(min-width: 1201px){
+            .hidden{
+                position: absolute;
+                visibility: hidden;
+            }
+            main{
+                width: 85%;
+                margin: 0 auto;
+                display: grid;
+                grid-template-areas: "title pagamento"
+                                    "dishes payment"
+                                    "priceTotal null"
+                                 ;
+            
+                margin-top: 56px;
+                height: 70%;
+
+            .pedido-title{
+                grid-area: title;
+                height: 10px;
+            }
+            .payment{
+                grid-area: payment-start;
+                margin-top: -45px;
+                h2{
+                    line-height: 32px;
+                    grid-area: pagamento;
+                    
+                    font-size: 32px;
+                    font-family: 'Poppins';
+                    color: white;
+                    margin-bottom: 15px;
+
+                }
+
+                .pix-and-card{
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                    border-radius: 8px;
+
+                    .pix-card{
+                        display: flex;
+                        text-align: center;
+                        align-items: center;
+                        
+                        p{
+                            height: 45px;
+                            img{
+                                width: 22px;
+                                height: 22px;
+                            }
+                            cursor: pointer;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 5px;
+                            color: white;
+                            padding: 30px;
+                            border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                            width: 50%;
+                            
+                        }
+
+                        p:hover{
+                            transition: .5s;
+                            background-color: ${({theme}) => theme.COLORS.BACKGROUND_INPUT_ADMIN};
+                        }
+
+                        .pix{
+                            border-radius: 8px 0 0 0;
+                        }
+
+                        .credit{
+                            border-radius: 0 8px 0 0;
+                        }
+                    }
+
+                    .qrcode{
+                        width: 100%;
+                        height: 84%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .credit{
+                        width: 100%;
+                        height: 60%;
+                        align-items: center;
+                        justify-content: center;
+                        display: flex;
+                        
+                        flex-direction: column;
+
+                        input{
+                            box-sizing: border-box;
+                            padding-left: 8px;
+                            border-radius: 8px;
+                            border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                            background: transparent;
+                            height: 45px;
+                        }
+
+                        .valid-cvc{
+                            gap: 16px;
+                        }
+
+                        .numCredit{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+
+                        .valid,.cvc{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+
+                        .num{
+                            margin-bottom: 37px;
+                        }
+
+                        .validated{
+                            width: 166px;
+                        }
+                        .cvc{
+                            width: 166px;
+                        }
+
+                        ::placeholder{
+                            
+                            color: ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                        }
+
+                        input.num{
+                            width: 348px;
+                        }
+
+                        p{
+                            color: white;
+                        }
+
+                        .valid-cvc{
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .pedidos{
+                grid-area: dishes;
+            }
+
+            .pix-and-card{
+                grid-area: payment;
+            }
+            .price-total{
+                grid-area: priceTotal;
+            }
+
+            .btt{
+                position: absolute;
+                visibility: hidden;
+                
+                .button{
+                    margin-top: 50px;
+                    margin-right: 37px;
+                    width: 216px;
+                }
+            }
+        }
+
+        .footer{
+            margin-top: 5%;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+    main>.pedidos{
+    width: 80%;
+    margin-top: 35px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    
+    .price{
+        color: white;
+    }
+    .one-pedido{
+        
+        display: flex;
+        
+        gap: 13px;
+        align-items: center;
+
+        img{
+            border-radius: 50%;
+            width: 72px;
+            height: 72px;
+        }
+
+        .title-and-remove{
+            display: flex;
+            flex-direction: column;
+            h2{
+                line-height: 32px;
+                font-size: 20px;
+                font-family: 'Poppins';
+                color: white;
+            }
+
+            p{
+                color: ${({ theme }) => theme.COLORS.BACKGROUND_BUTTON_SAVE};
+                font-family: 'Roboto';
+                font-weight: 400;
+                font-size: 12px;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+    
+}
+
+.price-total{
+        p{
+            margin-top: 20px;
+            color: white;
+            font-family: 'Poppins';
+            font-weight: 500;
+            font-size: 30px;
+        }
+    }
+        }
+        
 `;
