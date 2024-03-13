@@ -12,7 +12,7 @@ import meuoficialpix from "../../assets/meuoficialpix.png";
 import Vector from "../../assets/Vector.png";
 
 export function RequestDish() {
-    
+
     const { state } = useLocation();
 
     const idPedido = state;
@@ -21,22 +21,19 @@ export function RequestDish() {
     let soma = arrayRequest.reduce((total, pedido) => total + pedido, 0);
     const [data, setData] = useState([])
     const [pedidos, setPedidos] = useState(soma)
+    const [isActive, setIsActive] = useState(false);
 
-    function removeDish(index, arrayRequest){
+    function removeDish(index, arrayRequest) {
         const newDishes = data.filter((_, i) => i !== index)
         setData(newDishes)
- 
+
         setPedidos(pedidos - arrayRequest)
     }
 
-    const [isActive, setIsActive] = useState(false);
-    
-    
     const toggleClass = () => {
-            setIsActive(!isActive);
-        };
-    
-    
+        setIsActive(!isActive);
+    };
+
     useEffect(() => {
         async function dishes() {
 
@@ -55,7 +52,7 @@ export function RequestDish() {
                 console.log(error, "erro")
             }
         }
-        
+
         dishes()
     }, [])
 
@@ -65,6 +62,7 @@ export function RequestDish() {
     const priceFinal = data.map((dish, index) => arrayRequest[index] * prices[index]);
     const finalPrice = priceFinal.reduce((accumulator, num) => accumulator + num, 0).toFixed(2)
     const totalPrice = finalPrice.replace(".", ",")
+
     return (
         <Container>
 
@@ -83,7 +81,7 @@ export function RequestDish() {
                         <span>{arrayRequest[index]}</span>
                         <div className="title-and-remove">
                             <h2>{dish.name}</h2>
-                            <p onClick={function remove(){removeDish(index, arrayRequest[index])}}>Remover dos Pedidos</p>
+                            <p onClick={function remove() { removeDish(index, arrayRequest[index]) }}>Remover dos Pedidos</p>
                         </div>
                         <p className="price">R$ {arrayRequest[index] * prices[index]}</p>
                     </div>))}
@@ -111,26 +109,26 @@ export function RequestDish() {
                         </div>
 
                         <div className={isActive ? 'credit' : 'credit hidden'}>
-                                <div className="numCredit">
-                                    <p>Número do Cartão</p>
-                                    <input className="num" type="text" placeholder="0000 0000 0000 0000"/>
+                            <div className="numCredit">
+                                <p>Número do Cartão</p>
+                                <input className="num" type="text" placeholder="0000 0000 0000 0000" />
+                            </div>
+
+                            <div className="valid-cvc">
+                                <div className="valid">
+                                    <p>Validade</p>
+                                    <input className="validated" type="text" placeholder="04/25" />
                                 </div>
 
-                                <div className="valid-cvc">
-                                    <div className="valid">
-                                        <p>Validade</p>
-                                        <input className="validated" type="text" placeholder="04/25"/>
-                                    </div>
-
-                                    <div className="cvc">
-                                        <p>CVC</p>
-                                        <input className="cvc" type="password" placeholder="000"/>
-                                    </div>
+                                <div className="cvc">
+                                    <p>CVC</p>
+                                    <input className="cvc" type="password" placeholder="000" />
                                 </div>
+                            </div>
 
-                                <div className="finished-request-dish">
-                                    <Button image={Vector} children="Finalizar Pagamento"/>
-                                </div>
+                            <div className="finished-request-dish">
+                                <Button image={Vector} children="Finalizar Pagamento" />
+                            </div>
                         </div>
 
                     </div>
