@@ -107,7 +107,7 @@ export const Container = styled.div`
 
         @media(min-width: 1201px){
             .hidden{
-                position: absolute;
+                position: fixed;
                 visibility: hidden;
             }
             main{
@@ -142,6 +142,7 @@ export const Container = styled.div`
 
                 .pix-and-card{
                     width: 100%;
+                    
                     height: 100%;
                     border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
                     border-radius: 8px;
@@ -185,15 +186,17 @@ export const Container = styled.div`
 
                     .qrcode{
                         width: 100%;
-                        
+                        height: 80%;
                         display: flex;
                         align-items: center;
                         justify-content: center;
+
+                        
                     }
 
                     .credit{
                         width: 100%;
-                        height: 60%;
+                        height: 70%;
                         align-items: center;
                         justify-content: center;
                         display: flex;
@@ -251,6 +254,11 @@ export const Container = styled.div`
 
                         .valid-cvc{
                             display: flex;
+                        }
+
+                        .finished-request-dish{
+                            width: 340px;
+                            margin-top: 32px;
                         }
                     }
                 }

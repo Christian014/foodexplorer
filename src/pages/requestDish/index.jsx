@@ -8,7 +8,8 @@ import { useEffect, useState } from "react";
 
 import credit from "../../assets/credit.png";
 import pix from "../../assets/pix.png";
-import meuoficialpix from "../../assets/meuoficialpix.png"
+import meuoficialpix from "../../assets/meuoficialpix.png";
+import Vector from "../../assets/Vector.png";
 
 export function RequestDish() {
     
@@ -28,10 +29,13 @@ export function RequestDish() {
         setPedidos(pedidos - arrayRequest)
     }
 
-    const [payment, setPayment] = useState("")
-    function handlePayment(){
-
-    }
+    const [isActive, setIsActive] = useState(false);
+    
+    
+    const toggleClass = () => {
+            setIsActive(!isActive);
+        };
+    
     
     useEffect(() => {
         async function dishes() {
@@ -98,15 +102,15 @@ export function RequestDish() {
                     <h2>Pagamento</h2>
                     <div className="pix-and-card">
                         <div className="pix-card">
-                            <p className="pix"> <img src={pix} alt="" /> Pix</p>
-                            <p className="credit"> <img src={credit} alt="" /> Credito</p>
+                            <p className="pix" onClick={toggleClass}> <img src={pix} alt="" /> Pix</p>
+                            <p className="credit" onClick={toggleClass}> <img src={credit} alt="" /> Credito</p>
                         </div>
 
-                        <div className="qrcode hidden">
+                        <div className={isActive ? 'qrcode hidden' : 'qrcode '}>
                             <img src={meuoficialpix} alt="" />
                         </div>
 
-                        <div className="credit">
+                        <div className={isActive ? 'credit' : 'credit hidden'}>
                                 <div className="numCredit">
                                     <p>Número do Cartão</p>
                                     <input className="num" type="text" placeholder="0000 0000 0000 0000"/>
@@ -122,6 +126,10 @@ export function RequestDish() {
                                         <p>CVC</p>
                                         <input className="cvc" type="password" placeholder="000"/>
                                     </div>
+                                </div>
+
+                                <div className="finished-request-dish">
+                                    <Button image={Vector} children="Finalizar Pagamento"/>
                                 </div>
                         </div>
 
