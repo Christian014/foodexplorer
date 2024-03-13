@@ -180,7 +180,7 @@ export const Container = styled.div`
 
                     .qrcode{
                         width: 100%;
-                        height: 84%;
+                        
                         display: flex;
                         align-items: center;
                         justify-content: center;
