@@ -26,6 +26,11 @@ export const Container = styled.div`
             margin-top: 56px;
             height: 70%;
 
+            .payment{
+                position: fixed;
+                visibility: hidden;
+            }
+
             .btt{
                 display: flex;
                 justify-content: end;
