@@ -24,6 +24,7 @@ export function RequestDish() {
     const [pedidos, setPedidos] = useState(soma)
     const [isActive, setIsActive] = useState(false);
     const [isActiveMobile, setIsActiveMobile] = useState(false);
+    const [isButtonActive, setIsButtonActive] = useState(false);
 
     function removeDish(index, arrayRequest) {
         const newDishes = data.filter((_, i) => i !== index)
@@ -37,7 +38,8 @@ export function RequestDish() {
     };
 
     const toogleClassMobile = () => {
-        setIsActiveMobile(!isActiveMobile)
+        setIsButtonActive(true);
+        setIsActiveMobile(!isActiveMobile);
     }
     
 
@@ -65,8 +67,8 @@ export function RequestDish() {
 
     useEffect(() => {
         function handleResize() {
-            if (window.innerWidth < 1200) {
-                setIsActiveMobile(false);
+            if (window.innerWidth <= 1200 && isButtonActive) {
+                setIsActiveMobile(true);
             }
             else {
                 setIsActiveMobile(false);
@@ -75,11 +77,10 @@ export function RequestDish() {
 
         window.addEventListener('resize', handleResize);
 
-        // Remove o event listener quando o componente é desmontado
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    }, [isButtonActive]);
 
     const arrayPrice = data.map((price) => [price.price.replace(",", ".")])
     const prices = arrayPrice.map(price => parseFloat(price));
@@ -116,6 +117,7 @@ export function RequestDish() {
                 </div>
 
                 <div className={isActiveMobile ? "payment" : "btt"}>
+                    
                     <div className="button">
                     
                         <Button children="Avançar" onClick={toogleClassMobile}/>
