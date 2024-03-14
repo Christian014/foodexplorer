@@ -31,6 +31,128 @@ export const Container = styled.div`
                 visibility: hidden;
             }
 
+            .pixcard{
+                h2{
+                    line-height: 32px;
+                    grid-area: pagamento;
+                    
+                    font-size: 32px;
+                    font-family: 'Poppins';
+                    color: white;
+                    margin-bottom: 15px;
+                }
+
+                .pix-and-card{
+                    
+                    width: 80%;
+                    margin: 0 auto;
+                    border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                    border-radius: 8px 8px 0 0;
+                    .pix-card{
+                        display: flex;
+                        
+
+                        p{
+                            border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                            color: white;
+                            height: 80px;
+                            width: 50%;
+                            justify-content: center;
+                            align-items: center;
+                            display: flex;
+                        }
+
+                        .pix{
+                            border-radius: 8px 0 0 0;
+                        }
+                        .card-credit{
+                            border-radius: 0 8px 0 0;
+                        }
+
+                    }
+
+                    .qrcode{
+                            display: flex;
+                            img{
+                                width: 100%;
+                                padding: 30px;
+                                margin: 0 auto;
+                            }
+                        }
+                    .credit-div{
+                        width: 70%;
+                        margin: 0 auto;
+                        padding: 57px 0 57px 0;
+
+                        .numCredit{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 8px;
+
+                            p{
+                                color: ${({ theme }) => theme.COLORS.LABEL_COLOR};
+                            }
+                            .num{
+                                height: 48px;
+                                background-color: transparent;
+                                border-radius: 8px;
+                                border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
+                                padding-left: 10px;
+                            }
+
+                            ::placeholder{
+                                font-size: 16px;
+                                color: ${({ theme }) => theme.COLORS.LABEL_COLOR}
+                            }
+                        }
+
+                        .valid-cvc{
+                            display: flex;
+                            gap: 10px;
+                                .validated, .cvc-input{
+                                    height: 48px;
+                                    background-color: transparent;
+                                    border-radius: 8px;
+                                    border: 1px solid ${({ theme }) => theme.COLORS.    BACKGROUND_TAG_ADMIN};
+                                    padding-left: 10px;
+                                }
+
+                                .valid{
+                                    width: 100%;
+                                }
+                                .cvc{
+                                    width: 100%;
+                                }
+
+                                .valid,.cvc{
+                                    
+                                    margin-top: 37px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 8px;
+
+                                    p{
+                                        color: ${({ theme }) => theme.COLORS.LABEL_COLOR}
+                                    }
+                                }
+                            }
+                            ::placeholder{
+                                font-size: 16px;
+                                color: ${({ theme }) => theme.COLORS.LABEL_COLOR}
+                            }
+                    }
+
+                    .finished-request-dish{
+                        margin-top: 37px;
+
+                        img{
+                            position: absolute;
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+
             .btt{
                 display: flex;
                 justify-content: end;
@@ -104,6 +226,7 @@ export const Container = styled.div`
         }
     }
         }
+        
 
         @media(min-width: 1201px){
             .hidden{

@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 import credit from "../../assets/credit.png";
 import pix from "../../assets/pix.png";
-import meuoficialpix from "../../assets/meuoficialpix.png";
+import meuoficialpix from "../../assets/meuoficialpix1.png";
 import Vector from "../../assets/Vector.png";
 
 export function RequestDish() {
@@ -22,6 +22,7 @@ export function RequestDish() {
     const [data, setData] = useState([])
     const [pedidos, setPedidos] = useState(soma)
     const [isActive, setIsActive] = useState(false);
+    const [isActiveMobile, setIsActiveMobile] = useState(false);
 
     function removeDish(index, arrayRequest) {
         const newDishes = data.filter((_, i) => i !== index)
@@ -30,9 +31,14 @@ export function RequestDish() {
         setPedidos(pedidos - arrayRequest)
     }
 
-    const toggleClass = () => {
+    const toggleClassDesktop = () => {
         setIsActive(!isActive);
     };
+
+    const toogleClassMobile = () => {
+        setIsActiveMobile(!isActiveMobile)
+    }
+    
 
     useEffect(() => {
         async function dishes() {
@@ -70,11 +76,11 @@ export function RequestDish() {
 
 
             <main>
-                <div className="pedido-title">
+                <div className={isActiveMobile ? "payment" : "pedido-title"}>
                     <h1 className="title">Meu Pedido</h1>
                 </div>
 
-                <div className="pedidos">
+                <div className={isActiveMobile ? "payment" : "pedidos"}>
                     {data.map((dish, index) => (<div className="one-pedido" key={dish.id}>
                         <img src={`https://api-foodexplorer-si8p.onrender.com/dish/${dish.image}`} alt="" />
 
@@ -86,29 +92,29 @@ export function RequestDish() {
                         <p className="price">R$ {arrayRequest[index] * prices[index]}</p>
                     </div>))}
                 </div>
-                <div className="price-total">
+                <div className={isActiveMobile ? "payment" : "price-total"}>
                     <p className="price">Total: R$ {totalPrice}</p>
                 </div>
 
-                <div className="btt">
+                <div className={isActiveMobile ? "payment" : "btt"}>
                     <div className="button">
-                        <Button children="Avançar" />
+                        <Button children="Avançar" onClick={toogleClassMobile}/>
                     </div>
                 </div>
 
-                <div className="payment">
+                <div className={isActiveMobile ? "pixcard" : "payment"}>
                     <h2>Pagamento</h2>
                     <div className="pix-and-card">
                         <div className="pix-card">
-                            <p className="pix" onClick={toggleClass}> <img src={pix} alt="" /> Pix</p>
-                            <p className="credit" onClick={toggleClass}> <img src={credit} alt="" /> Credito</p>
+                            <p className="pix" onClick={toggleClassDesktop}> <img src={pix} alt="" /> Pix</p>
+                            <p className="credit credit-card" onClick={toggleClassDesktop}> <img src={credit} alt="" /> Credito</p>
                         </div>
 
-                        <div className={isActive ? 'qrcode hidden' : 'qrcode '}>
+                        <div className={isActive ? 'qrcode hidden payment' : 'qrcode '}>
                             <img src={meuoficialpix} alt="" />
                         </div>
 
-                        <div className={isActive ? 'credit' : 'credit hidden'}>
+                        <div className={isActive ? 'credit credit-div' : 'credit hidden payment'}>
                             <div className="numCredit">
                                 <p>Número do Cartão</p>
                                 <input className="num" type="text" placeholder="0000 0000 0000 0000" />
@@ -122,7 +128,7 @@ export function RequestDish() {
 
                                 <div className="cvc">
                                     <p>CVC</p>
-                                    <input className="cvc" type="password" placeholder="000" />
+                                    <input className="cvc-input" type="password" placeholder="000" />
                                 </div>
                             </div>
 
