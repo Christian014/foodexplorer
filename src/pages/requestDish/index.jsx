@@ -157,8 +157,10 @@ export function RequestDish() {
 
                             <div className="finished-request-dish">
                                 
-
+                                <Link to="/payment">
+                                
                                     <Button image={Vector} children="Finalizar Pagamento" />
+                                </Link>
                                 
                             </div>
                         </div>

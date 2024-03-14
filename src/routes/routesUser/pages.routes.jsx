@@ -7,6 +7,7 @@ import { Home } from '../../pages/home';
 import { Dish } from '../../pages/dish';
 import { MenuUser } from '../../pages/menuUser';
 import { RequestDish } from '../../pages/requestDish';
+import { Payment } from '../../pages/payment';
 
 export function UserRoutes(){
     return(
@@ -16,6 +17,7 @@ export function UserRoutes(){
             <Route path="/dish" element={<Dish />} />
             <Route path="/menuUser" element={<MenuUser />} />
             <Route path="/requestDish" element={<RequestDish/>}/>
+            <Route path="/payment" element={<Payment/>}/>
             
         </Routes>
         
