@@ -63,6 +63,24 @@ export function RequestDish() {
         dishes()
     }, [])
 
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 1200) {
+                setIsActiveMobile(false);
+            }
+            else {
+                setIsActiveMobile(false);
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+
+        // Remove o event listener quando o componente é desmontado
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     const arrayPrice = data.map((price) => [price.price.replace(",", ".")])
     const prices = arrayPrice.map(price => parseFloat(price));
 
