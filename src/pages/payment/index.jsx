@@ -9,16 +9,11 @@ import PaymentAprovado from "../../assets/payment-aprovado.png";
 import Entregue from "../../assets/entregue.png";
 import { useState, useEffect } from "react";
 
-
-
-
-
 export function Payment(){
 
     const [color, setColor] = useState(false)
     function Color(){
         setColor(!color)
-        console.log("oi")
     }
 
     const [imageSrc, setImageSrc] = useState(Awaitpayment);

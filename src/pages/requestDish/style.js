@@ -24,7 +24,8 @@ export const Container = styled.div`
             main{
             margin-left: 35px;
             margin-top: 56px;
-            height: 70%;
+            min-height: 70vh;
+            
 
             .payment{
                 position: fixed;
@@ -168,9 +169,9 @@ export const Container = styled.div`
         }
 
         .footer{
-            margin-top: 5%;
-            position: absolute;
-            bottom: 0;
+            margin-top: 20px;
+            
+            
             width: 100%;
         }
 
