@@ -5,7 +5,9 @@ import { Container } from "./style";
 import Credit from "../../assets/credit.png";
 import Pix from "../../assets/pix.png";
 import Awaitpayment from "../../assets/await-payment.png";
-import { useState } from "react";
+import PaymentAprovado from "../../assets/payment-aprovado.png";
+import Entregue from "../../assets/entregue.png";
+import { useState, useEffect } from "react";
 
 
 
@@ -18,6 +20,26 @@ export function Payment(){
         setColor(!color)
         console.log("oi")
     }
+
+    const [imageSrc, setImageSrc] = useState(Awaitpayment);
+    const [paragrado, setParagrafo] = useState("Aguardando pagamento no caixa!");
+
+  useEffect(() => {
+    const timeoutId1 = setTimeout(() => {
+      setImageSrc(PaymentAprovado);
+      setParagrafo("Pagamento aprovado!")  
+    }, 5000);
+
+    const timeoutId2 = setTimeout(() => {
+      setImageSrc(Entregue);
+      setParagrafo("Pedido Entregue")
+    }, 10000);
+
+    return () => {
+      clearTimeout(timeoutId1);
+      clearTimeout(timeoutId2);
+    };
+  }, []);
     
     return(
         <Container>
@@ -33,8 +55,8 @@ export function Payment(){
                     </div>
 
                     <div className="await-confirmation">
-                        <img src={Awaitpayment} alt="" />
-                        <p>Aguardando pagamento no caixa</p>
+                        <img src={imageSrc} alt="" />
+                        <p>{paragrado}</p>
                     </div>
                 </div>
             </main>
