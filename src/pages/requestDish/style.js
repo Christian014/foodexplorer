@@ -20,7 +20,7 @@ export const Container = styled.div`
     
         }
 
-        
+        @media(max-width: 1200px){
             main{
             margin-left: 35px;
             margin-top: 56px;
@@ -227,7 +227,7 @@ export const Container = styled.div`
             font-size: 20px;
         }
     }
-        
+        }
         
 
 @media(min-width: 1201px){
