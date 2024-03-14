@@ -107,7 +107,7 @@ export function RequestDish() {
                     <div className="pix-and-card">
                         <div className="pix-card">
                             <p className="pix" onClick={toggleClassDesktop}> <img src={pix} alt="" /> Pix</p>
-                            <p className="credit credit-card" onClick={toggleClassDesktop}> <img src={credit} alt="" /> Credito</p>
+                            <p className="credit-card" onClick={toggleClassDesktop}> <img src={credit} alt="" /> Credito</p>
                         </div>
 
                         <div className={isActive ? 'qrcode hidden payment' : 'qrcode '}>
