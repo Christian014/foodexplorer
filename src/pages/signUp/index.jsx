@@ -26,6 +26,7 @@ export function SignUp() {
         if(!name || !email || !password){
             return alert("Preencha Todos os Campos")
         }
+        
         if(password.length < 6){
             return alert("senha invalida")
         }

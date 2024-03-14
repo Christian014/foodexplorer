@@ -20,7 +20,7 @@ export const Container = styled.div`
     
         }
 
-        @media(max-width: 1200px){
+        
             main{
             margin-left: 35px;
             margin-top: 56px;
@@ -110,6 +110,8 @@ export const Container = styled.div`
                             display: flex;
                             gap: 10px;
                                 .validated, .cvc-input{
+                                    width: 100%;
+                                    box-sizing: border-box;
                                     height: 48px;
                                     background-color: transparent;
                                     border-radius: 8px;
@@ -225,10 +227,10 @@ export const Container = styled.div`
             font-size: 20px;
         }
     }
-        }
+        
         
 
-        @media(min-width: 1201px){
+@media(min-width: 1201px){
             .hidden{
                 position: fixed;
                 visibility: hidden;
@@ -475,6 +477,6 @@ export const Container = styled.div`
             font-size: 30px;
         }
     }
-        }
+    }
         
 `;

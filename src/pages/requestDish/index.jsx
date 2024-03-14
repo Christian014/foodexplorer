@@ -5,6 +5,7 @@ import { Button } from "../../components/button";
 import { useLocation } from 'react-router-dom';
 import { api } from "../../services/api";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import credit from "../../assets/credit.png";
 import pix from "../../assets/pix.png";
@@ -98,7 +99,9 @@ export function RequestDish() {
 
                 <div className={isActiveMobile ? "payment" : "btt"}>
                     <div className="button">
+                    
                         <Button children="Avançar" onClick={toogleClassMobile}/>
+                    
                     </div>
                 </div>
 
@@ -133,7 +136,10 @@ export function RequestDish() {
                             </div>
 
                             <div className="finished-request-dish">
-                                <Button image={Vector} children="Finalizar Pagamento" />
+                                
+
+                                    <Button image={Vector} children="Finalizar Pagamento" />
+                                
                             </div>
                         </div>
 
