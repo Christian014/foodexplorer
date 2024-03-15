@@ -26,15 +26,14 @@ export function SignIn() {
         if(!email || !password){
             return setAlert(<Alert severity="error">Digite todos os Campos</Alert>)
         }
-
-        setAlert(<Alert severity="success">Sucesso ao se autenticar</Alert>)
+        
 
         api.post("/login", {email, password})
         .then((res) => {
             
             if(res.status === 200){
                 console.log("carregando")
-                
+                return setAlert(<Alert severity="success">Sucesso ao se autenticar</Alert>)
             }
         })
         .catch((error) => {
