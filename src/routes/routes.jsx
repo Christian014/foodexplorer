@@ -16,7 +16,6 @@ export function AppRoutes(){
 
     if(user){
         const userAuth = user.autenticacao
-        console.log(userAuth)
     }
     
     

@@ -18,7 +18,7 @@ export function UserRoutes(){
             <Route path="/menuUser" element={<MenuUser />} />
             <Route path="/requestDish" element={<RequestDish/>}/>
             <Route path="/payment" element={<Payment/>}/>
-            
+            <Route path="*" element={<Home/>}/>
         </Routes>
         
     )

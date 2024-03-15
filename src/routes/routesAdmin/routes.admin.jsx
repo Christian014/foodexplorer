@@ -18,7 +18,7 @@ export function AdminRoutes(){
             <Route path="/dishCustomAdmin" element={<DishCustomAdmin />} />
             <Route path="/dishNewAdmin" element={<DishNewAdmin />} />
             <Route path="/dishAdmin" element={<DishAdmin />} />
-            
+            <Route path="*" element={<HomeAdmin/>}/>
 
             <Route path="/" element={<HomeAdmin/>} />
         </Routes>
