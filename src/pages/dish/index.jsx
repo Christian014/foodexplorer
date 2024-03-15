@@ -79,7 +79,7 @@ export function Dish() {
 
         <Container>
 
-            <NavBar className="navbar" />
+            <NavBar className="navbar" idPedido={[previewDish.id]} qtdRequestDish={amount} arrayRequest={[amount]}/>
 
             <div className="containOneDish">
 
@@ -130,7 +130,7 @@ export function Dish() {
 
                     <Button
                         className="btt"
-                        children="pedir ∙ R$ 25,00"
+                        children={`pedir ∙ R$ ${previewDish.price}`}
                     />
 
 

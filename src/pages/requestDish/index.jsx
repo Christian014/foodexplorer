@@ -20,6 +20,7 @@ export function RequestDish() {
     const arrayRequest = state.arrayRequest
 
     let soma = arrayRequest.reduce((total, pedido) => total + pedido, 0);
+    console.log("array",arrayRequest)
     const [data, setData] = useState([])
     const [pedidos, setPedidos] = useState(soma)
     const [isActive, setIsActive] = useState(false);
@@ -42,16 +43,18 @@ export function RequestDish() {
         setIsActiveMobile(!isActiveMobile);
     }
     
+    console.log(idPedido.idPedido)
 
     useEffect(() => {
         async function dishes() {
 
             try {
-                if (idPedido) {
+                if (idPedido.idPedido) {
                     const data = await api.post("/dishRequest", idPedido)
                     const arrayObectDish = data.data.response
 
                     setData(arrayObectDish)
+                    console.log(data)
 
                 } else {
                     console.log("sem id")
