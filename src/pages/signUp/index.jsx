@@ -1,5 +1,6 @@
 import { Container } from "./style";
 
+import Alert from '@mui/material/Alert';
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -14,7 +15,7 @@ export function SignUp() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
+    const [alert, setAlert] = useState(null);
     const [button, setButton] = useState("Cadastrar")
 
     function validarEmail(email) {
@@ -25,25 +26,29 @@ export function SignUp() {
     async function stopDefAction(evt) {
         evt.preventDefault();
         setButton("Cadastrando")
-        console.log(name, email, password)
+        
 
         if(!name || !email || !password){
-            return alert("Preencha Todos os Campos")
+            return setAlert(<Alert severity="error">Preencha Todos os Campos</Alert>)
         }
 
         if(!validarEmail(email)){
-            return alert("email-invalido")
+            return setAlert(<Alert severity="error">E-mail inválido</Alert>)
         }
         
         if(password.length < 6){
-            return alert("senha invalida")
+            return setAlert(<Alert severity="error">Senha Invalida</Alert>)
         }
+
+        setAlert(<Alert severity="success">Cadastrado com sucesso</Alert>)
+        
         api.post("/register", {name, email, password})
         .then((res) => {
 
            if(res.status == 200){
-                alert("cadastrado com sucesso")
-                window.location.href = "/";
+                
+            return window.location.href = "/";
+                
            }
         })
         .catch((error => {
@@ -97,6 +102,7 @@ export function SignUp() {
                         <Button id="bttCadastrar" onClick={(e) => {stopDefAction(e)}}>{button}</Button>
                         
                         <Link to="/">Ja tenho uma conta</Link>
+                        {alert}
                     </div>
                 </form>
 

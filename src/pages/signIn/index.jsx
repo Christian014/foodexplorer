@@ -1,7 +1,7 @@
 import { Container } from "./style";
 import { api } from "../../services/api";
 import { useAuth } from "../../hooks/auth";
-
+import Alert from '@mui/material/Alert';
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { TitleAndLogo } from "../../components/titleAndLogo";
@@ -15,7 +15,8 @@ export function SignIn() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [button, setButton] = useState("Entrar")
-
+    const [alert, setAlert] = useState(null);
+    
     function login(evt){
         
         signIn({ email, password });
@@ -23,8 +24,10 @@ export function SignIn() {
         evt.preventDefault();
         setButton("Carregando")
         if(!email || !password){
-            return alert("digite todos os campos");
+            return setAlert(<Alert severity="error">Digite todos os Campos</Alert>)
         }
+
+        setAlert(<Alert severity="success">Sucesso ao se autenticar</Alert>)
 
         api.post("/login", {email, password})
         .then((res) => {
@@ -35,8 +38,8 @@ export function SignIn() {
             }
         })
         .catch((error) => {
-            alert("email ou senha invalido")
-            console.error("Erro durante o login:", error);
+            return setAlert(<Alert severity="error">E-mail e/ou Senha Inválido</Alert>)
+            
             
         })
 
@@ -75,6 +78,7 @@ export function SignIn() {
 
                     <Link to="/signUp">Criar uma conta</Link>
 
+                    {alert}
                 </div>
 
             </div>
