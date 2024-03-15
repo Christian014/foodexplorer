@@ -17,7 +17,11 @@ export function SignUp() {
 
     const [button, setButton] = useState("Cadastrar")
 
-    //tirando o default do button e chamando os states funcao handleSignUp
+    function validarEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
     async function stopDefAction(evt) {
         evt.preventDefault();
         setButton("Cadastrando")
@@ -25,6 +29,10 @@ export function SignUp() {
 
         if(!name || !email || !password){
             return alert("Preencha Todos os Campos")
+        }
+
+        if(!validarEmail(email)){
+            return alert("email-invalido")
         }
         
         if(password.length < 6){
