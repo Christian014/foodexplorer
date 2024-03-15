@@ -20,7 +20,7 @@ import { api } from "../../services/api";
 
 
 export function Dish() {
-
+    
     const [amount, setAmount] = useState(1)
 
     const [searchParams] = useSearchParams();

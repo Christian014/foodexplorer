@@ -13,7 +13,7 @@ export const Container = styled.div`
         bottom: 0;
     }
 
-    @media(max-width: 1200px){
+    @media(max-width: 1920px){
         .color-p{
                         background-color: #0D161B;
                     }
