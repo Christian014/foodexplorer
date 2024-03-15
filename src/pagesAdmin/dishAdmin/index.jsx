@@ -29,8 +29,6 @@ export function DishAdmin() {
                 const dados = await api.post("/dishPreView", { id })
                 const previewDish = dados.data
 
-                console.log(previewDish.response)
-
                 setPreviewDish(previewDish.response)
             } catch {
                 console.log("eror")

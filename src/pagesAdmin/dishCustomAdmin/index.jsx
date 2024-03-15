@@ -5,7 +5,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Footer } from "../../components/footer"
-
+import Alert from '@mui/material/Alert';
 
 
 //api
@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 
 
 export function DishCustomAdmin() {
+    const [alert, setAlert] = useState(null);
     const [image, setImage] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -49,40 +50,42 @@ export function DishCustomAdmin() {
     }
 
     const formData = new FormData();
-    formData.append('image', image);
-    formData.append('name', name);
-    formData.append('price', price);
-    formData.append('category', category);
-    formData.append('description', description);
-    formData.append('ingredients', addIngredients);
-    formData.append('id', id);
+    
     
     function handleUpdate(){   
         
-        
-        console.log(addIngredients)
-        if(!image){
-            alert("tem campos importantes faltando para atualizar")
+        if(!image || !name || !price){
+            return setAlert(<Alert severity="error">Preencha Todos os Campos</Alert>)
         }else{
-            alert("atualizado com sucesso");
+            formData.append('image', image);
+            formData.append('name', name);
+            formData.append('price', price);
+            formData.append('category', category);
+            formData.append('description', description);
+            formData.append('ingredients', addIngredients);
+            formData.append('id', id);
+
+            setAlert(<Alert severity="success">Atualizado com sucesso</Alert>)
+
             try{
-            
                 api.put("/dish", formData);
-                
-            
-            
+ 
             }catch{
-                alert("error internal")
+                setAlert(<Alert severity="error">erro ao atualizar</Alert>)
             }
+
+            return window.location.href = "/"
         }
     }
 
     async function deleteDish(){
         try{
             api.delete(`/dish/${id}`)
-             return alert("prato deletado")
+             setAlert(<Alert severity="success">Deletado</Alert>)
+             window.location.href = "/"
+             return;
         }catch{
-            alert("erro ao deletar")
+            setAlert(<Alert severity="error">erro</Alert>)
         }
     }
 
@@ -111,7 +114,7 @@ export function DishCustomAdmin() {
                     </Link>
 
                     <h1>Editar prato</h1>
-
+                    
                     <div className="img-name-category">
                     <div className="img-dish">
                         <p className="p-img-fo-prato">Imagem do prato</p>
@@ -176,6 +179,7 @@ export function DishCustomAdmin() {
                     </div>
 
                     <div className="save-delete">
+                        {alert}
                         <Button onClick={deleteDish} id="delete-btt">Excluir Prato</Button>
                         <Button onClick={handleUpdate} id="save-btt">Salvar Alterações</Button>
                     </div>

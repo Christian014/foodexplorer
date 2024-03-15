@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
 import { Footer } from "../../components/footer"
-
+import Alert from '@mui/material/Alert';
 import { api } from "../../services/api";
 
 //img
@@ -21,7 +21,7 @@ export function DishNewAdmin() {
 
     const [ingredients, setIngredients] = useState([])
     const [newIngredients, setNewIngredients] = useState("")
-
+    const [alert, setAlert] = useState(null);
     function handleAddTag() {
         setIngredients(prevState => [...prevState, newIngredients]);
     }
@@ -46,21 +46,29 @@ export function DishNewAdmin() {
     };
 
     const formData = new FormData();
-    formData.append('image', image);
-    formData.append('name', name);
-    formData.append('price', price);
-    formData.append('category', category);
-    formData.append('description', description);
-    formData.append('ingredients', ingredients);
+    
 
 
 
     async function handleUpload() {
+        if(!image || !name || !price){
+            return setAlert(<Alert severity="error">Preencha todos os Campos</Alert>)
+        }
+
+        formData.append('image', image);
+        formData.append('name', name);
+        formData.append('price', price);
+        formData.append('category', category);
+        formData.append('description', description);
+        formData.append('ingredients', ingredients);
+
         api.post("/dish", formData)
             .then((res) => {
                 if (res.status === 200) {
                     
-                    return alert("Cadastrado com sucesso");
+                    setAlert(<Alert severity="success">Cadastrado com sucesso</Alert>)
+                    window.location.href = "/"
+                    
     
                 }
             }).catch((error) => {
@@ -161,8 +169,9 @@ export function DishNewAdmin() {
                         <textarea wrap="hard" cols="30" rows="10" placeholder="A Salada César é uma opção refrescante para o verão." onChange={e => setDescription(e.target.value)}></textarea>
                     </div>
 
+                                
                     <div className="save-delete">
-
+                                {alert}
                         <Button id="save-btt" onClick={handleUpload}>Salvar Alterações</Button>
 
                     </div>
