@@ -51,6 +51,7 @@ export const Container = styled.div`
                         border-radius: 8px 0 0 0;
                     }
                     p{
+                        
                         border: 1px solid ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
                         height: 80px;
                         padding: 10px;
@@ -88,6 +89,7 @@ export const Container = styled.div`
                     height: 100%;
                     gap: 24px;
                     p{
+                        text-align: center;
                         font-size: 32px;
                         font-weight: 400;
                         color: ${({ theme }) => theme.COLORS.BACKGROUND_TAG_ADMIN};
