@@ -21,6 +21,10 @@ export const Container = styled.div`
         }
 
         @media(max-width: 1200px){
+            .price{
+                position: absolute;
+                visibility: hidden;
+            }
             main{
             margin-left: 35px;
             margin-top: 56px;
