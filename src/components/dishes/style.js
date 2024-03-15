@@ -9,6 +9,7 @@ export const Container = styled.div `
             margin-bottom: 15px;
             width: 176px;
             height: 175px;
+            object-fit: cover;
             
         }
     }
