@@ -9,7 +9,7 @@ export const Container = styled.div`
 
     .footer{
         width: 100%;
-        position: absolute;
+        margin-top: 20px;
         bottom: 0;
     }
 
