@@ -31,9 +31,9 @@ export function SignIn() {
         api.post("/login", {email, password})
         .then((res) => {
             
+            setAlert(<Alert severity="success">Sucesso ao se autenticar</Alert>)
             if(res.status === 200){
                 console.log("carregando")
-                return setAlert(<Alert severity="success">Sucesso ao se autenticar</Alert>)
             }
         })
         .catch((error) => {
